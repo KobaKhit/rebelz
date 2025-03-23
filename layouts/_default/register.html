@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            width: 100%;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+        
+        .content {
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background-color: #222;
+            color: white;
+            font-family: inherit;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-option input {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+        
+        button {
+            background-color: #e63946;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #c1121f;
+        }
+        
+        .nav {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .nav a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="/images/rebelz-info.png" alt="Rebelz Basketball" class="logo">
+            <h1>{{ .Title }}</h1>
+        </div>
+        
+        <div class="content">
+            {{ .Content }}
+        </div>
+        
+        <div class="form-container">
+            <h2>Registration Form</h2>
+            <form id="registrationForm" action="#" method="POST">
+                <div class="form-group">
+                    <label for="playerName">Player Name</label>
+                    <input type="text" id="playerName" name="playerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Date of Birth</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Team Preference</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="team16u" name="teamPreference" value="16U" required>
+                            <label for="team16u">16U Team</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="team17u" name="teamPreference" value="17U">
+                            <label for="team17u">17U Team</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="position">Primary Position</label>
+                    <select id="position" name="position" required>
+                        <option value="">Select a position</option>
+                        <option value="PG">Point Guard</option>
+                        <option value="SG">Shooting Guard</option>
+                        <option value="SF">Small Forward</option>
+                        <option value="PF">Power Forward</option>
+                        <option value="C">Center</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="parentName">Parent/Guardian Name</label>
+                    <input type="text" id="parentName" name="parentName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience">Basketball Experience</label>
+                    <textarea id="experience" name="experience" rows="3"></textarea>
+                </div>
+                
+                <button type="submit">Submit Registration</button>
+            </form>
+        </div>
+        
+        <div class="nav">
+            <a href="/">← Back to Home</a>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for registering! We will contact you soon with tryout information.');
+            this.reset();
+        });
+    </script>
+</body>
+</html> 

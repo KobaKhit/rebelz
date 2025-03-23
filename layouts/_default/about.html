@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            width: 100%;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+        
+        .content {
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+        
+        .columns {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .column {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .column h3 {
+            color: #e63946;
+            margin-top: 0;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .person {
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .person-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid #e63946;
+        }
+        
+        .person-name {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+        
+        .person-title {
+            font-style: italic;
+            color: #aaa;
+            margin-bottom: 0.5rem;
+        }
+        
+        .person-bio {
+            font-size: 0.9rem;
+        }
+        
+        .nav {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .nav a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .view-all-button {
+            display: block;
+            background-color: #e63946;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .view-all-button:hover {
+            background-color: #c1121f;
+        }
+        
+        @media (max-width: 768px) {
+            .columns {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="/images/rebelz-info.png" alt="Rebelz Basketball" class="logo">
+            <h1>{{ .Title }}</h1>
+        </div>
+        
+        <div class="content">
+            {{ .Content }}
+        </div>
+        
+        <div class="columns">
+            <div class="column">
+                <h3>Administration</h3>
+                
+                <div class="person">
+                    <img src="/images/admin-robell.jpg" alt="Robell Meky" class="person-image">
+                    <div class="person-name">Robell Meky</div>
+                    <div class="person-title">Program Director</div>
+                    <div class="person-bio">Founder of Rebelz Basketball with over 15 years of experience in youth basketball development.</div>
+                </div>
+                
+                <div class="person">
+                    <img src="/images/admin-jane.jpg" alt="Jane Smith" class="person-image">
+                    <div class="person-name">Jane Smith</div>
+                    <div class="person-title">Operations Manager</div>
+                    <div class="person-bio">Handles day-to-day operations, tournament scheduling, and team logistics.</div>
+                </div>
+                
+                <div class="person">
+                    <img src="/images/admin-michael.jpg" alt="Michael Johnson" class="person-image">
+                    <div class="person-name">Michael Johnson</div>
+                    <div class="person-title">Community Outreach</div>
+                    <div class="person-bio">Coordinates community partnerships and sponsorship opportunities.</div>
+                </div>
+            </div>
+            
+            <div class="column">
+                <h3>Coaches</h3>
+                
+                <div class="person">
+                    <img src="/images/coach-williams.jpg" alt="Coach Williams" class="person-image">
+                    <div class="person-name">Coach Williams</div>
+                    <div class="person-title">Head Coach - 17U</div>
+                    <div class="person-bio">Former collegiate player with 10+ years coaching experience at the high school and AAU levels.</div>
+                </div>
+                
+                <div class="person">
+                    <img src="/images/coach-thompson.jpg" alt="Coach Thompson" class="person-image">
+                    <div class="person-name">Coach Thompson</div>
+                    <div class="person-title">Head Coach - 16U</div>
+                    <div class="person-bio">Specializes in player development with a focus on guard skills and shooting technique.</div>
+                </div>
+                
+                <div class="person">
+                    <img src="/images/coach-davis.jpg" alt="Coach Davis" class="person-image">
+                    <div class="person-name">Coach Davis</div>
+                    <div class="person-title">Assistant Coach</div>
+                    <div class="person-bio">Strength and conditioning specialist who helps players improve their athleticism and prevent injuries.</div>
+                </div>
+            </div>
+            
+            <div class="column">
+                <h3>Players</h3>
+                
+                <div class="person">
+                    <div class="person-name">17U Team</div>
+                    <div class="person-bio">Our 17U team consists of talented players born in 2007, competing at the highest level of AAU basketball in the Philadelphia Circuit.</div>
+                </div>
+                
+                <div class="person">
+                    <div class="person-name">16U Team</div>
+                    <div class="person-bio">Our 16U team features promising athletes born in 2008, developing their skills and basketball IQ through competitive play.</div>
+                </div>
+                
+                <div class="person">
+                    <div class="person-name">Alumni</div>
+                    <div class="person-bio">Many of our former players have gone on to play at the collegiate level, with several earning athletic scholarships.</div>
+                </div>
+                
+                <a href="/players/" class="view-all-button">View All Players</a>
+            </div>
+        </div>
+        
+        <div class="nav">
+            <a href="/">← Back to Home</a>
+        </div>
+    </div>
+</body>
+</html> 
