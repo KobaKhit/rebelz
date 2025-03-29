@@ -2,12 +2,22 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "static/images"
-public_folder: "/images"
+# Media files configuration
+media_folder: "static/images" # Media files will be stored here
+public_folder: "/images" # The src attribute for uploaded media
 
 collections:
-  - name: "coaches"
-    label: "Coaches"
+  - name: "test"
+    label: "Test Collection"
+    folder: "content/test"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+# Coaches collection
+  - name: "coaches" # Used in routes, e.g., /admin/collections/coaches
+    label: "Coaches" # Used in the UI
     files:
       - file: "data/coaches.yaml"
         label: "Coaches List"
@@ -18,11 +28,12 @@ collections:
             widget: "list"
             fields:
               - {label: "Name", name: "name", widget: "string"}
-              - {label: "Image", name: "image", widget: "string"}
+              - {label: "Image", name: "image", widget: "string", hint: "URL to coach image"}
               - {label: "Bio", name: "bio", widget: "text"}
 
-  - name: "players"
-    label: "Players"
+# Players collection
+  - name: "players" # Used in routes, e.g., /admin/collections/players
+    label: "Players" # Used in the UI
     files:
       - file: "data/players.yaml"
         label: "Players List"
@@ -40,5 +51,5 @@ collections:
                   - {label: "Name", name: "name", widget: "string"}
                   - {label: "Position", name: "position", widget: "string"}
                   - {label: "Height", name: "height", widget: "string"}
-                  - {label: "Image", name: "image", widget: "string"}
+                  - {label: "Image", name: "image", widget: "string", hint: "URL to player image"}
                   - {label: "Bio", name: "bio", widget: "text"} 
