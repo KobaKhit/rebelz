@@ -12,65 +12,63 @@
   
   <!-- Custom preview templates -->
   <script>
-    // Register a custom preview for coaches
-    const CoachPreview = createClass({
-      render: function() {
-        const entry = this.props.entry;
-        const coaches = entry.getIn(['data', 'coaches']) || [];
-        
-        return h('div', {className: 'coaches-preview'},
-          h('h2', {}, 'Coaches'),
-          h('div', {className: 'coaches-list'},
-            coaches.map((coach, index) => {
-              return h('div', {key: index, className: 'coach-item'},
-                h('img', {src: coach.get('image'), alt: coach.get('name'), className: 'coach-image'}),
-                h('div', {className: 'info'},
-                  h('div', {className: 'name'}, coach.get('name')),
-                  h('div', {className: 'bio'}, coach.get('bio'))
-                )
-              );
-            })
-          )
-        );
-      }
-    });
+    // Wait for CMS to be ready
+    window.CMS.registerPreviewStyle("/admin/preview.css");
+    
+    // Use modern component approach
+    const CoachPreview = ({ entry }) => {
+      const coaches = entry.getIn(['data', 'coaches']) || [];
+      
+      return `
+        <div class="coaches-preview">
+          <h2>Coaches</h2>
+          <div class="coaches-list">
+            ${coaches.map((coach, index) => `
+              <div class="coach-item" key="${index}">
+                <img src="${coach.get('image')}" alt="${coach.get('name')}" class="coach-image">
+                <div class="info">
+                  <div class="name">${coach.get('name')}</div>
+                  <div class="bio">${coach.get('bio')}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    };
 
-    // Register a custom preview for players
-    const PlayerPreview = createClass({
-      render: function() {
-        const entry = this.props.entry;
-        const teams = entry.getIn(['data', 'teams']) || [];
-        
-        return h('div', {className: 'teams-preview'},
-          h('h2', {}, 'Teams'),
-          teams.map((team, teamIndex) => {
+    const PlayerPreview = ({ entry }) => {
+      const teams = entry.getIn(['data', 'teams']) || [];
+      
+      return `
+        <div class="teams-preview">
+          <h2>Teams</h2>
+          ${teams.map((team, teamIndex) => {
             const players = team.get('players') || [];
-            return h('div', {key: teamIndex, className: 'team-container'},
-              h('div', {className: 'team-header'}, team.get('name')),
-              h('div', {className: 'team-players'},
-                players.map((player, playerIndex) => {
-                  return h('div', {key: playerIndex, className: 'player-item'},
-                    h('img', {src: player.get('image'), alt: player.get('name'), className: 'player-image'}),
-                    h('div', {className: 'info'},
-                      h('div', {className: 'name'}, player.get('name')),
-                      h('div', {className: 'title'}, `${player.get('position')} | ${player.get('height')}`),
-                      h('div', {className: 'bio'}, player.get('bio'))
-                    )
-                  );
-                })
-              )
-            );
-          })
-        );
-      }
-    });
+            return `
+              <div class="team-container" key="${teamIndex}">
+                <div class="team-header">${team.get('name')}</div>
+                <div class="team-players">
+                  ${players.map((player, playerIndex) => `
+                    <div class="player-item" key="${playerIndex}">
+                      <img src="${player.get('image')}" alt="${player.get('name')}" class="player-image">
+                      <div class="info">
+                        <div class="name">${player.get('name')}</div>
+                        <div class="title">${player.get('position')} | ${player.get('height')}</div>
+                        <div class="bio">${player.get('bio')}</div>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    };
 
-    // Register the preview templates
     CMS.registerPreviewTemplate('coaches-list', CoachPreview);
     CMS.registerPreviewTemplate('players-list', PlayerPreview);
-    
-    // Add custom CSS for the preview pane only
-    CMS.registerPreviewStyle("/admin/preview.css");
   </script>
 </body>
 </html> 
