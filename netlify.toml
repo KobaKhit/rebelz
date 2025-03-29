@@ -12,4 +12,19 @@
   command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy]
-  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL" 
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+# Enable Netlify Identity
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = "frame-ancestors 'none'"
+
+# Redirect to admin
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 301
+  force = true 
