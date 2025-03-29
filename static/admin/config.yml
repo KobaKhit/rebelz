@@ -6,6 +6,9 @@ backend:
 media_folder: "static/images" # Media files will be stored here
 public_folder: "/images" # The src attribute for uploaded media
 
+# Enable editorial workflow for better content management
+publish_mode: editorial_workflow
+
 collections:
   - name: "test"
     label: "Test Collection"
@@ -22,6 +25,7 @@ collections:
       - file: "data/coaches.yaml"
         label: "Coaches List"
         name: "coaches-list"
+        preview_path: "/"
         fields:
           - label: "Coaches"
             name: "coaches"
@@ -38,6 +42,7 @@ collections:
       - file: "data/players.yaml"
         label: "Players List"
         name: "players-list"
+        preview_path: "/"
         fields:
           - label: "Teams"
             name: "teams"

@@ -4,9 +4,93 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
+  <!-- Import your site's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <style>
+    /* Add any custom CSS from your site here */
+    :root {
+      --primary: #e63946;
+      --primary-hover: #c1121f;
+      --primary-focus: rgba(230, 57, 70, 0.25);
+      --background-color: #000000;
+      --card-background-color: #121212;
+      --card-sectionning-background-color: #1e1e1e;
+      --card-border-color: #333;
+      --color: #ffffff;
+      --h1-color: #ffffff;
+      --h2-color: #e63946;
+      --h3-color: #e63946;
+      --h4-color: #ffffff;
+      --h5-color: #ffffff;
+      --h6-color: #ffffff;
+    }
+  </style>
 </head>
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.10.192/dist/netlify-cms.js"></script>
+  
+  <!-- Custom preview templates -->
+  <script>
+    // Register a custom preview for coaches
+    const CoachPreview = createClass({
+      render: function() {
+        const entry = this.props.entry;
+        const coaches = entry.getIn(['data', 'coaches']) || [];
+        
+        return h('div', {className: 'coaches-preview'},
+          h('h2', {}, 'Coaches'),
+          h('div', {className: 'coaches-list'},
+            coaches.map((coach, index) => {
+              return h('div', {key: index, className: 'coach-item'},
+                h('img', {src: coach.get('image'), alt: coach.get('name'), className: 'coach-image'}),
+                h('div', {className: 'info'},
+                  h('div', {className: 'name'}, coach.get('name')),
+                  h('div', {className: 'bio'}, coach.get('bio'))
+                )
+              );
+            })
+          )
+        );
+      }
+    });
+
+    // Register a custom preview for players
+    const PlayerPreview = createClass({
+      render: function() {
+        const entry = this.props.entry;
+        const teams = entry.getIn(['data', 'teams']) || [];
+        
+        return h('div', {className: 'teams-preview'},
+          h('h2', {}, 'Teams'),
+          teams.map((team, teamIndex) => {
+            const players = team.get('players') || [];
+            return h('div', {key: teamIndex, className: 'team-container'},
+              h('div', {className: 'team-header'}, team.get('name')),
+              h('div', {className: 'team-players'},
+                players.map((player, playerIndex) => {
+                  return h('div', {key: playerIndex, className: 'player-item'},
+                    h('img', {src: player.get('image'), alt: player.get('name'), className: 'player-image'}),
+                    h('div', {className: 'info'},
+                      h('div', {className: 'name'}, player.get('name')),
+                      h('div', {className: 'title'}, `${player.get('position')} | ${player.get('height')}`),
+                      h('div', {className: 'bio'}, player.get('bio'))
+                    )
+                  );
+                })
+              )
+            );
+          })
+        );
+      }
+    });
+
+    // Register the preview templates
+    CMS.registerPreviewTemplate('coaches-list', CoachPreview);
+    CMS.registerPreviewTemplate('players-list', PlayerPreview);
+    
+    // Add custom CSS for the preview pane
+    CMS.registerPreviewStyle("/admin/preview.css");
+  </script>
 </body>
 </html> 
