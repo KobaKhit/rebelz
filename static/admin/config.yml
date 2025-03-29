@@ -1,53 +1,36 @@
 backend:
   name: git-gateway
-  branch: main # Make sure this matches your main branch (main or master)
+  branch: main
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
-# Add this line to make the admin UI load correctly
-publish_mode: editorial_workflow
-
 collections:
   - name: "coaches"
     label: "Coaches"
-    editor:
-      preview: false
-    files:
-      - file: "data/coaches.yaml"
-        name: "coaches-list"
-        label: "Coaches List"
-        description: "Coaches information"
-        fields:
-          - name: "coaches"
-            label: "Coaches"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Image", name: "image", widget: "image", required: false, default: "https://placehold.co/100x100/png"}
-              - {label: "Bio", name: "bio", widget: "text"}
+    folder: "data"
+    create: false
+    slug: "coaches"
+    fields:
+      - {label: "Coaches", name: "coaches", widget: "list", fields: [
+          {label: "Name", name: "name", widget: "string"},
+          {label: "Image", name: "image", widget: "string"},
+          {label: "Bio", name: "bio", widget: "text"}
+        ]}
 
   - name: "players"
     label: "Players"
-    editor:
-      preview: false
-    files:
-      - file: "data/players.yaml"
-        name: "players-list"
-        label: "Players List"
-        description: "Players information"
-        fields:
-          - name: "teams"
-            label: "Teams"
-            widget: "list"
-            fields:
-              - {label: "Team Name", name: "name", widget: "string"}
-              - name: "players"
-                label: "Players"
-                widget: "list"
-                fields:
-                  - {label: "Name", name: "name", widget: "string"}
-                  - {label: "Position", name: "position", widget: "string"}
-                  - {label: "Height", name: "height", widget: "string"}
-                  - {label: "Image", name: "image", widget: "image", required: false, default: "https://placehold.co/80x80/png"}
-                  - {label: "Bio", name: "bio", widget: "text"} 
+    folder: "data"
+    create: false
+    slug: "players"
+    fields:
+      - {label: "Teams", name: "teams", widget: "list", fields: [
+          {label: "Team Name", name: "name", widget: "string"},
+          {label: "Players", name: "players", widget: "list", fields: [
+            {label: "Name", name: "name", widget: "string"},
+            {label: "Position", name: "position", widget: "string"},
+            {label: "Height", name: "height", widget: "string"},
+            {label: "Image", name: "image", widget: "string"},
+            {label: "Bio", name: "bio", widget: "text"}
+          ]}
+        ]} 
