@@ -24,7 +24,21 @@
       --h5-color: #ffffff;
       --h6-color: #ffffff;
     }
+    
+    /* Fix for admin interface */
+    body {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    
+    /* Override Netlify CMS styles */
+    #nc-root {
+      background-color: #000000;
+      color: #ffffff;
+    }
   </style>
+  <!-- Custom admin styles -->
+  <link rel="stylesheet" href="/admin/admin-styles.css">
 </head>
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
@@ -91,6 +105,9 @@
     
     // Add custom CSS for the preview pane
     CMS.registerPreviewStyle("/admin/preview.css");
+    
+    // Apply custom styles to the entire CMS UI
+    CMS.registerPreviewStyle("/admin/admin-styles.css", { raw: true });
   </script>
 </body>
 </html> 

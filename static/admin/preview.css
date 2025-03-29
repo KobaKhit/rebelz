@@ -5,6 +5,74 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+/* Fix for split background issue */
+.css-1gj57a0-SidebarContainer-card {
+  background-color: #121212 !important;
+  border-right: 1px solid #333 !important;
+}
+
+.css-v758ki-AppMainContainer, .css-12b66la-AppHeaderContent {
+  background-color: #000000 !important;
+}
+
+.css-104dqk8-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton, .css-12yqrwa-AppHeaderNavLink-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+.css-1hvrgvd-CollectionTopContainer-card-cardTop {
+  background-color: #121212 !important;
+}
+
+.css-1f7nhiq-CollectionMain {
+  background-color: #000000 !important;
+}
+
+.css-1kgj5p1-ToolbarSectionMain-toolbarSection {
+  background-color: #121212 !important;
+}
+
+.css-1ix3pzl-StyledDropdownButton-button-default-disabled-button-disabled-ToolbarButton, .css-1hpjyse-DeleteButton-button-default-disabled-button-disabled-ToolbarButton, .css-1vxo83u-PublishedToolbarButton-button-default-disabled-button-disabled-ToolbarButton, .css-1pxmqtt-SaveButtonContainer-button-default-disabled-button-disabled-ToolbarButton {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+.css-1pxmqtt-SaveButtonContainer-button-default-disabled-button-disabled-ToolbarButton:hover, .css-1vxo83u-PublishedToolbarButton-button-default-disabled-button-disabled-ToolbarButton:hover {
+  background-color: #e63946 !important;
+  color: #ffffff !important;
+}
+
+/* Editor area */
+.css-1f3mf5k-StyledModal {
+  background-color: #121212 !important;
+  border: 1px solid #333 !important;
+  color: #ffffff !important;
+}
+
+/* Form inputs */
+.css-p5sjac-ControlContainer {
+  background-color: #1e1e1e !important;
+  border: 1px solid #333 !important;
+  color: #ffffff !important;
+}
+
+input, textarea {
+  background-color: #1e1e1e !important;
+  border: 1px solid #333 !important;
+  color: #ffffff !important;
+}
+
+/* Widget headers */
+.css-u4olba-WidgetTopBar {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+/* Preview pane specific styles */
+.frame-content html {
+  background-color: #000000 !important;
+}
+
 .coaches-preview, .teams-preview {
   max-width: 1200px;
   margin: 0 auto;
