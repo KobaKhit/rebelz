@@ -7,14 +7,6 @@ media_folder: "static/images" # Media files will be stored here
 public_folder: "/images" # The src attribute for uploaded media
 
 collections:
-  - name: "test"
-    label: "Test Collection"
-    folder: "content/test"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-
 # Coaches collection
   - name: "coaches" # Used in routes, e.g., /admin/collections/coaches
     label: "Coaches" # Used in the UI
