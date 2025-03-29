@@ -27,4 +27,13 @@
   from = "/admin"
   to = "/admin/"
   status = 301
-  force = true 
+  force = true
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/:splat"
+  status = 200
+
+# Make sure the admin folder is included in the build
+[[plugins]]
+  package = "@netlify/plugin-hugo" 
