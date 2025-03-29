@@ -2,35 +2,43 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "static/images/uploads"
-public_folder: "/images/uploads"
+media_folder: "static/images"
+public_folder: "/images"
 
 collections:
   - name: "coaches"
     label: "Coaches"
-    folder: "data"
-    create: false
-    slug: "coaches"
-    fields:
-      - {label: "Coaches", name: "coaches", widget: "list", fields: [
-          {label: "Name", name: "name", widget: "string"},
-          {label: "Image", name: "image", widget: "string"},
-          {label: "Bio", name: "bio", widget: "text"}
-        ]}
+    files:
+      - file: "data/coaches.yaml"
+        label: "Coaches List"
+        name: "coaches-list"
+        fields:
+          - label: "Coaches"
+            name: "coaches"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Image", name: "image", widget: "string"}
+              - {label: "Bio", name: "bio", widget: "text"}
 
   - name: "players"
     label: "Players"
-    folder: "data"
-    create: false
-    slug: "players"
-    fields:
-      - {label: "Teams", name: "teams", widget: "list", fields: [
-          {label: "Team Name", name: "name", widget: "string"},
-          {label: "Players", name: "players", widget: "list", fields: [
-            {label: "Name", name: "name", widget: "string"},
-            {label: "Position", name: "position", widget: "string"},
-            {label: "Height", name: "height", widget: "string"},
-            {label: "Image", name: "image", widget: "string"},
-            {label: "Bio", name: "bio", widget: "text"}
-          ]}
-        ]} 
+    files:
+      - file: "data/players.yaml"
+        label: "Players List"
+        name: "players-list"
+        fields:
+          - label: "Teams"
+            name: "teams"
+            widget: "list"
+            fields:
+              - {label: "Team Name", name: "name", widget: "string"}
+              - label: "Players"
+                name: "players"
+                widget: "list"
+                fields:
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Position", name: "position", widget: "string"}
+                  - {label: "Height", name: "height", widget: "string"}
+                  - {label: "Image", name: "image", widget: "string"}
+                  - {label: "Bio", name: "bio", widget: "text"} 
