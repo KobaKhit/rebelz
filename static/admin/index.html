@@ -4,71 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <!-- Remove custom site CSS -->
 </head>
 <body>
-  <!-- Include the script that builds the page and powers Decap CMS -->
-  <script src="https://unpkg.com/@decapcms/cms@^3.0.0/dist/decap-cms.js"></script>
-  
-  <!-- Custom preview templates -->
-  <script>
-    // Wait for CMS to be ready
-    window.CMS.registerPreviewStyle("/admin/preview.css");
-    
-    // Use modern component approach
-    const CoachPreview = ({ entry }) => {
-      const coaches = entry.getIn(['data', 'coaches']) || [];
-      
-      return `
-        <div class="coaches-preview">
-          <h2>Coaches</h2>
-          <div class="coaches-list">
-            ${coaches.map((coach, index) => `
-              <div class="coach-item" key="${index}">
-                <img src="${coach.get('image')}" alt="${coach.get('name')}" class="coach-image">
-                <div class="info">
-                  <div class="name">${coach.get('name')}</div>
-                  <div class="bio">${coach.get('bio')}</div>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `;
-    };
-
-    const PlayerPreview = ({ entry }) => {
-      const teams = entry.getIn(['data', 'teams']) || [];
-      
-      return `
-        <div class="teams-preview">
-          <h2>Teams</h2>
-          ${teams.map((team, teamIndex) => {
-            const players = team.get('players') || [];
-            return `
-              <div class="team-container" key="${teamIndex}">
-                <div class="team-header">${team.get('name')}</div>
-                <div class="team-players">
-                  ${players.map((player, playerIndex) => `
-                    <div class="player-item" key="${playerIndex}">
-                      <img src="${player.get('image')}" alt="${player.get('name')}" class="player-image">
-                      <div class="info">
-                        <div class="name">${player.get('name')}</div>
-                        <div class="title">${player.get('position')} | ${player.get('height')}</div>
-                        <div class="bio">${player.get('bio')}</div>
-                      </div>
-                    </div>
-                  `).join('')}
-                </div>
-              </div>
-            `;
-          }).join('')}
-        </div>
-      `;
-    };
-
-    CMS.registerPreviewTemplate('coaches-list', CoachPreview);
-    CMS.registerPreviewTemplate('players-list', PlayerPreview);
-  </script>
+  <!-- Include the script that builds the page and powers Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.10.192/dist/netlify-cms.js"></script>
 </body>
 </html> 
