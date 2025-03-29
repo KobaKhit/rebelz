@@ -1,4 +1,13 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "Rebelz Basketball"
-# theme = "ananke" 
+# theme = "ananke"
+
+[outputFormats.ADMIN]
+mediaType = "text/html"
+baseName = "admin"
+isPlainText = true
+notAlternative = true
+
+[outputs]
+home = ["HTML", "RSS", "ADMIN"] 
