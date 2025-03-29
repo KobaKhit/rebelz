@@ -1,12 +1,13 @@
 coaches:
-  - name: "Coach Mike Johnson"
-    image: "https://placehold.co/100x100/png"
-    bio: "Head Coach with 15+ years experience. Former Division I player specializing in player development and offensive strategy."
-
-  - name: "Coach Sarah Williams"
-    image: "https://placehold.co/100x100/png"
-    bio: "Assistant Coach focusing on guard skills and shooting technique. Collegiate basketball standout with coaching experience at multiple levels."
-
-  - name: "Coach David Thompson"
-    image: "https://placehold.co/100x100/png"
-    bio: "Strength and Conditioning Coach. Certified trainer who helps players improve athleticism, prevent injuries, and maximize performance." 
+  - name: Coach Mike Johnson
+    image: https://placehold.co/100x100/png
+    bio: Head Coach with 15+ years experience. Former Division I player specializing
+      in player development and offensive strategy.
+  - name: Robel Meky
+    image: https://wallpapers.com/images/hd/military-beret-png-06132024-iwugic6zjakgmlga.png
+    bio: Assistant Coach focusing on guard skills and shooting technique. Collegiate
+      basketball standout with coaching experience at multiple levels.
+  - name: Coach David Thompson
+    image: https://placehold.co/100x100/png
+    bio: Strength and Conditioning Coach. Certified trainer who helps players
+      improve athleticism, prevent injuries, and maximize performance.
