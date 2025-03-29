@@ -2,18 +2,10 @@
   "name": "rebelz-basketball",
   "version": "1.0.0",
   "description": "Rebelz Basketball website",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "hugo --gc --minify"
   },
-  "keywords": [
-    "basketball",
-    "hugo",
-    "netlify"
-  ],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@netlify/plugin-hugo": "^0.1.0"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 } 
