@@ -11,8 +11,78 @@
   <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   
-  <!-- Add this script for Netlify Identity -->
+  <!-- Register custom preview styles -->
   <script>
+    CMS.registerPreviewStyle("/admin/preview-styles.css");
+    
+    // Custom preview for coaches
+    var CoachPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var coaches = entry.getIn(['data', 'coaches']) || [];
+        
+        return h('div', {className: 'preview-container'},
+          h('h1', {className: 'preview-header'}, 'Coaches Preview'),
+          h('div', {className: 'coaches-container'},
+            coaches.map(function(coach, index) {
+              return h('div', {key: index, className: 'coach-item'},
+                h('img', {
+                  src: coach.getIn(['image']), 
+                  alt: coach.getIn(['name']),
+                  className: 'coach-image'
+                }),
+                h('div', {className: 'info'},
+                  h('div', {className: 'name'}, coach.getIn(['name'])),
+                  h('div', {className: 'bio'}, coach.getIn(['bio']))
+                )
+              );
+            })
+          )
+        );
+      }
+    });
+    
+    // Custom preview for players
+    var PlayerPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var teams = entry.getIn(['data', 'teams']) || [];
+        
+        return h('div', {className: 'preview-container'},
+          h('h1', {className: 'preview-header'}, 'Players Preview'),
+          h('div', {className: 'teams-container'},
+            teams.map(function(team, teamIndex) {
+              return h('div', {key: teamIndex},
+                h('div', {className: 'team-header'}, team.getIn(['name'])),
+                h('div', {className: 'team-players'},
+                  (team.getIn(['players']) || []).map(function(player, playerIndex) {
+                    return h('div', {key: playerIndex, className: 'player-item'},
+                      h('img', {
+                        src: player.getIn(['image']), 
+                        alt: player.getIn(['name']),
+                        className: 'player-image'
+                      }),
+                      h('div', {className: 'info'},
+                        h('div', {className: 'name'}, player.getIn(['name'])),
+                        h('div', {className: 'title'}, 
+                          player.getIn(['position']) + ' | ' + player.getIn(['height'])
+                        ),
+                        h('div', {className: 'bio'}, player.getIn(['bio']))
+                      )
+                    );
+                  })
+                )
+              );
+            })
+          )
+        );
+      }
+    });
+    
+    // Register the custom previews
+    CMS.registerPreviewTemplate("coaches-list", CoachPreview);
+    CMS.registerPreviewTemplate("players-list", PlayerPreview);
+    
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
