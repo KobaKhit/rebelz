@@ -11,21 +11,28 @@ teams:
         height: 6'
         image: https://placehold.co/80x80/png
         bio: Floor general with excellent court vision and leadership skills.
-      - name: Jayden
-        position: Small Forward
+      - name: JB
+        position: Guard
+        height: 6'
+        image: https://placehold.co/80x80/png
+        bio: "Crafty Combo guard with foundational understanding of on-ball and off ball
+          guard play. Tough and smart serving as a defensive asset and lethal
+          off-ball threat. "
+      - name: Yasir P.
+        position: Power Forward
         height: 6'5"
         image: https://placehold.co/80x80/png
-        bio: Athletic wing who excels in transition and finishing at the rim.
-      - name: Yassir
-        position: Power Forward
-        height: 6'7"
-        image: https://placehold.co/80x80/png
-        bio: Versatile defender with developing perimeter skills.
-      - name: Micheal
+        bio: "Versatile and Crafty Forward with advanced dribbling capacity on the
+          Perimeter and advanced strength in the paint. A multi-dimensional
+          player that can serve as a pillar of an offense and defense. "
+      - name: Michael Chepyshev
         position: Center
-        height: 6'9"
+        height: 6'6"
         image: https://placehold.co/80x80/png
-        bio: Rim protector with soft touch around the basket.
+        bio: "Rim protector with equal parts strength and mobility. Has capacity to
+          serve as the anchor of a defense, especially a zone defense. Offensive
+          package includes pick and roll, dunker spot actions and a reliable 3
+          point shot. "
   - name: 16U
     players:
       - name: Mohamed Konate
