@@ -33,6 +33,13 @@ teams:
           serve as the anchor of a defense, especially a zone defense. Offensive
           package includes pick and roll, dunker spot actions and a reliable 3
           point shot. "
+      - name: Ahnaf Mollah
+        position: Guard
+        height: 5'10
+        bio: "Speedy shooting guard with excellent work ethic. Offensive package will
+          develop into a lethal 3 level scorer.  Ahnaf is a matchup nightmare in
+          1v1 situations. "
+        image: "11"
   - name: 16U
     players:
       - name: Mohamed Konate
