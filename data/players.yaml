@@ -39,11 +39,11 @@ teams:
         bio: "Speedy shooting guard with excellent work ethic. Offensive package will
           develop into a lethal 3 level scorer.  Ahnaf is a matchup nightmare in
           1v1 situations. "
-        image: "11"
+        image: https://placehold.co/80x80/png
       - name: "Nate "
         position: Guard
         height: "6"
-        image: "11"
+        image: https://placehold.co/80x80/png
         bio: "Two-Way Guard with fundamental understanding of the game. Can be used as
           an initiator in an offense while serving as a lethal off ball threat.
           3 Level Scorer and rugged defender. "
