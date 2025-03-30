@@ -53,6 +53,11 @@ teams:
         image: https://placehold.co/80x80/png
         bio: "Scoring guard with lethal 3-point Accuracy and fierce defender. Excellent
           work ethic and discipline to the game. "
+      - name: Muhammad Asadullah
+        position: Forward
+        height: "6"
+        image: https://placehold.co/80x80/png
+        bio: Athletic player with excellent slashing ability.
   - name: 16U
     players:
       - name: Mohamed Konate
@@ -80,3 +85,4 @@ teams:
         height: 6'2"
         image: https://placehold.co/80x80/png
         bio: Athletic player with excellent slashing ability.
+      - name: Zion Johnson
