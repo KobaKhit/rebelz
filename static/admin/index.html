@@ -79,19 +79,90 @@
       }
     });
     
+    // Custom preview for individual player pages
+    var PlayerPagePreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var title = entry.getIn(['data', 'title']) || '';
+        var position = entry.getIn(['data', 'position']) || '';
+        var height = entry.getIn(['data', 'height']) || '';
+        var image = entry.getIn(['data', 'image']) || '';
+        var bio = entry.getIn(['data', 'bio']) || '';
+        var team = entry.getIn(['data', 'team']) || '';
+        var videos = entry.getIn(['data', 'videos']);
+        var stats = entry.getIn(['data', 'stats']);
+        
+        // Check if videos exist and is iterable
+        var hasVideos = videos && videos.size > 0;
+        
+        // Check if stats exist and is iterable
+        var hasStats = stats && stats.size > 0;
+        
+        return h('div', {className: 'preview-container player-page-preview'},
+          h('a', {className: 'back-link'}, '← Back to Home'),
+          
+          h('div', {className: 'player-header'},
+            h('img', {
+              src: image,
+              alt: title,
+              className: 'player-image'
+            }),
+            h('div', {className: 'player-info'},
+              h('h1', {className: 'player-name'}, title),
+              h('div', {className: 'player-position'}, position + ' | ' + height),
+              h('div', {className: 'player-team'}, 'Team: ' + team),
+              h('div', {className: 'player-bio'}, bio)
+            )
+          ),
+          
+          hasVideos ? h('div', {className: 'section'},
+            h('h2', {className: 'section-title'}, 'Featured Videos'),
+            h('div', {className: 'videos-grid'},
+              videos.map(function(video, index) {
+                return h('div', {key: index, className: 'video-container'},
+                  h('div', {className: 'video-placeholder'},
+                    h('div', {className: 'video-placeholder-text'}, 'Video: ' + video)
+                  )
+                );
+              })
+            )
+          ) : null,
+          
+          hasStats ? h('div', {className: 'section'},
+            h('h2', {className: 'section-title'}, 'Stats'),
+            h('table', {},
+              h('thead', {},
+                h('tr', {},
+                  h('th', {}, 'Season'),
+                  h('th', {}, 'PPG'),
+                  h('th', {}, 'RPG'),
+                  h('th', {}, 'APG'),
+                  h('th', {}, 'FG%'),
+                  h('th', {}, '3P%')
+                )
+              ),
+              h('tbody', {},
+                stats.map(function(stat, index) {
+                  return h('tr', {key: index},
+                    h('td', {}, stat.get('season')),
+                    h('td', {}, stat.get('ppg')),
+                    h('td', {}, stat.get('rpg')),
+                    h('td', {}, stat.get('apg')),
+                    h('td', {}, stat.get('fgp')),
+                    h('td', {}, stat.get('tpp'))
+                  );
+                })
+              )
+            )
+          ) : null
+        );
+      }
+    });
+    
     // Register the custom previews
     CMS.registerPreviewTemplate("coaches-list", CoachPreview);
     CMS.registerPreviewTemplate("players-list", PlayerPreview);
-    
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
+    CMS.registerPreviewTemplate("player_pages", PlayerPagePreview);
   </script>
 </body>
 </html> 

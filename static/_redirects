@@ -1,1 +1,7 @@
-/admin    /admin/    301! 
+# Netlify redirects file
+
+# Redirect default Netlify subdomain to primary domain
+https://rebelz.netlify.app/* https://rebelz.club/:splat 301!
+
+# Handle admin routes properly
+/admin/*  /admin/index.html  200 
