@@ -1,94 +1,80 @@
 teams:
-  - name: "17U"
+  - name: 17U
     players:
-      - name: "Kye"
-        position: "Point Guard"
-        height: "6'2\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Floor general with excellent court vision and leadership skills."
-      
-      - name: "Heedy"
-        position: "Shooting Guard"
-        height: "6'3\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Sharpshooter with range and defensive intensity."
-      
-      - name: "Jayden"
-        position: "Small Forward"
-        height: "6'5\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Athletic wing who excels in transition and finishing at the rim."
-      
-      - name: "Yassir"
-        position: "Power Forward"
-        height: "6'7\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Versatile defender with developing perimeter skills."
-      
-      - name: "Micheal"
-        position: "Center"
-        height: "6'9\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Rim protector with soft touch around the basket."
-  
-  - name: "16U"
+      - name: Shiheed Rice-Sloan
+        position: Forward
+        height: 6'3"
+        image: https://placehold.co/80x80/png
+        bio: 17U Team Captain . Sharpshooter, defensive asset and natural leader.
+      - name: Kye
+        position: Point Guard
+        height: 6'
+        image: https://placehold.co/80x80/png
+        bio: Floor general with excellent court vision and leadership skills.
+      - name: Jayden
+        position: Small Forward
+        height: 6'5"
+        image: https://placehold.co/80x80/png
+        bio: Athletic wing who excels in transition and finishing at the rim.
+      - name: Yassir
+        position: Power Forward
+        height: 6'7"
+        image: https://placehold.co/80x80/png
+        bio: Versatile defender with developing perimeter skills.
+      - name: Micheal
+        position: Center
+        height: 6'9"
+        image: https://placehold.co/80x80/png
+        bio: Rim protector with soft touch around the basket.
+  - name: 16U
     players:
-      - name: "Mohamed Konate"
-        position: "Point Guard"
-        height: "6'1\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Quick ball-handler with excellent passing ability."
-      
-      - name: "Yasir"
-        position: "Shooting Guard"
-        height: "6'2\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Three-point specialist with improving defensive skills."
-      
-      - name: "Michael Chepyshev"
-        position: "Small Forward"
-        height: "6'4\""
-        image: "https://placehold.co/80x80/png"
-        bio: "All-around player who contributes in multiple ways."
-      
-      - name: "Gaoussou"
-        position: "Power Forward"
-        height: "6'6\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Strong rebounder with developing post moves."
-      
-      - name: "Ian"
-        position: "Center"
-        height: "6'8\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Shot-blocker with high basketball IQ and leadership."
-      
-      - name: "Ronald Coleman"
-        position: "Guard"
-        height: "6'0\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Defensive specialist with developing offensive skills."
-      
-      - name: "Ahnaf Mollah"
-        position: "Forward"
-        height: "6'5\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Versatile player who can score from multiple positions."
-      
-      - name: "Lamont Harris"
-        position: "Guard"
-        height: "6'2\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Athletic player with excellent slashing ability."
-      
-      - name: "Nate"
-        position: "Forward"
-        height: "6'4\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Physical player with strong finishing ability at the rim."
-      
-      - name: "Julian"
-        position: "Guard"
-        height: "6'1\""
-        image: "https://placehold.co/80x80/png"
-        bio: "Creative ball-handler with excellent court vision." 
+      - name: Mohamed Konate
+        position: Point Guard
+        height: 6'1"
+        image: https://placehold.co/80x80/png
+        bio: Quick ball-handler with excellent passing ability.
+      - name: Yasir
+        position: Shooting Guard
+        height: 6'2"
+        image: https://placehold.co/80x80/png
+        bio: Three-point specialist with improving defensive skills.
+      - name: Michael Chepyshev
+        position: Small Forward
+        height: 6'4"
+        image: https://placehold.co/80x80/png
+        bio: All-around player who contributes in multiple ways.
+      - name: Gaoussou
+        position: Power Forward
+        height: 6'6"
+        image: https://placehold.co/80x80/png
+        bio: Strong rebounder with developing post moves.
+      - name: Ian
+        position: Center
+        height: 6'8"
+        image: https://placehold.co/80x80/png
+        bio: Shot-blocker with high basketball IQ and leadership.
+      - name: Ronald Coleman
+        position: Guard
+        height: 6'0"
+        image: https://placehold.co/80x80/png
+        bio: Defensive specialist with developing offensive skills.
+      - name: Ahnaf Mollah
+        position: Forward
+        height: 6'5"
+        image: https://placehold.co/80x80/png
+        bio: Versatile player who can score from multiple positions.
+      - name: Lamont Harris
+        position: Guard
+        height: 6'2"
+        image: https://placehold.co/80x80/png
+        bio: Athletic player with excellent slashing ability.
+      - name: Nate
+        position: Forward
+        height: 6'4"
+        image: https://placehold.co/80x80/png
+        bio: Physical player with strong finishing ability at the rim.
+      - name: Julian
+        position: Guard
+        height: 6'1"
+        image: https://placehold.co/80x80/png
+        bio: Creative ball-handler with excellent court vision.
