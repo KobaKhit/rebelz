@@ -58,6 +58,10 @@ teams:
         height: "6"
         image: https://placehold.co/80x80/png
         bio: Athletic player with excellent slashing ability.
+      - name: Lamont Harris
+        position: Guard
+        height: "6"
+        image: https://placehold.co/80x80/png
   - name: 16U
     players:
       - name: Mohamed Konate
@@ -80,9 +84,9 @@ teams:
         height: 6'0"
         image: https://placehold.co/80x80/png
         bio: Defensive specialist with developing offensive skills.
-      - name: Lamont Harris
+      - name: "Amyr Mcclenton "
         position: Guard
-        height: 6'2"
+        height: 5'7
         image: https://placehold.co/80x80/png
         bio: Athletic player with excellent slashing ability.
       - name: Zion Johnson
