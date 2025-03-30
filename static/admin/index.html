@@ -20,7 +20,7 @@
       render: function() {
         var entry = this.props.entry;
         var coaches = entry.getIn(['data', 'coaches']) || [];
-        
+
         return h('div', {className: 'preview-container'},
           h('h1', {className: 'preview-header'}, 'Coaches Preview'),
           h('div', {className: 'coaches-container'},

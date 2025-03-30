@@ -42,4 +42,33 @@ collections:
                   - {label: "Position", name: "position", widget: "string"}
                   - {label: "Height", name: "height", widget: "string"}
                   - {label: "Image", name: "image", widget: "string"}
-                  - {label: "Bio", name: "bio", widget: "text"} 
+                  - {label: "Bio", name: "bio", widget: "text"}
+
+  - name: "player_pages"
+    label: "Player Pages"
+    folder: "/content/players"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Position", name: "position", widget: "string"}
+      - {label: "Height", name: "height", widget: "string"}
+      - {label: "Image", name: "image", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "text"}
+      - {label: "Team", name: "team", widget: "select", options: ["17U", "16U"]}
+      - label: "Videos"
+        name: "videos"
+        widget: "list"
+        required: false
+        field: {label: "Video Embed URL", name: "video", widget: "string"}
+      - label: "Stats"
+        name: "stats"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Season", name: "season", widget: "string"}
+          - {label: "Points Per Game", name: "ppg", widget: "number", value_type: "float"}
+          - {label: "Rebounds Per Game", name: "rpg", widget: "number", value_type: "float"}
+          - {label: "Assists Per Game", name: "apg", widget: "number", value_type: "float"}
+          - {label: "Field Goal Percentage", name: "fgp", widget: "string"}
+          - {label: "Three Point Percentage", name: "tpp", widget: "string"} 

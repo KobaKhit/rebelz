@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <!-- Pico.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        :root {
+            --primary: #e63946;
+            --primary-hover: #c1121f;
+            --primary-focus: rgba(230, 57, 70, 0.25);
+            --background-color: #000000;
+            --card-background-color: #121212;
+            --card-sectionning-background-color: #1e1e1e;
+            --card-border-color: #333;
+            --color: #ffffff;
+            --h1-color: #ffffff;
+            --h2-color: #e63946;
+            --h3-color: #e63946;
+            --h4-color: #ffffff;
+            --h5-color: #ffffff;
+            --h6-color: #ffffff;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .page-title {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .team-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem 0.25rem 0 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+        }
+        
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: var(--card-sectionning-background-color);
+            border: 1px solid var(--card-border-color);
+            border-top: none;
+            border-radius: 0 0 0.25rem 0.25rem;
+            padding: 1.5rem;
+        }
+        
+        .player-card {
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .player-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .player-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .player-card-content {
+            padding: 1rem;
+        }
+        
+        .player-card-name {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+            color: var(--primary);
+        }
+        
+        .player-card-position {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 0.5rem;
+        }
+        
+        .player-card-bio {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .player-card-link {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        
+        .player-card-link:hover {
+            background-color: var(--primary-hover);
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-nav a {
+            background-color: var(--card-background-color);
+            border-color: var(--card-border-color);
+        }
+        
+        .footer-nav a:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <a href="/" class="back-link">← Back to Home</a>
+        
+        <h1 class="page-title">{{ .Title }}</h1>
+        
+        {{ range .Pages.GroupByParam "team" }}
+        <div class="team-header">{{ .Key }}</div>
+        <div class="players-grid">
+            {{ range .Pages }}
+            <div class="player-card">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">{{ .Title }}</h3>
+                    <div class="player-card-position">{{ .Params.position }} | {{ .Params.height }}</div>
+                    <div class="player-card-bio">{{ .Params.bio }}</div>
+                    <a href="{{ .Permalink }}" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </main>
+    
+    <!-- Navigation links at the bottom -->
+    <footer class="container">
+        <div class="footer-nav">
+            <a href="/" role="button">Home</a>
+            <a href="/about/" role="button">About Us</a>
+            <a href="/gofundme/" role="button">Support Our Team</a>
+        </div>
+    </footer>
+    
+    <!-- Add this script at the end of the body -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+</body>
+</html> 
