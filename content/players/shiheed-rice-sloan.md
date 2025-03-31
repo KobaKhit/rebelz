@@ -6,7 +6,7 @@ image: images/heedy.png
 bio: 17U Team Captain. Sharpshooter, defensive asset and natural leader.
 team: 17U
 videos:
-  - https://www.youtube.com/watch?v=dUuhDK5qqN8
+  - https://www.youtube.com/watch?v=ubFa0NTHk3k
 stats:
   - season: 2022-2023
     ppg: 15.2
