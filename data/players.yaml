@@ -81,8 +81,8 @@ teams:
         bio: "Combo Guard that can go both left and right with a strong motor that
           results in great rebounding and defense. Coachable and hard working. "
       - name: Ian
-        position: Center
-        height: 6'8"
+        position: Forward
+        height: 5'7
         image: images/more-than-basketball-logo.webp
         bio: Shot-blocker with high basketball IQ and leadership.
       - name: Ronald Coleman
