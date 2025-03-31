@@ -9,4 +9,11 @@ bio: "Floor general with excellent court vision and lethal 3 point accuracy. 3
   defense.  "
 team: 17U
 videos: []
+stats:
+  - season: "2025"
+    ppg: 0
+    rpg: 0
+    apg: 0
+    fgp: "0"
+    tpp: "0"
 ---
