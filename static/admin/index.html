@@ -119,9 +119,33 @@
             h('h2', {className: 'section-title'}, 'Featured Videos'),
             h('div', {className: 'videos-grid'},
               videos.map(function(video, index) {
+                var videoSrc = video;
+                // Convert YouTube watch URLs to embed URLs for preview
+                if (videoSrc && videoSrc.includes('youtube.com/watch?v=')) {
+                  var videoId = videoSrc.split('v=')[1];
+                  // Handle additional parameters
+                  var ampersandPosition = videoId.indexOf('&');
+                  if (ampersandPosition !== -1) {
+                    videoId = videoId.substring(0, ampersandPosition);
+                  }
+                  videoSrc = 'https://www.youtube.com/embed/' + videoId;
+                } else if (videoSrc && videoSrc.includes('youtu.be/')) {
+                  var videoId = videoSrc.split('youtu.be/')[1];
+                  // Handle additional parameters
+                  var questionMarkPosition = videoId.indexOf('?');
+                  if (questionMarkPosition !== -1) {
+                    videoId = videoId.substring(0, questionMarkPosition);
+                  }
+                  videoSrc = 'https://www.youtube.com/embed/' + videoId;
+                }
+                
                 return h('div', {key: index, className: 'video-container'},
-                  h('div', {className: 'video-placeholder'},
-                    h('div', {className: 'video-placeholder-text'}, 'Video: ' + video)
+                  h('div', {className: 'video-wrapper'},
+                    h('iframe', {
+                      src: videoSrc,
+                      title: 'Player Video',
+                      allowFullScreen: true
+                    })
                   )
                 );
               })

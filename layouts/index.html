@@ -399,7 +399,16 @@
                     <div class="videos-container">
                         <div class="video-item">
                             <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Featured Video" allowfullscreen></iframe>
+                                {{ $videoURL := "https://www.youtube.com/watch?v=dqkU8dvj_SY" }}
+                                {{ if in $videoURL "youtube.com/watch?v=" }}
+                                    {{ $videoID := index (split (index (split $videoURL "?v=") 1) "&") 0 }}
+                                    <iframe src="https://www.youtube.com/embed/{{ $videoID }}" title="Featured Video" allowfullscreen></iframe>
+                                {{ else if in $videoURL "youtu.be/" }}
+                                    {{ $videoID := index (split (index (split $videoURL "/") -1) "?") 0 }}
+                                    <iframe src="https://www.youtube.com/embed/{{ $videoID }}" title="Featured Video" allowfullscreen></iframe>
+                                {{ else }}
+                                    <iframe src="{{ $videoURL }}" title="Featured Video" allowfullscreen></iframe>
+                                {{ end }}
                             </div>
                             <div class="video-title">Team Highlights - Summer 2023</div>
                         </div>

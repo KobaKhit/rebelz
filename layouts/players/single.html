@@ -171,7 +171,16 @@
             <h2 class="section-title">Featured Videos</h2>
             {{ range .Params.videos }}
             <div class="video-container">
-                <iframe src="{{ . }}" title="Player Video" allowfullscreen></iframe>
+                {{ $videoURL := . }}
+                {{ if in . "youtube.com/watch?v=" }}
+                    {{ $videoID := index (split (index (split . "?v=") 1) "&") 0 }}
+                    <iframe src="https://www.youtube.com/embed/{{ $videoID }}" title="Player Video" allowfullscreen></iframe>
+                {{ else if in . "youtu.be/" }}
+                    {{ $videoID := index (split (index (split . "/") -1) "?") 0 }}
+                    <iframe src="https://www.youtube.com/embed/{{ $videoID }}" title="Player Video" allowfullscreen></iframe>
+                {{ else }}
+                    <iframe src="{{ . }}" title="Player Video" allowfullscreen></iframe>
+                {{ end }}
             </div>
             {{ end }}
         </div>
