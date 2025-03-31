@@ -8,6 +8,5 @@ bio: "Floor general with excellent court vision and lethal 3 point accuracy. 3
   basketball. A Point Guard capable of running an offense and manipulating any
   defense.  "
 team: 17U
-videos:
-  - https://www.youtube.com/embed/dQw4w9WgXcQ
+videos: []
 ---
