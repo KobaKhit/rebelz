@@ -9,26 +9,26 @@ teams:
       - name: Kye
         position: Point Guard
         height: 6'
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: Floor general with excellent court vision and leadership skills.
       - name: JB
         position: Guard
         height: 6'
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: "Crafty Combo guard with foundational understanding of on-ball and off ball
           guard play. Tough and smart serving as a defensive asset and lethal
           off-ball threat. "
       - name: Yasir P.
         position: Power Forward
         height: 6'5"
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: "Versatile and Crafty Forward with advanced dribbling capacity on the
           Perimeter and advanced strength in the paint. A multi-dimensional
           player that can serve as a pillar of an offense and defense. "
       - name: Michael Chepyshev
         position: Center
         height: 6'6"
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: "Rim protector with equal parts strength and mobility. Has capacity to
           serve as the anchor of a defense, especially a zone defense. Offensive
           package includes pick and roll, dunker spot actions and a reliable 3
@@ -39,29 +39,29 @@ teams:
         bio: "Speedy shooting guard with excellent work ethic. Offensive package will
           develop into a lethal 3 level scorer.  Ahnaf is a matchup nightmare in
           1v1 situations. "
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
       - name: "Nate "
         position: Guard
         height: "6"
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: "Two-Way Guard with fundamental understanding of the game. Can be used as
           an initiator in an offense while serving as a lethal off ball threat.
           3 Level Scorer and rugged defender. "
       - name: Haafiz Webb
         position: Guard
         height: 5'11
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: "Scoring guard with lethal 3-point Accuracy and fierce defender. Excellent
           work ethic and discipline to the game. "
       - name: Muhammad Asadullah
         position: Forward
         height: "6"
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: Athletic player with excellent slashing ability.
       - name: Lamont Harris
         position: Guard
         height: 5’7
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: "All-Around Point Guard and Floor General with the capacity to switch to an
           off-ball nightmare. Great 3 point shooter, high IQ and Coachable. "
   - name: 16U
