@@ -376,7 +376,7 @@
                             <div class="team-players">
                                 {{ range .players }}
                                 <div class="player-item">
-                                    <a href="/players/{{ .name | urlize }}/">View {{ .name }}'s Profile</a>
+                                    <a href="/players/{{ .name | replaceRE "[.]+" "" | urlize }}/">View {{ .name }}'s Profile</a>
                                     <img src="{{ .image }}" alt="{{ .name }}" class="player-image">
                                     <div class="info">
                                         <div class="name">{{ .name }}</div>
