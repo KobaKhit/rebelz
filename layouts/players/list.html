@@ -169,7 +169,7 @@
         <div class="players-grid">
             {{ range .Pages }}
             <div class="player-card">
-                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="player-card-image">
+                <img src="/{{ .Params.image }}" alt="{{ .Title }}" class="player-card-image">
                 <div class="player-card-content">
                     <h3 class="player-card-name">{{ .Title }}</h3>
                     <div class="player-card-position">{{ .Params.position }} | {{ .Params.height }}</div>
