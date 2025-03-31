@@ -14,4 +14,10 @@ stats:
     apg: 1.4
     fgp: 48%
     tpp: 39%
+  - season: "2025"
+    ppg: 0
+    rpg: 0
+    apg: 0
+    fgp: "0"
+    tpp: "0"
 ---
