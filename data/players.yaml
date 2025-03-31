@@ -69,33 +69,33 @@ teams:
       - name: Mohamed Konate
         position: Point Guard
         height: 6'1"
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: Quick ball-handler with excellent passing ability.
       - name: Gaoussou
         position: Power Forward
         height: 5'11
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: "Combo Guard that can go both left and right with a strong motor that
           results in great rebounding and defense. Coachable and hard working. "
       - name: Ian
         position: Center
         height: 6'8"
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: Shot-blocker with high basketball IQ and leadership.
       - name: Ronald Coleman
         position: Guard
         height: 6'0"
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: Defensive specialist with developing offensive skills.
       - name: "Amyr Mcclenton "
         position: Guard
         height: 5'7
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: Crafty guard with natural feel for the game. Dual Scoring and facilitating
           threat. Floor general.
       - name: Zion Johnson
         position: Forward
         height: 6’0
-        image: https://placehold.co/80x80/png
+        image: images/more-than-basketball-logo.webp
         bio: "Athletic Wing player with explosive scoring capacity and excellent
           defense. "
