@@ -46,7 +46,7 @@ collections:
 
   - name: "player_pages"
     label: "Player Pages"
-    folder: "/content/players"
+    folder: "content/players"
     create: true
     slug: "{{slug}}"
     fields:
