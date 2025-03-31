@@ -2,7 +2,7 @@
 title: Shiheed Rice-Sloan
 position: Forward
 height: 6'
-image: images/heedy.jpg
+image: images/screen-shot-2025-03-30-at-8.16.45-pm.png
 bio: 17U Team Captain. Sharpshooter, defensive asset and natural leader.
 team: 17U
 videos:
