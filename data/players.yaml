@@ -67,6 +67,11 @@ teams:
         image: images/more-than-basketball-logo.webp
         bio: "All-Around Point Guard and Floor General with the capacity to switch to an
           off-ball nightmare. Great 3 point shooter, high IQ and Coachable. "
+      - name: "Sayid "
+        position: Guard
+        height: 6'1
+        bio: Guard
+        image: images/more-than-basketball-logo.webp
   - name: 16U
     players:
       - name: Mohamed Konate
