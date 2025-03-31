@@ -70,7 +70,7 @@ teams:
       - name: "Sayid "
         position: Guard
         height: 6'1
-        bio: Guard
+        bio: "Athletic guard/wing with lethal 3 point accuracy. Rugged defender. "
         image: images/more-than-basketball-logo.webp
   - name: 16U
     players:
