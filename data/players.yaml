@@ -1,18 +1,19 @@
 teams:
   - name: 17U
     players:
-      - name: "Jaydon B. "
-        position: Guard
-        height: 6'
-        image: images/more-than-basketball-logo.webp
-        bio: "Crafty Combo guard with foundational understanding of on-ball and off ball
-          guard play. Tough and smart serving as a defensive asset and lethal
-          off-ball threat. "
       - name: Shiheed Rice-Sloan
         position: Forward
         height: 6'
         image: images/heedy.png
         bio: 17U Team Captain. Sharpshooter, defensive asset and natural leader.
+      - name: Kye
+        position: Point Guard
+        height: 6'
+        image: images/more-than-basketball-logo.webp
+        bio: "Floor general with excellent court vision and lethal 3 point accuracy. 3
+          Level Scorer with an excellent understanding of the fundamentals of
+          basketball. A Point Guard capable of running an offense and
+          manipulating any defense.  "
       - name: Robert Towns
         position: SF
         height: 6'1
@@ -38,6 +39,33 @@ teams:
           serve as the anchor of a defense, especially a zone defense. Offensive
           package includes pick and roll, dunker spot actions and a reliable 3
           point shot. "
+      - name: Jay
+        position: PG
+        height: 5'9
+        bio: >-
+          True Floor General. A Point of attack guard capable of running an
+          offense and destroying defensive schemes. 
+
+
+          Excellent dedication the game. 
+
+
+          Elite speed and toughness. Defensive hound and natural leader. 
+        image: "1"
+      - name: "Nate "
+        position: Guard
+        height: "6"
+        image: images/more-than-basketball-logo.webp
+        bio: "Two-Way Guard with fundamental understanding of the game. Can be used as
+          an initiator in an offense while serving as a lethal off ball threat.
+          3 Level Scorer and rugged defender. "
+      - name: "Jaydon B. "
+        position: Guard
+        height: 6'
+        image: images/more-than-basketball-logo.webp
+        bio: "Crafty Combo guard with foundational understanding of on-ball and off ball
+          guard play. Tough and smart serving as a defensive asset and lethal
+          off-ball threat. "
       - name: Lamont Harris
         position: Guard
         height: 5’7
@@ -56,21 +84,6 @@ teams:
         bio: "Athletic wing with lethal 3 point accuracy, Rugged defense and rare
           rebounding ability. A player that can change the interior presence of
           a team offensively and defensively  "
-      - name: Kye
-        position: Point Guard
-        height: 6'
-        image: images/more-than-basketball-logo.webp
-        bio: "Floor general with excellent court vision and lethal 3 point accuracy. 3
-          Level Scorer with an excellent understanding of the fundamentals of
-          basketball. A Point Guard capable of running an offense and
-          manipulating any defense.  "
-      - name: "Nate "
-        position: Guard
-        height: "6"
-        image: images/more-than-basketball-logo.webp
-        bio: "Two-Way Guard with fundamental understanding of the game. Can be used as
-          an initiator in an offense while serving as a lethal off ball threat.
-          3 Level Scorer and rugged defender. "
       - name: Haafiz Webb
         position: Guard
         height: 5'11
@@ -84,19 +97,6 @@ teams:
           develop into a lethal 3 level scorer.  Ahnaf is a matchup nightmare in
           1v1 situations. "
         image: images/more-than-basketball-logo.webp
-      - name: Jay
-        position: PG
-        height: 5'9
-        bio: >-
-          True Floor General. A Point of attack guard capable of running an
-          offense and destroying defensive schemes. 
-
-
-          Excellent dedication the game. 
-
-
-          Elite speed and toughness. Defensive hound and natural leader. 
-        image: "1"
   - name: 16U
     players:
       - name: Mohamed Konate
