@@ -2,7 +2,7 @@
 title: "Robert Towns "
 position: SF
 height: 6'1
-image: "1"
+image: static/images/more-than-basketball-logo.webp
 bio: >-
   Swiss Army Knife. Capable of Initiating and offense and serving as a lethal
   off ball guard and forward. 
