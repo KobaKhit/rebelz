@@ -3,7 +3,12 @@ title: "Robert Towns "
 position: SF
 height: 6'1
 image: "1"
-bio: "1"
+bio: >-
+  Swiss Army Knife. Capable of Initiating and offense and serving as a lethal
+  off ball guard and forward. 
+
+
+  3 Level Scorer, Excellent passer and fierce defender. 
 team: 17U
 stats:
   - season: 2024-25
