@@ -1,11 +1,11 @@
 coaches:
   - name: Coach Isaac
-    image: https://www.youtube.com/watch?v=ubFa0NTHk3k
+    image: images/isaac-ugly-self.jpg
     bio: "Head Coach of 16U team 8 years experience as a player and a manager.
       Played Varsity Basketball as well as high level AAU basketball in the
       Mid-Atlantic Circuit.  Excellent coach and communicator. "
   - name: Coach Robel (RO)
-    image: static/images/1740421779482.jpg
+    image: images/1740421779482.jpg
     bio: "Head Coach of the 17U team and Assistant to Coach Isaac on 16U team. 15+
       years of experience in Sports Management realm. Coach Robel played High
       School Division 2 Football, Soccer and Basketball in Virginia and Maryland
