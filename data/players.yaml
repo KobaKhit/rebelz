@@ -39,7 +39,7 @@ teams:
           serve as the anchor of a defense, especially a zone defense. Offensive
           package includes pick and roll, dunker spot actions and a reliable 3
           point shot. "
-      - name: Jay
+      - name: Jayden aka 30
         position: PG
         height: 5'9
         bio: >-
@@ -51,7 +51,7 @@ teams:
 
 
           Elite speed and toughness. Defensive hound and natural leader. 
-        image: "1"
+        image: images/more-than-basketball-logo.webp
       - name: "Nate "
         position: Guard
         height: "6"
