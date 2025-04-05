@@ -1,5 +1,5 @@
 ---
-title: "Jay "
+title: Jayden aka 30
 position: PG
 height: 5'9
 image: images/more-than-basketball-logo.webp
