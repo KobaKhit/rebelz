@@ -237,11 +237,66 @@
       }
     });
     
+    // Custom preview for Play of the Day
+    var PlayOfDayPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var title = entry.getIn(['data', 'title']) || '';
+        var videoUrl = entry.getIn(['data', 'videoUrl']) || '';
+        var description = entry.getIn(['data', 'description']) || '';
+        var date = entry.getIn(['data', 'date']) || '';
+        
+        // Convert YouTube watch URLs to embed URLs for preview
+        var videoSrc = videoUrl;
+        if (videoUrl && videoUrl.includes('youtube.com/watch?v=')) {
+          var videoId = videoUrl.split('v=')[1];
+          // Handle additional parameters
+          var ampersandPosition = videoId.indexOf('&');
+          if (ampersandPosition !== -1) {
+            videoId = videoId.substring(0, ampersandPosition);
+          }
+          videoSrc = 'https://www.youtube.com/embed/' + videoId;
+        } else if (videoUrl && videoUrl.includes('youtu.be/')) {
+          var videoId = videoUrl.split('youtu.be/')[1];
+          // Handle additional parameters
+          var questionMarkPosition = videoId.indexOf('?');
+          if (questionMarkPosition !== -1) {
+            videoId = videoId.substring(0, questionMarkPosition);
+          }
+          videoSrc = 'https://www.youtube.com/embed/' + videoId;
+        }
+        
+        return h('div', {className: 'preview-container'},
+          h('h1', {className: 'preview-header'}, 'Play of the Day Preview'),
+          
+          h('div', {className: 'play-of-day-container'},
+            h('div', {className: 'play-of-day-header'},
+              h('h2', {className: 'play-of-day-title'}, title),
+              h('div', {className: 'play-of-day-date'}, 'Posted on: ' + date)
+            ),
+            
+            h('div', {className: 'video-container'},
+              h('div', {className: 'video-wrapper'},
+                h('iframe', {
+                  src: videoSrc,
+                  title: 'Play of the Day',
+                  allowFullScreen: true
+                })
+              )
+            ),
+            
+            h('div', {className: 'play-of-day-description'}, description)
+          )
+        );
+      }
+    });
+    
     // Register the custom previews
     CMS.registerPreviewTemplate("coaches-list", CoachPreview);
     CMS.registerPreviewTemplate("players-list", PlayerPreview);
     CMS.registerPreviewTemplate("player_pages", PlayerPagePreview);
     CMS.registerPreviewTemplate("events-calendar", EventsPreview);
+    CMS.registerPreviewTemplate("featured-video", PlayOfDayPreview);
   </script>
 </body>
 </html> 

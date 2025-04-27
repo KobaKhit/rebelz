@@ -95,4 +95,16 @@ collections:
               - {label: "Location URL", name: "locationUrl", widget: "string", hint: "Google Maps or other location link"}
               - {label: "Cost", name: "cost", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
-              - {label: "Players Registered", name: "playersRegistered", widget: "number", value_type: "int"} 
+              - {label: "Players Registered", name: "playersRegistered", widget: "number", value_type: "int"}
+
+  - name: "playofday"
+    label: "Play of the Day"
+    files:
+      - file: "data/playofday.yaml"
+        label: "Featured Video"
+        name: "featured-video"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "YouTube Video URL", name: "videoUrl", widget: "string", hint: "Regular YouTube URLs like https://www.youtube.com/watch?v=dQw4w9WgXcQ are supported"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD"} 

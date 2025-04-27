@@ -597,6 +597,41 @@
             </div>
             
             <div>
+                <!-- Play of the Day -->
+                <article>
+                    <header>
+                        <h2>Play of the Day</h2>
+                    </header>
+                    
+                    {{ with .Site.Data.playofday }}
+                    <div class="play-of-day">
+                        <div class="play-of-day-header">
+                            <h3>{{ .title }}</h3>
+                            <div class="play-of-day-date">Posted on: {{ .date }}</div>
+                        </div>
+                        
+                        <div class="video-container">
+                            <div class="video-wrapper">
+                                {{ $videoURL := .videoUrl }}
+                                {{ if in $videoURL "youtube.com/watch?v=" }}
+                                    {{ $videoID := index (split (index (split $videoURL "?v=") 1) "&") 0 }}
+                                    <iframe src="https://www.youtube.com/embed/{{ $videoID }}" title="Play of the Day" allowfullscreen></iframe>
+                                {{ else if in $videoURL "youtu.be/" }}
+                                    {{ $videoID := index (split (index (split $videoURL "/") -1) "?") 0 }}
+                                    <iframe src="https://www.youtube.com/embed/{{ $videoID }}" title="Play of the Day" allowfullscreen></iframe>
+                                {{ else }}
+                                    <iframe src="{{ $videoURL }}" title="Play of the Day" allowfullscreen></iframe>
+                                {{ end }}
+                            </div>
+                        </div>
+                        
+                        <div class="play-of-day-description">
+                            {{ .description }}
+                        </div>
+                    </div>
+                    {{ end }}
+                </article>
+                
                 <!-- Players Section -->
                 <article>
                     <header>
