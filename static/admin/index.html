@@ -244,7 +244,13 @@
         var title = entry.getIn(['data', 'title']) || '';
         var videoUrl = entry.getIn(['data', 'videoUrl']) || '';
         var description = entry.getIn(['data', 'description']) || '';
-        var date = entry.getIn(['data', 'date']) || '';
+        
+        // Format current date for display
+        var currentDate = new Date().toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
         
         // Convert YouTube watch URLs to embed URLs for preview
         var videoSrc = videoUrl;
@@ -276,7 +282,7 @@
           h('div', {className: 'play-of-day-container'},
             h('div', {className: 'play-of-day-header'},
               h('h2', {className: 'play-of-day-title'}, title),
-              h('div', {className: 'play-of-day-date'}, 'Posted on: ' + date)
+              h('div', {className: 'play-of-day-date'}, 'Posted on: ' + currentDate)
             ),
             
             h('div', {className: 'video-container'},
