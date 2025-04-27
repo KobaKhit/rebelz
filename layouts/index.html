@@ -478,6 +478,71 @@
             min-width: 0 !important;
             width: auto !important;
         }
+        
+        /* Custom Modal Styles */
+        .event-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .event-modal-content {
+            background-color: var(--card-background-color);
+            color: var(--color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .event-modal-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--card-border-color);
+        }
+        
+        .event-modal-details {
+            margin-bottom: 1.5rem;
+            white-space: pre-line;
+        }
+        
+        .event-modal-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .event-modal-button {
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .event-modal-button.primary {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+        }
+        
+        .event-modal-button.secondary {
+            background-color: transparent;
+            color: var(--color);
+            border: 1px solid var(--card-border-color);
+        }
     </style>
 </head>
 <body>
@@ -573,9 +638,15 @@
       }
     </script>
     
-    <!-- Add these scripts at the end of the body, before the closing </body> tag -->
+    <!-- Load FullCalendar -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+
+    <!-- Load Tippy.js with Popper included -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css">
+
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
@@ -594,27 +665,59 @@
             meridiem: 'short'
           },
           eventDidMount: function(info) {
-            var tooltip = new Tooltip(info.el, {
-              title: `
-                <div class="event-tooltip">
-                  <div class="event-tooltip-title">${info.event.title}</div>
-                  <div class="event-tooltip-datetime">
-                    ${new Date(info.event.start).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
-                    ${new Date(info.event.start).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })} - 
-                    ${new Date(info.event.end).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
-                  </div>
-                  <div class="event-tooltip-location">
-                    Location: <a href="${info.event.extendedProps.locationUrl}" target="_blank">${info.event.extendedProps.location}</a>
-                  </div>
-                  <div class="event-tooltip-cost">Cost: ${info.event.extendedProps.cost}</div>
-                  <div class="event-tooltip-players">Players Registered: ${info.event.extendedProps.playersRegistered}</div>
-                  <div class="event-tooltip-description">${info.event.extendedProps.description}</div>
-                </div>
-              `,
-              html: true,
-              placement: 'top',
-              trigger: 'hover',
-              container: 'body'
+            // Create a simple tooltip using the browser's native title attribute
+            var tooltipText = `
+              ${info.event.title}
+              Date: ${new Date(info.event.start).toLocaleDateString()}
+              Time: ${new Date(info.event.start).toLocaleTimeString()} - ${new Date(info.event.end).toLocaleTimeString()}
+              Location: ${info.event.extendedProps.location}
+              Cost: ${info.event.extendedProps.cost}
+              Players: ${info.event.extendedProps.playersRegistered}
+            `;
+            
+            info.el.setAttribute('title', tooltipText);
+            
+            // Add click handler to show custom modal instead of alert
+            info.el.style.cursor = 'pointer';
+            info.el.addEventListener('click', function() {
+              // Get modal elements
+              var modal = document.getElementById('eventModal');
+              var modalTitle = document.getElementById('eventModalTitle');
+              var modalDetails = document.getElementById('eventModalDetails');
+              var modalLocation = document.getElementById('eventModalLocation');
+              var modalClose = document.getElementById('eventModalClose');
+              
+              // Set modal content
+              modalTitle.textContent = info.event.title;
+              modalDetails.textContent = `
+Date: ${new Date(info.event.start).toLocaleDateString()}
+Time: ${new Date(info.event.start).toLocaleTimeString()} - ${new Date(info.event.end).toLocaleTimeString()}
+
+Location: ${info.event.extendedProps.location}
+Cost: ${info.event.extendedProps.cost}
+Players Registered: ${info.event.extendedProps.playersRegistered}
+
+${info.event.extendedProps.description}`;
+              
+              // Set up button handlers
+              modalLocation.onclick = function() {
+                window.open(info.event.extendedProps.locationUrl, '_blank');
+                modal.style.display = 'none';
+              };
+              
+              modalClose.onclick = function() {
+                modal.style.display = 'none';
+              };
+              
+              // Show the modal
+              modal.style.display = 'flex';
+              
+              // Close modal when clicking outside
+              modal.onclick = function(event) {
+                if (event.target === modal) {
+                  modal.style.display = 'none';
+                }
+              };
             });
           },
           events: [
@@ -640,29 +743,36 @@
         calendar.render();
       });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script>
+
+    <!-- Add this right after the calendar div -->
+    <div id="tooltip-test" style="margin-top: 10px; padding: 10px; background-color: #333; text-align: center; cursor: pointer;">
+      Hover me to test tooltips
+    </div>
+
+    <!-- Add this to your DOMContentLoaded event handler -->
     <script>
-      // Initialize tooltips
-      var Tooltip = function(element, options) {
-        this.init(element, options);
-      };
-      
-      Tooltip.prototype.init = function(element, options) {
-        var self = this;
-        self.element = element;
-        self.options = options;
-        
-        tippy(element, {
-          content: options.title,
-          allowHTML: options.html,
-          placement: options.placement,
-          trigger: options.trigger,
-          interactive: true,
-          appendTo: document.body,
+      document.addEventListener('DOMContentLoaded', function() {
+        // Test tippy
+        tippy('#tooltip-test', {
+          content: 'If you can see this, tooltips are working!',
+          placement: 'top',
           theme: 'custom'
         });
-      };
+        
+        // Rest of your calendar code...
+      });
     </script>
+
+    <!-- Add this HTML at the end of your body -->
+    <div id="eventModal" class="event-modal">
+      <div class="event-modal-content">
+        <div id="eventModalTitle" class="event-modal-title"></div>
+        <div id="eventModalDetails" class="event-modal-details"></div>
+        <div class="event-modal-buttons">
+          <button id="eventModalClose" class="event-modal-button secondary">Close</button>
+          <button id="eventModalLocation" class="event-modal-button primary">View Location</button>
+        </div>
+      </div>
+    </div>
 </body>
 </html> 

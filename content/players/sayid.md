@@ -1,11 +1,10 @@
 ---
-title: Ian
-position: Center
-height: 6'8"
+title: "Sayid "
+position: SG
+height: 6'1
 image: images/more-than-basketball-logo.webp
-bio: Shot-blocker with high basketball IQ and leadership.
-team: 16U
-videos: []
+bio: "Athletic guard/wing with lethal 3 point accuracy. Rugged defender. "
+team: 17U
 stats:
   - season: "2025"
     ppg: 0
