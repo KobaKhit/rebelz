@@ -298,4 +298,56 @@ tr:nth-child(even) {
     width: 150px;
     height: 150px;
   }
+}
+
+/* Events Preview Styles */
+.month-container {
+  margin-bottom: 2rem;
+  background-color: var(--card-background-color);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--card-border-color);
+}
+
+.month-header {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--card-border-color);
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--card-sectionning-background-color);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--card-border-color);
+}
+
+.event-date {
+  min-width: 100px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.event-details {
+  flex-grow: 1;
+}
+
+.event-title {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.event-location, .event-cost {
+  font-size: 0.85rem;
+  color: #aaa;
 } 

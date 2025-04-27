@@ -75,4 +75,24 @@ collections:
           - {label: "Rebounds Per Game", name: "rpg", widget: "number", value_type: "float"}
           - {label: "Assists Per Game", name: "apg", widget: "number", value_type: "float"}
           - {label: "Field Goal Percentage", name: "fgp", widget: "string"}
-          - {label: "Three Point Percentage", name: "tpp", widget: "string"} 
+          - {label: "Three Point Percentage", name: "tpp", widget: "string"}
+
+  - name: "events"
+    label: "Events"
+    files:
+      - file: "data/events.yaml"
+        label: "Events Calendar"
+        name: "events-calendar"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Start Time", name: "start", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ss", date_format: "YYYY-MM-DD", time_format: "HH:mm"}
+              - {label: "End Time", name: "end", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ss", date_format: "YYYY-MM-DD", time_format: "HH:mm"}
+              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Location URL", name: "locationUrl", widget: "string", hint: "Google Maps or other location link"}
+              - {label: "Cost", name: "cost", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Players Registered", name: "playersRegistered", widget: "number", value_type: "int"} 

@@ -331,6 +331,153 @@
             font-weight: bold;
             text-align: center;
         }
+        
+        /* Calendar Styles */
+        #calendar {
+            background-color: var(--card-sectionning-background-color);
+            border-radius: 0.25rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .fc-theme-standard td, .fc-theme-standard th {
+            border-color: var(--card-border-color);
+        }
+        
+        .fc-theme-standard .fc-scrollgrid {
+            border-color: var(--card-border-color);
+        }
+        
+        .fc-col-header-cell {
+            background-color: var(--card-background-color);
+            color: var(--primary);
+        }
+        
+        .fc-daygrid-day-number {
+            color: var(--color);
+        }
+        
+        .fc-daygrid-day.fc-day-today {
+            background-color: rgba(230, 57, 70, 0.1);
+        }
+        
+        /* Fix for button size and overlap */
+        .fc-header-toolbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem !important;
+        }
+        
+        .fc-toolbar-chunk:nth-child(2) {
+            order: -1; /* Move the title (month/year) to the top */
+        }
+        
+        .fc-toolbar-chunk:nth-child(1),
+        .fc-toolbar-chunk:nth-child(3) {
+            align-self: stretch;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .fc-toolbar-chunk:nth-child(1) {
+            justify-content: flex-start;
+        }
+        
+        .fc-toolbar-chunk:nth-child(3) {
+            justify-content: flex-end;
+        }
+        
+        .fc-button {
+            font-size: 0.8rem !important;
+            padding: 0.3rem 0.5rem !important;
+        }
+        
+        .fc-button-primary {
+            background-color: var(--card-background-color) !important;
+            border-color: var(--card-border-color) !important;
+            color: var(--color) !important;
+        }
+        
+        .fc-button-primary:hover {
+            background-color: var(--primary) !important;
+            border-color: var(--primary) !important;
+        }
+        
+        .fc-button-primary:not(:disabled).fc-button-active, 
+        .fc-button-primary:not(:disabled):active {
+            background-color: var(--primary) !important;
+            border-color: var(--primary) !important;
+        }
+        
+        @media (max-width: 768px) {
+            .fc-toolbar-chunk {
+                width: 100%;
+                display: flex;
+                justify-content: center !important;
+                margin-bottom: 0.5rem;
+            }
+        }
+        
+        /* Tooltip Styles */
+        .tippy-box[data-theme~='custom'] {
+            background-color: var(--card-background-color);
+            color: var(--color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tippy-box[data-theme~='custom'] .tippy-arrow {
+            color: var(--card-background-color);
+        }
+        
+        .event-tooltip {
+            padding: 0.5rem;
+            max-width: 300px;
+        }
+        
+        .event-tooltip-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .event-tooltip-datetime {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .event-tooltip-location, 
+        .event-tooltip-cost, 
+        .event-tooltip-players {
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        .event-tooltip-location a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .event-tooltip-location a:hover {
+            text-decoration: underline;
+        }
+        
+        .event-tooltip-description {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        
+        /* Add this to your existing calendar styles in the <style> section */
+        .fc-today-button {
+            min-width: 0 !important;
+            width: auto !important;
+        }
     </style>
 </head>
 <body>
@@ -344,6 +491,14 @@
                 
                 <!-- Register Button -->
                 <a href="https://forms.gle/dAc54Y42HvjAJeGa6" class="register-button" role="button" target="_blank">Register now</a>
+                
+                <!-- Upcoming Events -->
+                <article>
+                    <header>
+                        <h2>Upcoming Events</h2>
+                    </header>
+                    <div id="calendar"></div>
+                </article>
                 
                 <!-- Coaches Section -->
                 <article>
@@ -416,6 +571,98 @@
           }
         });
       }
+    </script>
+    
+    <!-- Add these scripts at the end of the body, before the closing </body> tag -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          height: 'auto',
+          headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,listMonth'
+          },
+          eventTimeFormat: {
+            hour: '2-digit',
+            minute: '2-digit',
+            meridiem: 'short'
+          },
+          eventDidMount: function(info) {
+            var tooltip = new Tooltip(info.el, {
+              title: `
+                <div class="event-tooltip">
+                  <div class="event-tooltip-title">${info.event.title}</div>
+                  <div class="event-tooltip-datetime">
+                    ${new Date(info.event.start).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
+                    ${new Date(info.event.start).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })} - 
+                    ${new Date(info.event.end).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
+                  </div>
+                  <div class="event-tooltip-location">
+                    Location: <a href="${info.event.extendedProps.locationUrl}" target="_blank">${info.event.extendedProps.location}</a>
+                  </div>
+                  <div class="event-tooltip-cost">Cost: ${info.event.extendedProps.cost}</div>
+                  <div class="event-tooltip-players">Players Registered: ${info.event.extendedProps.playersRegistered}</div>
+                  <div class="event-tooltip-description">${info.event.extendedProps.description}</div>
+                </div>
+              `,
+              html: true,
+              placement: 'top',
+              trigger: 'hover',
+              container: 'body'
+            });
+          },
+          events: [
+            {{ range .Site.Data.events.events }}
+            {
+              title: '{{ .title }}',
+              start: '{{ .start }}',
+              end: '{{ .end }}',
+              extendedProps: {
+                location: '{{ .location }}',
+                locationUrl: '{{ .locationUrl }}',
+                cost: '{{ .cost }}',
+                playersRegistered: {{ .playersRegistered }},
+                description: '{{ .description }}'
+              },
+              backgroundColor: '#e63946',
+              borderColor: '#e63946'
+            },
+            {{ end }}
+          ]
+        });
+        
+        calendar.render();
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script>
+    <script>
+      // Initialize tooltips
+      var Tooltip = function(element, options) {
+        this.init(element, options);
+      };
+      
+      Tooltip.prototype.init = function(element, options) {
+        var self = this;
+        self.element = element;
+        self.options = options;
+        
+        tippy(element, {
+          content: options.title,
+          allowHTML: options.html,
+          placement: options.placement,
+          trigger: options.trigger,
+          interactive: true,
+          appendTo: document.body,
+          theme: 'custom'
+        });
+      };
     </script>
 </body>
 </html> 

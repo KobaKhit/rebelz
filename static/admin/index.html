@@ -183,10 +183,65 @@
       }
     });
     
+    // Custom preview for events
+    var EventsPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var events = entry.getIn(['data', 'events']) || [];
+        
+        // Group events by month for the preview
+        var eventsByMonth = {};
+        events.forEach(function(event) {
+          var start = new Date(event.getIn(['start']));
+          var monthYear = start.toLocaleString('default', { month: 'long', year: 'numeric' });
+          
+          if (!eventsByMonth[monthYear]) {
+            eventsByMonth[monthYear] = [];
+          }
+          
+          eventsByMonth[monthYear].push({
+            title: event.getIn(['title']),
+            start: start,
+            location: event.getIn(['location']),
+            cost: event.getIn(['cost'])
+          });
+        });
+        
+        return h('div', {className: 'preview-container'},
+          h('h1', {className: 'preview-header'}, 'Events Calendar Preview'),
+          
+          Object.keys(eventsByMonth).map(function(monthYear, monthIndex) {
+            return h('div', {key: monthIndex, className: 'month-container'},
+              h('h2', {className: 'month-header'}, monthYear),
+              h('div', {className: 'events-list'},
+                eventsByMonth[monthYear].map(function(event, eventIndex) {
+                  return h('div', {key: eventIndex, className: 'event-item'},
+                    h('div', {className: 'event-date'}, 
+                      event.start.toLocaleDateString('en-US', {
+                        weekday: 'short',
+                        month: 'short',
+                        day: 'numeric'
+                      })
+                    ),
+                    h('div', {className: 'event-details'},
+                      h('div', {className: 'event-title'}, event.title),
+                      h('div', {className: 'event-location'}, event.location),
+                      h('div', {className: 'event-cost'}, event.cost)
+                    )
+                  );
+                })
+              )
+            );
+          })
+        );
+      }
+    });
+    
     // Register the custom previews
     CMS.registerPreviewTemplate("coaches-list", CoachPreview);
     CMS.registerPreviewTemplate("players-list", PlayerPreview);
     CMS.registerPreviewTemplate("player_pages", PlayerPagePreview);
+    CMS.registerPreviewTemplate("events-calendar", EventsPreview);
   </script>
 </body>
 </html> 
