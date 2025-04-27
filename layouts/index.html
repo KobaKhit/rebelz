@@ -334,27 +334,28 @@
         
         /* Calendar Styles */
         #calendar {
-            background-color: var(--card-sectionning-background-color);
+            background-color: #ffffff;
             border-radius: 0.25rem;
             padding: 1rem;
             margin-top: 1rem;
+            color: #333333;
         }
         
         .fc-theme-standard td, .fc-theme-standard th {
-            border-color: var(--card-border-color);
+            border-color: #dddddd;
         }
         
         .fc-theme-standard .fc-scrollgrid {
-            border-color: var(--card-border-color);
+            border-color: #dddddd;
         }
         
         .fc-col-header-cell {
-            background-color: var(--card-background-color);
-            color: var(--primary);
+            background-color: #f8f8f8;
+            color: #333333;
         }
         
         .fc-daygrid-day-number {
-            color: var(--color);
+            color: #333333;
         }
         
         .fc-daygrid-day.fc-day-today {
@@ -396,20 +397,22 @@
         }
         
         .fc-button-primary {
-            background-color: var(--card-background-color) !important;
-            border-color: var(--card-border-color) !important;
-            color: var(--color) !important;
+            background-color: #f8f8f8 !important;
+            border-color: #dddddd !important;
+            color: #333333 !important;
         }
         
         .fc-button-primary:hover {
-            background-color: var(--primary) !important;
-            border-color: var(--primary) !important;
+            background-color: #e63946 !important;
+            border-color: #e63946 !important;
+            color: #ffffff !important;
         }
         
         .fc-button-primary:not(:disabled).fc-button-active, 
         .fc-button-primary:not(:disabled):active {
-            background-color: var(--primary) !important;
-            border-color: var(--primary) !important;
+            background-color: #e63946 !important;
+            border-color: #e63946 !important;
+            color: #ffffff !important;
         }
         
         @media (max-width: 768px) {
@@ -542,6 +545,17 @@
             background-color: transparent;
             color: var(--color);
             border: 1px solid var(--card-border-color);
+        }
+        
+        /* Make event text more readable on colored background */
+        .fc-event {
+            color: #c62828 !important;
+            font-weight: bold;
+        }
+        
+        /* Update the month/year title to be dark */
+        .fc-toolbar-title {
+            color: #333333;
         }
     </style>
 </head>
