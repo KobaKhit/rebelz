@@ -566,7 +566,7 @@
         <li><a href="/" class="{{ if .IsHome }}active{{ end }}">Home</a></li>
         <li><a href="/news/" class="{{ if eq .Section "news" }}active{{ end }}">News</a></li>
         <li><a href="/about/" class="{{ if eq .RelPermalink "/about/" }}active{{ end }}">About Us</a></li>
-        <li><a href="/gofundme/" class="{{ if eq .RelPermalink "/gofundme/" }}active{{ end }}">Support Our Team</a></li>
+        <li><a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer">Donate</a></li>
       </ul>
     </nav>
     <main class="container">
@@ -626,7 +626,7 @@
                                     {{ $videoID := index (split (index (split $videoURL "?v=") 1) "&") 0 }}
                                     <iframe src="https://www.youtube.com/embed/{{ $videoID }}" title="Play of the Day" allowfullscreen></iframe>
                                 {{ else if in $videoURL "youtu.be/" }}
-                                    {{ $videoID := index (split (index (split $videoURL "/") -1) "?") 0 }}
+                                    {{ $videoID := index (split (index (split $videoURL "youtu.be/") 1) "?") 0 }}
                                     <iframe src="https://www.youtube.com/embed/{{ $videoID }}" title="Play of the Day" allowfullscreen></iframe>
                                 {{ else }}
                                     <iframe src="{{ $videoURL }}" title="Play of the Day" allowfullscreen></iframe>
@@ -676,8 +676,9 @@
     <!-- Navigation links at the bottom -->
     <footer class="container">
         <div class="footer-nav">
+            <a href="/" role="button">Home</a>
             <a href="/about/" role="button">About Us</a>
-            <a href="/gofundme/" role="button">Support Our Team</a>
+            <a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer" role="button">Donate</a>
         </div>
     </footer>
     

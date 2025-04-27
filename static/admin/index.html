@@ -248,6 +248,8 @@
         
         // Convert YouTube watch URLs to embed URLs for preview
         var videoSrc = videoUrl;
+        
+        // Handle standard YouTube URLs
         if (videoUrl && videoUrl.includes('youtube.com/watch?v=')) {
           var videoId = videoUrl.split('v=')[1];
           // Handle additional parameters
@@ -256,9 +258,11 @@
             videoId = videoId.substring(0, ampersandPosition);
           }
           videoSrc = 'https://www.youtube.com/embed/' + videoId;
-        } else if (videoUrl && videoUrl.includes('youtu.be/')) {
+        } 
+        // Handle youtu.be short URLs
+        else if (videoUrl && videoUrl.includes('youtu.be/')) {
           var videoId = videoUrl.split('youtu.be/')[1];
-          // Handle additional parameters
+          // Handle additional parameters including ?si= tracking parameters
           var questionMarkPosition = videoId.indexOf('?');
           if (questionMarkPosition !== -1) {
             videoId = videoId.substring(0, questionMarkPosition);

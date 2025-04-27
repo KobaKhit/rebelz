@@ -105,7 +105,7 @@ collections:
         name: "featured-video"
         fields:
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "YouTube Video URL", name: "videoUrl", widget: "string", hint: "Regular YouTube URLs like https://www.youtube.com/watch?v=dQw4w9WgXcQ are supported"}
+          - {label: "YouTube Video URL", name: "videoUrl", widget: "string", hint: "Supports multiple formats: https://www.youtube.com/watch?v=dQw4w9WgXcQ, https://youtu.be/dQw4w9WgXcQ, or https://youtu.be/c3uwIWhpT-0?si=M-0hn2mzxIsYbfjb"}
           - {label: "Description", name: "description", widget: "text"}
           - {label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD"}
 
