@@ -560,6 +560,15 @@
     </style>
 </head>
 <body>
+    <!-- Add this right after the opening <body> tag -->
+    <nav class="container">
+      <ul>
+        <li><a href="/" class="{{ if .IsHome }}active{{ end }}">Home</a></li>
+        <li><a href="/news/" class="{{ if eq .Section "news" }}active{{ end }}">News</a></li>
+        <li><a href="/about/" class="{{ if eq .RelPermalink "/about/" }}active{{ end }}">About Us</a></li>
+        <li><a href="/gofundme/" class="{{ if eq .RelPermalink "/gofundme/" }}active{{ end }}">Support Our Team</a></li>
+      </ul>
+    </nav>
     <main class="container">
         <div class="two-columns">
             <div>

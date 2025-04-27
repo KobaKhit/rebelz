@@ -291,12 +291,55 @@
       }
     });
     
+    // Custom preview for Blog Posts
+    var BlogPostPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var image = entry.getIn(['data', 'image']);
+        var imageUrl = image ? this.props.getAsset(image).toString() : '';
+        
+        return h('div', {className: 'preview-container'},
+          h('h1', {className: 'preview-header'}, 'Blog Post Preview'),
+          
+          h('div', {className: 'blog-post-container'},
+            h('div', {className: 'blog-post-header'},
+              h('h2', {className: 'blog-post-title'}, entry.getIn(['data', 'title'])),
+              h('div', {className: 'blog-post-meta'},
+                h('span', {className: 'blog-post-date'}, 
+                  'Published on: ' + new Date(entry.getIn(['data', 'date'])).toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })
+                ),
+                h('span', {className: 'blog-post-author'}, 
+                  'By: ' + entry.getIn(['data', 'author'])
+                )
+              )
+            ),
+            
+            imageUrl ? h('div', {className: 'blog-post-image'},
+              h('img', {src: imageUrl, alt: entry.getIn(['data', 'title'])})
+            ) : null,
+            
+            h('div', {className: 'blog-post-summary'}, entry.getIn(['data', 'summary'])),
+            
+            h('div', {className: 'blog-post-content'}, 
+              this.props.widgetFor('body')
+            )
+          )
+        );
+      }
+    });
+    
     // Register the custom previews
     CMS.registerPreviewTemplate("coaches-list", CoachPreview);
     CMS.registerPreviewTemplate("players-list", PlayerPreview);
     CMS.registerPreviewTemplate("player_pages", PlayerPagePreview);
     CMS.registerPreviewTemplate("events-calendar", EventsPreview);
     CMS.registerPreviewTemplate("featured-video", PlayOfDayPreview);
+    CMS.registerPreviewTemplate("blog", BlogPostPreview);
   </script>
 </body>
 </html> 

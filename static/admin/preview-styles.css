@@ -378,4 +378,85 @@ tr:nth-child(even) {
 .play-of-day-description {
   margin-top: 1rem;
   line-height: 1.5;
+}
+
+/* Blog Post Preview Styles */
+.blog-post-container {
+  background-color: var(--card-background-color);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--card-border-color);
+}
+
+.blog-post-header {
+  margin-bottom: 1.5rem;
+}
+
+.blog-post-title {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.blog-post-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.blog-post-image {
+  margin-bottom: 1.5rem;
+}
+
+.blog-post-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+.blog-post-summary {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--card-border-color);
+}
+
+.blog-post-content {
+  line-height: 1.6;
+}
+
+.blog-post-content h1, 
+.blog-post-content h2, 
+.blog-post-content h3 {
+  color: var(--primary);
+  margin: 1.5rem 0 1rem;
+}
+
+.blog-post-content p {
+  margin-bottom: 1rem;
+}
+
+.blog-post-content ul, 
+.blog-post-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.blog-post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  margin: 1rem 0;
+}
+
+.blog-post-content blockquote {
+  border-left: 3px solid var(--primary);
+  padding-left: 1rem;
+  margin-left: 0;
+  color: #aaa;
+  font-style: italic;
 } 

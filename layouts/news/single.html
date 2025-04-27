@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | Team Rebelz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        /* Copy all your styles from index.html here */
+        /* Add these blog-specific styles */
+        .blog-post {
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .blog-header {
+            margin-bottom: 2rem;
+        }
+        
+        .blog-title {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-image {
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 0.25rem;
+        }
+        
+        .blog-summary {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--card-border-color);
+        }
+        
+        .blog-content {
+            line-height: 1.6;
+        }
+        
+        .blog-content h1, 
+        .blog-content h2, 
+        .blog-content h3 {
+            color: var(--primary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .blog-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .blog-content ul, 
+        .blog-content ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.25rem;
+            margin: 1rem 0;
+        }
+        
+        .blog-content blockquote {
+            border-left: 3px solid var(--primary);
+            padding-left: 1rem;
+            margin-left: 0;
+            color: #aaa;
+            font-style: italic;
+        }
+        
+        .back-to-news {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .back-to-news:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="container">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/news/" class="active">News</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/gofundme/">Support Our Team</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <a href="/news/" class="back-to-news">← Back to News</a>
+        
+        <article class="blog-post">
+            <header class="blog-header">
+                <h1 class="blog-title">{{ .Title }}</h1>
+                <div class="blog-meta">
+                    <span>Published on: {{ .Date.Format "January 2, 2006" }}</span>
+                    <span>By: {{ .Params.author }}</span>
+                </div>
+            </header>
+            
+            {{ if .Params.image }}
+            <div class="blog-image">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}">
+            </div>
+            {{ end }}
+            
+            <div class="blog-summary">{{ .Params.summary }}</div>
+            
+            <div class="blog-content">
+                {{ .Content }}
+            </div>
+        </article>
+    </main>
+    
+    <footer class="container">
+        <div class="footer-nav">
+            <a href="/" role="button">Home</a>
+            <a href="/about/" role="button">About Us</a>
+            <a href="/gofundme/" role="button">Support Our Team</a>
+        </div>
+    </footer>
+    
+    <!-- Add this script at the end of the body -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              if (!window.location.pathname.startsWith('/admin/')) {
+                document.location.href = "/admin/";
+              }
+            });
+          }
+        });
+      }
+    </script>
+</body>
+</html> 
