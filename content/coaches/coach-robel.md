@@ -1,5 +1,5 @@
 ---
-title: "Coach Robel (RO)"
+title: "Coach Robel"
 image: "images/1740421779482.jpg"
 bio: "Head Coach of the 17U team and Assistant to Coach Isaac on 16U team. 15+ years of experience in Sports Management realm. Coach Robel played High School Division 2 Football, Soccer and Basketball in Virginia and Maryland later studying Sports Management at Drexel."
 title: "Head Coach - 17U Team"
