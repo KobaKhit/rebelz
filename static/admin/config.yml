@@ -128,4 +128,4 @@ collections:
         label: "Season Information"
         name: "season-information"
         fields:
-          - {label: "Content", name: "content", widget: "text", hint: "This text appears in the Season Info section on the homepage"} 
+          - {label: "Content", name: "content", widget: "markdown", hint: "This text appears in the Season Info section on the homepage. You can use markdown formatting."} 
