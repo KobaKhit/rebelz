@@ -343,6 +343,22 @@
       }
     });
     
+    // Custom preview for Season Info
+    var SeasonInfoPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var content = entry.getIn(['data', 'content']) || '';
+        
+        return h('div', {className: 'preview-container'},
+          h('h1', {className: 'preview-header'}, 'Season Info Preview'),
+          
+          h('div', {className: 'season-info-container'},
+            h('div', {className: 'season-info-content'}, content)
+          )
+        );
+      }
+    });
+    
     // Register the custom previews
     CMS.registerPreviewTemplate("coaches-list", CoachPreview);
     CMS.registerPreviewTemplate("players-list", PlayerPreview);
@@ -350,6 +366,7 @@
     CMS.registerPreviewTemplate("events-calendar", EventsPreview);
     CMS.registerPreviewTemplate("featured-video", PlayOfDayPreview);
     CMS.registerPreviewTemplate("blog", BlogPostPreview);
+    CMS.registerPreviewTemplate("season-information", SeasonInfoPreview);
   </script>
 </body>
 </html> 

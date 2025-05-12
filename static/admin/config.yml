@@ -119,4 +119,13 @@ collections:
       - {label: "Featured Image", name: "image", widget: "image", required: false}
       - {label: "Summary", name: "summary", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Author", name: "author", widget: "string", default: "Team Rebelz"} 
+      - {label: "Author", name: "author", widget: "string", default: "Team Rebelz"}
+
+  - name: "season_info"
+    label: "Season Info"
+    files:
+      - file: "data/season_info.yaml"
+        label: "Season Information"
+        name: "season-information"
+        fields:
+          - {label: "Content", name: "content", widget: "text", hint: "This text appears in the Season Info section on the homepage"} 

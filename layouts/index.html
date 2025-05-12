@@ -585,6 +585,13 @@
                     <header>
                         <h2>Upcoming Events</h2>
                     </header>
+                    <div class="season-info">
+                        {{ with .Site.Data.season_info }}
+                        {{ .content }}
+                        {{ else }}
+                        The 2025-2026 season is underway! We're competing in the Phila Circuit with our 16U and 17U teams. Check out our upcoming games and tournaments in the calendar below.
+                        {{ end }}
+                    </div>
                     <div id="calendar"></div>
                 </article>
                 

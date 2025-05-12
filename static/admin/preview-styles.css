@@ -459,4 +459,17 @@ tr:nth-child(even) {
   margin-left: 0;
   color: #aaa;
   font-style: italic;
+}
+
+/* Season Info Preview Styles */
+.season-info-container {
+  background-color: var(--card-background-color);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--card-border-color);
+}
+
+.season-info-content {
+  line-height: 1.6;
+  font-size: 1.1rem;
 } 
