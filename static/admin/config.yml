@@ -128,4 +128,26 @@ collections:
         label: "Season Information"
         name: "season-information"
         fields:
-          - {label: "Content", name: "content", widget: "markdown", hint: "This text appears in the Season Info section on the homepage. You can use markdown formatting."} 
+          - {label: "Content", name: "content", widget: "markdown", hint: "This text appears in the Season Info section on the homepage. You can use markdown formatting."}
+
+  - name: "coach_pages"
+    label: "Coach Pages"
+    folder: "content/coaches"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Position", name: "position_title", widget: "string"}
+      - {label: "Image", name: "image", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "text"}
+      - {label: "Coaching Philosophy", name: "philosophy", widget: "text", required: false}
+      - label: "Achievements"
+        name: "achievements"
+        widget: "list"
+        required: false
+        field: 
+          label: "Achievement"
+          name: "achievement"
+          widget: "string"
+      - {label: "Experience", name: "experience", widget: "markdown", required: false}
+      - {label: "Additional Information", name: "body", widget: "markdown", required: false} 

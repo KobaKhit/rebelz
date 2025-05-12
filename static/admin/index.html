@@ -360,6 +360,68 @@
       }
     });
     
+    // Custom preview for Coach Pages
+    var CoachPagePreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var title = entry.getIn(['data', 'title']) || '';
+        var position = entry.getIn(['data', 'position_title']) || '';
+        var image = entry.getIn(['data', 'image']) || '';
+        var bio = entry.getIn(['data', 'bio']) || '';
+        var philosophy = entry.getIn(['data', 'philosophy']) || '';
+        var achievements = entry.getIn(['data', 'achievements']);
+        var experience = entry.getIn(['data', 'experience']) || '';
+        
+        // Check if achievements exist and is iterable
+        var hasAchievements = achievements && achievements.size > 0;
+        
+        return h('div', {className: 'preview-container coach-page-preview'},
+          h('a', {className: 'back-link'}, '← Back to Home'),
+          
+          h('div', {className: 'coach-header'},
+            h('img', {
+              src: image,
+              alt: title,
+              className: 'coach-image'
+            }),
+            h('div', {className: 'coach-info'},
+              h('h1', {className: 'coach-name'}, title),
+              h('div', {className: 'coach-title'}, position),
+              h('div', {className: 'coach-bio'}, bio)
+            )
+          ),
+          
+          philosophy ? h('div', {className: 'section'},
+            h('h2', {className: 'section-title'}, 'Coaching Philosophy'),
+            h('div', {className: 'philosophy-content'}, philosophy)
+          ) : null,
+          
+          hasAchievements ? h('div', {className: 'section'},
+            h('h2', {className: 'section-title'}, 'Achievements'),
+            h('ul', {className: 'achievements-list'},
+              achievements.map(function(achievement, index) {
+                return h('li', {key: index}, achievement);
+              })
+            )
+          ) : null,
+          
+          experience ? h('div', {className: 'section'},
+            h('h2', {className: 'section-title'}, 'Experience'),
+            h('div', {className: 'experience-content'}, 
+              this.props.widgetFor('experience')
+            )
+          ) : null,
+          
+          h('div', {className: 'section'},
+            h('h2', {className: 'section-title'}, 'Additional Information'),
+            h('div', {className: 'additional-content'}, 
+              this.props.widgetFor('body')
+            )
+          )
+        );
+      }
+    });
+    
     // Register the custom previews
     CMS.registerPreviewTemplate("coaches-list", CoachPreview);
     CMS.registerPreviewTemplate("players-list", PlayerPreview);
@@ -368,6 +430,7 @@
     CMS.registerPreviewTemplate("featured-video", PlayOfDayPreview);
     CMS.registerPreviewTemplate("blog", BlogPostPreview);
     CMS.registerPreviewTemplate("season-information", SeasonInfoPreview);
+    CMS.registerPreviewTemplate("coach_pages", CoachPagePreview);
   </script>
 </body>
 </html> 

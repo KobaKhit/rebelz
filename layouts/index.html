@@ -557,6 +557,26 @@
         .fc-toolbar-title {
             color: #333333;
         }
+        
+        /* Add these styles for clickable coach panels */
+        .coach-item-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .coach-item-link .coach-item {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .coach-item-link:hover .coach-item {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .coach-item-link:hover .name {
+            color: var(--primary);
+        }
     </style>
 </head>
 <body>
@@ -601,14 +621,20 @@
                         <h2>Coaches</h2>
                     </header>
                     {{ range .Site.Data.coaches.coaches }}
-                    <div class="coach-item">
-                        <img src="{{ .image }}" alt="{{ .name }}" class="coach-image">
-                        <div class="info">
-                            <div class="name">{{ .name }}</div>
-                            <div class="bio">{{ .bio }}</div>
+                    {{ $coachSlug := .name | urlize }}
+                    <a href="/coaches/{{ $coachSlug }}/" class="coach-item-link">
+                        <div class="coach-item">
+                            <img src="{{ .image }}" alt="{{ .name }}" class="coach-image">
+                            <div class="info">
+                                <div class="name">{{ .name }}</div>
+                                <div class="bio">{{ .bio }}</div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     {{ end }}
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <a href="/coaches/" class="view-all-button" style="display: inline-block; background-color: var(--primary); color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: bold;">View All Coaches</a>
+                    </div>
                 </article>
             </div>
             
