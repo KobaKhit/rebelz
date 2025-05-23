@@ -577,6 +577,81 @@
         .coach-item-link:hover .name {
             color: var(--primary);
         }
+
+        /* Chat Icon and Popup */
+        .hidefooter {
+          position: absolute;
+          width: 100%;
+          height: 35px;
+          background: rgb(0,0,0);
+          right: 0px;
+          bottom: 0px;
+          z-index: 2;
+          display: block;
+          color: rgb(0, 0, 0);
+        }
+
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, background-color 0.2s;
+            z-index: 1000;
+        }
+
+        .chat-icon:hover {
+            transform: scale(1.1);
+            background-color: var(--primary-hover);
+        }
+
+        .chat-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .chat-popup {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .chat-popup iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .chat-popup.active {
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .chat-popup {
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                right: 0;
+                border-radius: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -865,5 +940,35 @@ ${info.event.extendedProps.description}`;
         </div>
       </div>
     </div>
+
+    <!-- Chat Icon and Popup -->
+    <div class="chat-icon" onclick="toggleChat()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+            <path d="M7 9h10v2H7zm0-3h10v2H7zm0 6h7v2H7z"/>
+        </svg>
+    </div>
+
+    <div class="chat-popup" id="chatPopup">
+        <div class="hidefooter"></div>
+        <iframe src="https://stagents.streamlit.app/?embedded=true&embed=true" title="Chat Assistant"></iframe>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const popup = document.getElementById('chatPopup');
+            popup.classList.toggle('active');
+        }
+
+        // Close popup when clicking outside
+        document.addEventListener('click', function(event) {
+            const popup = document.getElementById('chatPopup');
+            const chatIcon = document.querySelector('.chat-icon');
+            
+            if (!popup.contains(event.target) && !chatIcon.contains(event.target)) {
+                popup.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html> 
