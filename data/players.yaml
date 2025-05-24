@@ -97,6 +97,12 @@ teams:
           develop into a lethal 3 level scorer.  Ahnaf is a matchup nightmare in
           1v1 situations. "
         image: images/more-than-basketball-logo.webp
+      - name: Kane
+        position: G
+        height: 6'2
+        image: x
+        bio: "2 way beast. 15yo playing like 18. excellent work ethic and attention to
+          detail in personal development. "
   - name: 16U
     players:
       - name: Mohamed Konate
