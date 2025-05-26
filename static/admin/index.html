@@ -431,37 +431,162 @@
         var content = entry.getIn(['data', 'content']) || '';
         var staff = entry.getIn(['data', 'staff']) || [];
         
-        return h('div', {className: 'preview-container'},
-          h('h1', {className: 'preview-header'}, title),
+        return h('div', {className: 'preview-container about-preview'},
+          h('div', {className: 'header', style: {
+            textAlign: 'center',
+            marginBottom: '2rem'
+          }},
+            h('img', {
+              src: '/images/rebelz-info.png',
+              alt: 'Rebelz Basketball',
+              className: 'logo',
+              style: {
+                maxWidth: '200px',
+                marginBottom: '1rem'
+              }
+            }),
+            h('h1', {style: {color: '#e63946'}}, title)
+          ),
           
-          h('div', {className: 'about-content-preview'},
-            h('h2', {}, 'About Rebelz Basketball'),
+          h('div', {className: 'content', style: {
+            lineHeight: '1.6',
+            marginBottom: '3rem',
+            backgroundColor: '#121212',
+            padding: '1.5rem',
+            borderRadius: '8px'
+          }},
+            h('h2', {style: {color: '#e63946'}}, 'About Rebelz Basketball'),
             h('div', {
-              className: 'content',
+              className: 'content-preview',
+              style: {marginBottom: '1.5rem'},
               dangerouslySetInnerHTML: {
-                __html: this.props.widgetFor('content')
+                __html: this.props.widgetFor('content').props.value
               }
             }),
             
-            h('h3', {}, 'Our Mission'),
+            h('h3', {style: {color: '#e63946'}}, 'Our Mission'),
             h('p', {}, mission)
           ),
           
-          h('h3', {}, 'Staff'),
-          h('div', {className: 'staff-preview'},
-            staff.map(function(person, index) {
-              return h('div', {key: index, className: 'person-preview'},
-                h('img', {
-                  src: person.get('image'),
-                  className: 'person-image-preview'
-                }),
-                h('div', {className: 'person-info-preview'},
-                  h('div', {className: 'person-name-preview'}, person.get('name')),
-                  h('div', {className: 'person-title-preview'}, person.get('title')),
-                  h('div', {className: 'person-bio-preview'}, person.get('bio'))
-                )
-              );
-            })
+          h('div', {className: 'columns', style: {
+            display: 'flex',
+            gap: '2rem',
+            marginTop: '3rem'
+          }},
+            h('div', {className: 'column', style: {
+              flex: '1',
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              padding: '1.5rem',
+              borderRadius: '8px'
+            }},
+              h('h3', {style: {
+                color: '#e63946',
+                marginTop: '0',
+                textAlign: 'center',
+                paddingBottom: '0.5rem',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.2)'
+              }}, 'Administration'),
+              
+              staff.map(function(person, index) {
+                return h('div', {key: index, className: 'person', style: {
+                  marginBottom: '1.5rem',
+                  padding: '1rem',
+                  backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                  borderRadius: '8px',
+                  textAlign: 'center'
+                }},
+                  h('img', {
+                    src: `/${person.get('image')}`,
+                    alt: person.get('name'),
+                    style: {
+                      width: '100px',
+                      height: '100px',
+                      objectFit: 'cover',
+                      borderRadius: '50%',
+                      marginBottom: '1rem',
+                      display: 'block',
+                      margin: '0 auto 1rem'
+                    }
+                  }),
+                  h('div', {style: {}},
+                    h('div', {style: {
+                      fontWeight: 'bold',
+                      fontSize: '1.1rem',
+                      color: '#ffffff',
+                      marginBottom: '0.25rem'
+                    }}, person.get('name')),
+                    h('div', {style: {
+                      fontSize: '0.9rem',
+                      color: '#e63946',
+                      marginBottom: '0.5rem'
+                    }}, person.get('title')),
+                    h('div', {style: {
+                      fontSize: '0.9rem',
+                      lineHeight: '1.4',
+                      textAlign: 'left'
+                    }}, person.get('bio'))
+                  )
+                );
+              })
+            ),
+            
+            h('div', {className: 'column', style: {
+              flex: '1',
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              padding: '1.5rem',
+              borderRadius: '8px'
+            }},
+              h('h3', {style: {
+                color: '#e63946',
+                marginTop: '0',
+                textAlign: 'center',
+                paddingBottom: '0.5rem',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.2)'
+              }}, 'Coaches'),
+              h('div', {style: {
+                fontSize: '0.9rem', 
+                textAlign: 'center', 
+                padding: '1rem',
+                color: '#aaa'
+              }}, 'Coach information is managed in the Coaches section')
+            ),
+            
+            h('div', {className: 'column', style: {
+              flex: '1',
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              padding: '1.5rem',
+              borderRadius: '8px'
+            }},
+              h('h3', {style: {
+                color: '#e63946',
+                marginTop: '0',
+                textAlign: 'center',
+                paddingBottom: '0.5rem',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.2)'
+              }}, 'Players'),
+              h('div', {style: {
+                fontSize: '0.9rem', 
+                textAlign: 'center',
+                padding: '1rem',
+                color: '#aaa'
+              }}, 'Player information is managed in the Players section')
+            )
+          ),
+          
+          h('div', {className: 'nav', style: {
+            textAlign: 'center',
+            marginTop: '2rem'
+          }},
+            h('a', {
+              style: {
+                color: '#e63946',
+                textDecoration: 'none',
+                display: 'inline-block',
+                padding: '0.5rem 1rem',
+                border: '1px solid #e63946',
+                borderRadius: '4px'
+              }
+            }, '← Back to Home')
           )
         );
       }

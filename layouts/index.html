@@ -726,6 +726,108 @@
             opacity: 0.8;
             font-style: italic;
         }
+
+        /* Additional compact calendar styling */
+        .fc .fc-daygrid-day-frame {
+            padding: 4px !important; /* Reduce cell padding */
+        }
+        
+        .fc .fc-daygrid-day-top {
+            justify-content: center; /* Center date numbers */
+            font-size: 0.85rem;     /* Smaller date numbers */
+        }
+        
+        .fc .fc-daygrid-day-number {
+            padding: 2px;           /* Reduce padding around date numbers */
+        }
+        
+        .fc .fc-daygrid-day-events {
+            margin-top: 2px;        /* Less space above events */
+        }
+        
+        .fc .fc-daygrid-event {
+            padding: 2px 4px;       /* Smaller event padding */
+            font-size: 0.75rem;     /* Smaller event text */
+        }
+        
+        .fc .fc-toolbar {
+            margin-bottom: 0.5rem;  /* Less space below toolbar */
+        }
+        
+        .fc .fc-toolbar-title {
+            font-size: 1.25rem;     /* Smaller title */
+        }
+        
+        .fc .fc-button {
+            padding: 0.3em 0.65em;  /* Smaller buttons */
+            font-size: 0.8rem;      /* Smaller button text */
+        }
+        
+        /* More compact list view */
+        .fc-list-day-cushion {
+            padding: 6px 8px !important;
+        }
+        
+        .fc-list-event td {
+            padding: 6px 8px !important;
+        }
+        
+        /* Hide "more" links - optional */
+        .fc-daygrid-more-link {
+            font-size: 0.7rem;
+            margin-top: 1px;
+            padding: 0;
+        }
+
+        /* Make toolbar elements appear on the same row */
+        .fc .fc-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .fc .fc-toolbar-title {
+            font-size: 1.2rem;
+            white-space: nowrap;
+            margin: 0;
+            padding: 0 10px;
+        }
+
+        /* Make buttons more compact */
+        .fc .fc-button-group {
+            display: flex;
+            gap: 2px;
+        }
+
+        .fc .fc-button {
+            padding: 0.2em 0.4em;
+            font-size: 0.8rem;
+        }
+
+        /* Ensure proper flex behavior for each toolbar section */
+        .fc .fc-toolbar-chunk {
+            display: flex;
+            align-items: center;
+        }
+
+        /* On mobile make it more compact */
+        @media (max-width: 576px) {
+            .fc .fc-toolbar {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+            
+            .fc .fc-toolbar-chunk {
+                flex: 0 0 auto;
+            }
+            
+            .fc .fc-toolbar-title {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -899,27 +1001,31 @@
             right: 'listMonth,dayGridMonth'
           },
           height: 'auto',
-          themeSystem: 'standard',
-          navLinks: true,
-          dayMaxEvents: true,
-          timeZone: 'local',
-          listDayFormat: { weekday: 'long', month: 'long', day: 'numeric' },
-          listDayAltFormat: { weekday: 'long' },
+          
+          // Simplify the configuration to avoid conflicts
+          dayMaxEventRows: 2,
+          
+          // Formatting
           eventTimeFormat: {
             hour: '2-digit',
             minute: '2-digit',
-            meridiem: 'short'
+            meridiem: 'short',
+            omitZeroMinute: true
           },
+          
+          // Simplified view settings
           views: {
+            dayGridMonth: {
+              dayHeaderFormat: { weekday: 'short' },
+              fixedWeekCount: false
+            },
             listMonth: {
-              listDaySideFormat: false,
-              eventTimeFormat: {
-                hour: '2-digit',
-                minute: '2-digit',
-                meridiem: 'short'
-              }
+              listDayFormat: { weekday: 'short', month: 'short', day: 'numeric' },
+              listDaySideFormat: false
             }
           },
+          
+          // Event handling
           eventDidMount: function(info) {
             var tooltipText = `
               ${info.event.title}
