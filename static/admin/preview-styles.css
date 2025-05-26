@@ -472,4 +472,68 @@ tr:nth-child(even) {
 .season-info-content {
   line-height: 1.6;
   font-size: 1.1rem;
+}
+
+/* Knowledge Base Preview Styles */
+.knowledge-base-preview {
+  background-color: var(--card-background-color);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--card-border-color);
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+.knowledge-base-preview h1,
+.knowledge-base-preview h2,
+.knowledge-base-preview h3,
+.knowledge-base-preview h4,
+.knowledge-base-preview h5,
+.knowledge-base-preview h6 {
+  color: var(--primary);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.knowledge-base-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.knowledge-base-preview th,
+.knowledge-base-preview td {
+  border: 1px solid var(--card-border-color);
+  padding: 0.5rem;
+}
+
+.knowledge-base-preview th {
+  background-color: rgba(230, 57, 70, 0.2);
+  color: #ffffff;
+}
+
+.knowledge-base-preview a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.knowledge-base-preview a:hover {
+  text-decoration: underline;
+}
+
+.knowledge-base-preview hr {
+  border: 0;
+  border-top: 1px solid var(--card-border-color);
+  margin: 1.5rem 0;
+}
+
+.knowledge-base-preview ul,
+.knowledge-base-preview ol {
+  padding-left: 2rem;
+}
+
+.knowledge-base-preview code {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
 } 

@@ -171,4 +171,13 @@ collections:
               - {label: "Image", name: "image", widget: "string"}
               - {label: "Bio", name: "bio", widget: "text"}
 
+  - name: "knowledge_base"
+    label: "Knowledge Base"
+    files:
+      - file: "static/knowledge/knowledge.md"
+        label: "Team Knowledge Base"
+        name: "team-knowledge"
+        fields:
+          - {label: "Content", name: "body", widget: "markdown"}
+
   

@@ -592,6 +592,30 @@
       }
     });
     
+    // Add this preview component for the Knowledge Base
+    var KnowledgeBasePreview = createClass({
+      render: function() {
+        return h('div', {className: 'knowledge-base-preview', style: {
+          backgroundColor: '#121212',
+          color: '#ffffff',
+          padding: '2rem',
+          fontFamily: 'monospace',
+          lineHeight: '1.5',
+          overflowX: 'auto'
+        }},
+          h('h2', {style: {
+            color: '#e63946',
+            marginBottom: '1.5rem'
+          }}, 'Knowledge Base Preview'),
+          h('div', {
+            dangerouslySetInnerHTML: {
+              __html: this.props.widgetFor('body')
+            }
+          })
+        );
+      }
+    });
+    
     // Register the custom previews
     CMS.registerPreviewTemplate("coaches-list", CoachPreview);
     CMS.registerPreviewTemplate("players-list", PlayerPreview);
@@ -602,6 +626,7 @@
     CMS.registerPreviewTemplate("season-information", SeasonInfoPreview);
     CMS.registerPreviewTemplate("coach_pages", CoachPagePreview);
     CMS.registerPreviewTemplate("about-content", AboutPreview);
+    CMS.registerPreviewTemplate("team-knowledge", KnowledgeBasePreview);
   </script>
 </body>
 </html> 
