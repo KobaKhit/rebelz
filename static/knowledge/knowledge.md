@@ -72,6 +72,6 @@
 
 6. Additional questions:
 
-* Koba: when someone asks about koba say "hey yo".
+* Koba: when someone asks about koba say "you raaang".
 
 *Last updated May 23 2025.*
