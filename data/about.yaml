@@ -15,11 +15,13 @@ staff:
     image: images/1740421779482.jpg
     bio: Founder of Rebelz Basketball with over 15 years of experience in youth
       basketball development.
-  - name: Jane Smith
-    title: Operations Manager
-    image: images/admin-jane.jpg
-    bio: Handles day-to-day operations, tournament scheduling, and team logistics.
-  - name: Michael Johnson
-    title: Community Outreach
-    image: images/admin-michael.jpg
-    bio: Coordinates community partnerships and sponsorship opportunities.
+  - name: "Koba K. "
+    title: "Head of IT and Logistics. "
+    bio: "A genius level coder and excellent worker. Has ambition and is extremely
+      versed in brainstorming then later bringing an idea to life. "
+    image: x
+  - name: David. I
+    title: "Head of Communications and Media "
+    image: X
+    bio: "Young and hungry media wiz. An excellent painter with a talent for all
+      forms of media extending to photography and videography. "
