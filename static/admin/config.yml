@@ -172,7 +172,7 @@ collections:
               - {label: "Bio", name: "bio", widget: "text"}
 
   - name: "knowledge_base"
-    label: "Knowledge Base"
+    label: "AI Knowledge Base"
     files:
       - file: "static/knowledge/knowledge.md"
         label: "Team Knowledge Base"
