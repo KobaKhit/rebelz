@@ -422,6 +422,51 @@
       }
     });
     
+    // Custom preview for About page
+    var AboutPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var title = entry.getIn(['data', 'title']) || '';
+        var mission = entry.getIn(['data', 'mission']) || '';
+        var content = entry.getIn(['data', 'content']) || '';
+        var staff = entry.getIn(['data', 'staff']) || [];
+        
+        return h('div', {className: 'preview-container'},
+          h('h1', {className: 'preview-header'}, title),
+          
+          h('div', {className: 'about-content-preview'},
+            h('h2', {}, 'About Rebelz Basketball'),
+            h('div', {
+              className: 'content',
+              dangerouslySetInnerHTML: {
+                __html: this.props.widgetFor('content')
+              }
+            }),
+            
+            h('h3', {}, 'Our Mission'),
+            h('p', {}, mission)
+          ),
+          
+          h('h3', {}, 'Staff'),
+          h('div', {className: 'staff-preview'},
+            staff.map(function(person, index) {
+              return h('div', {key: index, className: 'person-preview'},
+                h('img', {
+                  src: person.get('image'),
+                  className: 'person-image-preview'
+                }),
+                h('div', {className: 'person-info-preview'},
+                  h('div', {className: 'person-name-preview'}, person.get('name')),
+                  h('div', {className: 'person-title-preview'}, person.get('title')),
+                  h('div', {className: 'person-bio-preview'}, person.get('bio'))
+                )
+              );
+            })
+          )
+        );
+      }
+    });
+    
     // Register the custom previews
     CMS.registerPreviewTemplate("coaches-list", CoachPreview);
     CMS.registerPreviewTemplate("players-list", PlayerPreview);
@@ -431,6 +476,7 @@
     CMS.registerPreviewTemplate("blog", BlogPostPreview);
     CMS.registerPreviewTemplate("season-information", SeasonInfoPreview);
     CMS.registerPreviewTemplate("coach_pages", CoachPagePreview);
+    CMS.registerPreviewTemplate("about-content", AboutPreview);
   </script>
 </body>
 </html> 

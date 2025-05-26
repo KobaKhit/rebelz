@@ -1,0 +1,20 @@
+title: "About Us"
+mission: "To create a positive environment where young athletes can develop their basketball skills, build character, and learn valuable life lessons through competitive play."
+content: >-
+  Rebelz Basketball is an AAU program in the Philadelphia Circuit dedicated to developing young athletes both on and off the court. We focus on basketball fundamentals, teamwork, discipline, and character building.
+
+
+  Our program provides competitive basketball opportunities for talented youth, helping them reach their full potential while preparing them for success at the high school, collegiate, and beyond.
+staff:
+  - name: "Robell Meky"
+    title: "Program Director"
+    image: "images/admin-robell.jpg"
+    bio: "Founder of Rebelz Basketball with over 15 years of experience in youth basketball development."
+  - name: "Jane Smith"
+    title: "Operations Manager"
+    image: "images/admin-jane.jpg"
+    bio: "Handles day-to-day operations, tournament scheduling, and team logistics."
+  - name: "Michael Johnson"
+    title: "Community Outreach"
+    image: "images/admin-michael.jpg"
+    bio: "Coordinates community partnerships and sponsorship opportunities." 

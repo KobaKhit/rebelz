@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
     <meta charset="utf-8">
@@ -654,6 +654,78 @@
                 border-radius: 10px;
             }
         }
+
+        /* Calendar styling */
+        .fc-theme-standard .fc-list {
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background-color: var(--card-background-color);
+        }
+        
+        .fc .fc-list-empty {
+            background-color: var(--card-background-color);
+            color: var(--color);
+        }
+        
+        .fc .fc-list-day-cushion {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 14px;
+        }
+        
+        .fc .fc-list-event:hover td {
+            background-color: #2a2a2a;
+        }
+        
+        .fc .fc-list-event-dot {
+            border-color: var(--primary);
+        }
+        
+        .fc .fc-list-day th {
+            border-color: var(--card-border-color);
+        }
+        
+        .fc .fc-list-event td {
+            border-color: var(--card-border-color);
+        }
+        
+        .fc .fc-toolbar-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .fc .fc-button-primary {
+            background-color: var(--card-background-color);
+            border-color: var(--card-border-color);
+            color: var(--color);
+        }
+        
+        .fc .fc-button-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .fc .fc-button-primary:not(:disabled).fc-button-active {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .fc .fc-toolbar {
+            margin-bottom: 1rem;
+        }
+        
+        /* Make the calendar container more compact */
+        #calendar {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Style event location in list view */
+        .event-location {
+            opacity: 0.8;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -820,20 +892,35 @@
         var calendarEl = document.getElementById('calendar');
         
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
-          height: 'auto',
+          initialView: 'listMonth',
           headerToolbar: {
             left: 'prev,next today',
             center: 'title',
-            right: 'dayGridMonth,listMonth'
+            right: 'listMonth,dayGridMonth'
           },
+          height: 'auto',
+          themeSystem: 'standard',
+          navLinks: true,
+          dayMaxEvents: true,
+          timeZone: 'local',
+          listDayFormat: { weekday: 'long', month: 'long', day: 'numeric' },
+          listDayAltFormat: { weekday: 'long' },
           eventTimeFormat: {
             hour: '2-digit',
             minute: '2-digit',
             meridiem: 'short'
           },
+          views: {
+            listMonth: {
+              listDaySideFormat: false,
+              eventTimeFormat: {
+                hour: '2-digit',
+                minute: '2-digit',
+                meridiem: 'short'
+              }
+            }
+          },
           eventDidMount: function(info) {
-            // Create a simple tooltip using the browser's native title attribute
             var tooltipText = `
               ${info.event.title}
               Date: ${new Date(info.event.start).toLocaleDateString()}
@@ -845,17 +932,14 @@
             
             info.el.setAttribute('title', tooltipText);
             
-            // Add click handler to show custom modal instead of alert
             info.el.style.cursor = 'pointer';
             info.el.addEventListener('click', function() {
-              // Get modal elements
               var modal = document.getElementById('eventModal');
               var modalTitle = document.getElementById('eventModalTitle');
               var modalDetails = document.getElementById('eventModalDetails');
               var modalLocation = document.getElementById('eventModalLocation');
               var modalClose = document.getElementById('eventModalClose');
               
-              // Set modal content
               modalTitle.textContent = info.event.title;
               modalDetails.textContent = `
 Date: ${new Date(info.event.start).toLocaleDateString()}
@@ -867,7 +951,6 @@ Players Registered: ${info.event.extendedProps.playersRegistered}
 
 ${info.event.extendedProps.description}`;
               
-              // Set up button handlers
               modalLocation.onclick = function() {
                 window.open(info.event.extendedProps.locationUrl, '_blank');
                 modal.style.display = 'none';
@@ -877,16 +960,39 @@ ${info.event.extendedProps.description}`;
                 modal.style.display = 'none';
               };
               
-              // Show the modal
               modal.style.display = 'flex';
               
-              // Close modal when clicking outside
               modal.onclick = function(event) {
                 if (event.target === modal) {
                   modal.style.display = 'none';
                 }
               };
             });
+            
+            if (info.view.type === 'listMonth') {
+              var timeEl = info.el.querySelector('.fc-list-event-time');
+              if (timeEl) {
+                timeEl.style.fontSize = '0.85rem';
+                timeEl.style.color = '#aaa';
+                timeEl.style.width = '120px';
+              }
+              
+              var titleEl = info.el.querySelector('.fc-list-event-title');
+              if (titleEl) {
+                titleEl.style.fontWeight = 'bold';
+                
+                var locationEl = document.createElement('div');
+                locationEl.className = 'event-location';
+                locationEl.textContent = info.event.extendedProps.location;
+                locationEl.style.fontSize = '0.8rem';
+                locationEl.style.color = '#aaa';
+                locationEl.style.marginTop = '2px';
+                
+                titleEl.appendChild(locationEl);
+              }
+              
+              info.el.style.padding = '8px 12px';
+            }
           },
           events: [
             {{ range .Site.Data.events.events }}

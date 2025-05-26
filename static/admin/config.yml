@@ -152,4 +152,23 @@ collections:
         fields:
           - {label: "Content", name: "content", widget: "markdown", hint: "This text appears in the Season Info section on the homepage. You can use markdown formatting."}
 
+  - name: "about_page"
+    label: "About Page"
+    files:
+      - file: "data/about.yaml"
+        label: "About Us Content"
+        name: "about-content"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Mission Statement", name: "mission", widget: "text"}
+          - {label: "Main Content", name: "content", widget: "markdown"}
+          - label: "Staff Members"
+            name: "staff"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Image", name: "image", widget: "string"}
+              - {label: "Bio", name: "bio", widget: "text"}
+
   

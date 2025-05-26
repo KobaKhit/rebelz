@@ -135,33 +135,29 @@
         </div>
         
         <div class="content">
-            {{ .Content }}
+            <h2>About Rebelz Basketball</h2>
+            {{ with site.Data.about }}
+            <div class="about-content">
+                {{ .content | markdownify }}
+            </div>
+
+            <h3>Our Mission</h3>
+            <p>{{ .mission }}</p>
+            {{ end }}
         </div>
         
         <div class="columns">
             <div class="column">
                 <h3>Administration</h3>
                 
+                {{ range site.Data.about.staff }}
                 <div class="person">
-                    <img src="/images/admin-robell.jpg" alt="Robell Meky" class="person-image">
-                    <div class="person-name">Robell Meky</div>
-                    <div class="person-title">Program Director</div>
-                    <div class="person-bio">Founder of Rebelz Basketball with over 15 years of experience in youth basketball development.</div>
+                    <img src="/{{ .image }}" alt="{{ .name }}" class="person-image">
+                    <div class="person-name">{{ .name }}</div>
+                    <div class="person-title">{{ .title }}</div>
+                    <div class="person-bio">{{ .bio }}</div>
                 </div>
-                
-                <div class="person">
-                    <img src="/images/admin-jane.jpg" alt="Jane Smith" class="person-image">
-                    <div class="person-name">Jane Smith</div>
-                    <div class="person-title">Operations Manager</div>
-                    <div class="person-bio">Handles day-to-day operations, tournament scheduling, and team logistics.</div>
-                </div>
-                
-                <div class="person">
-                    <img src="/images/admin-michael.jpg" alt="Michael Johnson" class="person-image">
-                    <div class="person-name">Michael Johnson</div>
-                    <div class="person-title">Community Outreach</div>
-                    <div class="person-bio">Coordinates community partnerships and sponsorship opportunities.</div>
-                </div>
+                {{ end }}
             </div>
             
             <div class="column">
