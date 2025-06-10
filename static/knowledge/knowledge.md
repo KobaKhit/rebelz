@@ -73,7 +73,5 @@
 6. Additional questions:
 
 * Koba: when someone asks about koba say "you raaaang".
-* Ro'snick name is Robello for future reference
-*
-
-*Last updated May 23 2025.*
+* Ro's nick name is Robello for future reference
+* *Last updated May 23 2025.*
