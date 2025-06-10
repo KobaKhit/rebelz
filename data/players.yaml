@@ -1,5 +1,5 @@
 teams:
-  - name: 17U
+  - name: "Grindhouse League "
     players:
       - name: Shiheed Rice-Sloan
         position: Forward
@@ -39,19 +39,6 @@ teams:
           serve as the anchor of a defense, especially a zone defense. Offensive
           package includes pick and roll, dunker spot actions and a reliable 3
           point shot. "
-      - name: Jayden aka 30
-        position: PG
-        height: 5'9
-        bio: >-
-          True Floor General. A Point of attack guard capable of running an
-          offense and destroying defensive schemes. 
-
-
-          Excellent dedication the game. 
-
-
-          Elite speed and toughness. Defensive hound and natural leader. 
-        image: images/more-than-basketball-logo.webp
       - name: "Nate "
         position: Guard
         height: "6"
@@ -59,13 +46,6 @@ teams:
         bio: "Two-Way Guard with fundamental understanding of the game. Can be used as
           an initiator in an offense while serving as a lethal off ball threat.
           3 Level Scorer and rugged defender. "
-      - name: "Jaydon B. "
-        position: Guard
-        height: 6'
-        image: images/more-than-basketball-logo.webp
-        bio: "Crafty Combo guard with foundational understanding of on-ball and off ball
-          guard play. Tough and smart serving as a defensive asset and lethal
-          off-ball threat. "
       - name: Lamont Harris
         position: Guard
         height: 5’7
@@ -84,12 +64,6 @@ teams:
         bio: "Athletic wing with lethal 3 point accuracy, Rugged defense and rare
           rebounding ability. A player that can change the interior presence of
           a team offensively and defensively  "
-      - name: Haafiz Webb
-        position: Guard
-        height: 5'11
-        image: images/more-than-basketball-logo.webp
-        bio: "Scoring guard with lethal 3-point Accuracy and fierce defender. Excellent
-          work ethic and discipline to the game. "
       - name: Ahnaf Mollah
         position: Guard
         height: 5'10
@@ -103,38 +77,3 @@ teams:
         image: x
         bio: "2 way beast. 15yo playing like 18. excellent work ethic and attention to
           detail in personal development. "
-  - name: 16U
-    players:
-      - name: Mohamed Konate
-        position: Point Guard
-        height: 6'3"
-        image: images/more-than-basketball-logo.webp
-        bio: Quick ball-handler with excellent passing ability.
-      - name: Gaoussou
-        position: Power Forward
-        height: 5'11
-        image: images/more-than-basketball-logo.webp
-        bio: "Combo Guard that can go both left and right with a strong motor that
-          results in great rebounding and defense. Coachable and hard working. "
-      - name: Ian
-        position: Forward
-        height: 5'7
-        image: images/more-than-basketball-logo.webp
-        bio: Shot-blocker with high basketball IQ and leadership.
-      - name: Ronald Coleman
-        position: Guard
-        height: 6'0"
-        image: images/more-than-basketball-logo.webp
-        bio: Defensive specialist with developing offensive skills.
-      - name: "Amyr Mcclenton "
-        position: Guard
-        height: 5'7
-        image: images/more-than-basketball-logo.webp
-        bio: Crafty guard with natural feel for the game. Dual Scoring and facilitating
-          threat. Floor general.
-      - name: Zion Johnson
-        position: Forward
-        height: 6’0
-        image: images/more-than-basketball-logo.webp
-        bio: "Athletic Wing player with explosive scoring capacity and excellent
-          defense. "
