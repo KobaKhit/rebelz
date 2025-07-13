@@ -863,6 +863,60 @@
         .hidefooter {
             height: 0;
         }
+
+        /* Navigation dropdown styles */
+        nav details {
+            position: relative;
+        }
+        
+        nav details summary {
+            cursor: pointer;
+            color: var(--color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+        }
+        
+        nav details summary:hover {
+            color: var(--primary);
+        }
+        
+        nav details[open] summary {
+            color: var(--primary);
+        }
+        
+        nav details ul {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            min-width: 250px;
+            z-index: 1000;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+        
+        nav details ul li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav details ul li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--color);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        
+        nav details ul li a:hover {
+            background-color: var(--card-sectionning-background-color);
+            color: var(--primary);
+        }
     </style>
 </head>
 <body>
@@ -873,6 +927,18 @@
         <li><a href="/news/" class="{{ if eq .Section "news" }}active{{ end }}">News</a></li>
         <li><a href="/about/" class="{{ if eq .RelPermalink "/about/" }}active{{ end }}">About Us</a></li>
         <li><a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer">Donate</a></li>
+        <li><a href="/workforce-readiness/">Workforce Readiness</a></li>
+        <li>
+          <details role="list" dir="rtl">
+            <summary aria-haspopup="listbox" role="link">STEM</summary>
+            <ul role="listbox">
+              <li><a href="/stem/ai-app-development/">AI Assisted App Development</a></li>
+              <li><a href="/stem/computer-science/">Computer Science</a></li>
+              <li><a href="/stem/chess/">Chess</a></li>
+              <li><a href="/stem/drone-flight/">Drone Flight and FAA Part 107 Certification Training</a></li>
+            </ul>
+          </details>
+        </li>
       </ul>
     </nav>
     <main class="container">

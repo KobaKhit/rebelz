@@ -180,4 +180,30 @@ collections:
         fields:
           - {label: "Content", name: "body", widget: "markdown"}
 
+  - name: "stem_pages"
+    label: "STEM Programs"
+    folder: "content/stem"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Type", name: "type", widget: "hidden", default: "stem"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Content", name: "body", widget: "markdown"}
+
+  - name: "workforce_readiness"
+    label: "Workforce Readiness"
+    folder: "content/workforce-readiness"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Type", name: "type", widget: "hidden", default: "workforce"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Content", name: "body", widget: "markdown"}
+
   
