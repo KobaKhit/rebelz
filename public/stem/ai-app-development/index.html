@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Assisted App Development - Rebelz Basketball</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        :root {
+            --primary: #e63946;
+            --primary-hover: #c1121f;
+            --primary-focus: rgba(230, 57, 70, 0.25);
+            --background-color: #000000;
+            --card-background-color: #121212;
+            --card-sectionning-background-color: #1e1e1e;
+            --card-border-color: #333;
+            --color: #ffffff;
+            --h1-color: #ffffff;
+            --h2-color: #e63946;
+            --h3-color: #e63946;
+            --h4-color: #ffffff;
+            --h5-color: #ffffff;
+            --h6-color: #ffffff;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background-color: var(--card-background-color);
+            border-radius: 0.25rem;
+            border: 1px solid var(--card-border-color);
+        }
+        
+        .logo {
+            max-width: 150px;
+            margin-bottom: 1rem;
+        }
+        
+        .content {
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .content h1 {
+            color: var(--h1-color);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content h2 {
+            color: var(--h2-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content h3 {
+            color: var(--h3-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .content ul, .content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .content strong {
+            color: var(--primary);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            transition: background-color 0.2s;
+        }
+        
+        .back-link:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+        
+        .program-meta {
+            background-color: var(--card-sectionning-background-color);
+            padding: 1rem;
+            border-radius: 0.25rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .program-meta p {
+            margin: 0;
+            font-style: italic;
+        }
+
+         
+        nav details {
+            position: relative;
+        }
+        
+        nav details summary {
+            cursor: pointer;
+            color: var(--color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+        }
+        
+        nav details summary:hover {
+            color: var(--primary);
+        }
+        
+        nav details[open] summary {
+            color: var(--primary);
+        }
+        
+        nav details ul {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            min-width: 250px;
+            z-index: 1000;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+        
+        nav details ul li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav details ul li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--color);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        
+        nav details ul li a:hover {
+            background-color: var(--card-sectionning-background-color);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="container">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer">Donate</a></li>
+        <li><a href="/workforce-readiness/">Workforce Readiness</a></li>
+        <li>
+          <details role="list" dir="rtl">
+            <summary aria-haspopup="listbox" role="link">STEM</summary>
+            <ul role="listbox">
+              <li><a href="/stem/ai-app-development/">AI Assisted App Development</a></li>
+              <li><a href="/stem/computer-science/">Computer Science</a></li>
+              <li><a href="/stem/chess/">Chess</a></li>
+              <li><a href="/stem/drone-flight/">Drone Flight and FAA Part 107 Certification Training</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container">
+        
+        <div class="header">
+            <img src="/images/rebelz-logo.png" alt="Rebelz Basketball" class="logo">
+            <h1>AI Assisted App Development</h1>
+        </div>
+
+        
+        <a href="/" class="back-link">← Back to Home</a>
+
+        
+        
+        <div class="program-meta">
+            <p>Our AI Assisted App Development program introduces students to the cutting-edge world of artificial intelligence-powered software development. Students will learn to leverage AI tools and frameworks to create innovative mobile and web applications.</p>
+        </div>
+        
+
+        
+        <div class="content">
+            <h2 id="what-youll-learn">What You&rsquo;ll Learn</h2>
+<ul>
+<li><strong>AI Development Tools</strong>: Master popular AI-assisted coding platforms like GitHub Copilot, Cursor, and Claude</li>
+<li><strong>Mobile App Development</strong>: Build native iOS and Android applications with AI assistance</li>
+<li><strong>Web Development</strong>: Create responsive web applications using modern frameworks</li>
+<li><strong>Machine Learning Integration</strong>: Implement AI features into your applications</li>
+<li><strong>UI/UX Design</strong>: Design intuitive user interfaces with AI-powered design tools</li>
+<li><strong>Project Management</strong>: Learn agile development methodologies and version control</li>
+</ul>
+<p><strong>App Creation Lab – Build Your Own App</strong></p>
+<p>The App Creation Lab introduces participants to the fundamentals of coding logic, design thinking, and ethical technology use. Each student will develop their <strong>own individual app concept</strong>, working from idea to execution with mentorship from engineers, designers, and youth educators.
+Using tools like FlutterFlow, MIT App Inventor, or Replit’s mobile frameworks, participants will:</p>
+<ul>
+<li>
+<p>Identify a real-world problem or passion project</p>
+</li>
+<li>
+<p>Design the user interface and layout</p>
+</li>
+<li>
+<p>Build and test their own working app
+Examples may include:</p>
+</li>
+<li>
+<p>A <strong>basketball stat-tracking app</strong> personalized to their team</p>
+</li>
+<li>
+<p>A <strong>teen-focused budgeting and allowance manager</strong></p>
+</li>
+<li>
+<p>A <strong>local community volunteer tracker or peer mental health support tool</strong></p>
+</li>
+</ul>
+<p>This program is about more than just coding—it’s about <strong>ownership of innovation</strong>, giving participants the confidence and skills to build solutions for their lives and neighborhoods.</p>
+<p>Together, these three pillars—<strong>Chess</strong>, <strong>Drones</strong>, and <strong>App Creation</strong>—form the strategic, exploratory, and innovative foundation of STEM Avenue. It is a bold step toward making the Rebelz Program not only a hub for elite athletes, but a <strong>launchpad for tomorrow’s thinkers, creators, and community builders.</strong></p>
+
+        </div>
+    </main>
+</body>
+</html> 

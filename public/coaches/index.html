@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coaches | Rebelz Basketball</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        :root {
+            --primary: #e63946;
+            --primary-hover: #c1121f;
+            --primary-focus: rgba(230, 57, 70, 0.25);
+            --background-color: #000000;
+            --card-background-color: #121212;
+            --card-sectionning-background-color: #1e1e1e;
+            --card-border-color: #333;
+            --color: #ffffff;
+            --h1-color: #ffffff;
+            --h2-color: #e63946;
+            --h3-color: #e63946;
+            --h4-color: #ffffff;
+            --h5-color: #ffffff;
+            --h6-color: #ffffff;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .page-title {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .coaches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .coach-card {
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .coach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .coach-card-image-container {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .coach-card-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+        }
+        
+        .coach-card-content {
+            padding: 0 1.5rem 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .coach-card-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .coach-card-title {
+            font-size: 1rem;
+            color: #aaa;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .coach-card-bio {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .coach-card-link {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s;
+            margin-top: auto;
+        }
+        
+        .coach-card-link:hover {
+            background-color: var(--primary-hover);
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-nav a {
+            background-color: var(--card-background-color);
+            border-color: var(--card-border-color);
+        }
+        
+        .footer-nav a:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <a href="/" class="back-link">← Back to Home</a>
+        
+        <h1 class="page-title">Coaches</h1>
+        
+        <div class="coaches-grid">
+            
+            <div class="coach-card">
+                <div class="coach-card-image-container">
+                    <img src="/x" alt="Coach Charlie" class="coach-card-image">
+                </div>
+                <div class="coach-card-content">
+                    <h3 class="coach-card-name">Coach Charlie</h3>
+                    <div class="coach-card-title">Coach Charlie</div>
+                    <div class="coach-card-bio">x</div>
+                    <a href="//localhost:1313/coaches/coach-charlie/" class="coach-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="coach-card">
+                <div class="coach-card-image-container">
+                    <img src="/x" alt="Coach Deacon" class="coach-card-image">
+                </div>
+                <div class="coach-card-content">
+                    <h3 class="coach-card-name">Coach Deacon</h3>
+                    <div class="coach-card-title">Coach Deacon</div>
+                    <div class="coach-card-bio">x</div>
+                    <a href="//localhost:1313/coaches/coach-deacon/" class="coach-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="coach-card">
+                <div class="coach-card-image-container">
+                    <img src="/x" alt="Coach ICE" class="coach-card-image">
+                </div>
+                <div class="coach-card-content">
+                    <h3 class="coach-card-name">Coach ICE</h3>
+                    <div class="coach-card-title">Coach ICE</div>
+                    <div class="coach-card-bio">x</div>
+                    <a href="//localhost:1313/coaches/coach-ice/" class="coach-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="coach-card">
+                <div class="coach-card-image-container">
+                    <img src="/images/isaac-ugly-self.jpg" alt="Coach Isaac" class="coach-card-image">
+                </div>
+                <div class="coach-card-content">
+                    <h3 class="coach-card-name">Coach Isaac</h3>
+                    <div class="coach-card-title">Coach Isaac</div>
+                    <div class="coach-card-bio">Head Coach of 16U team with 8 years experience as a player and a manager. Played Varsity Basketball as well as high level AAU basketball in the Mid-Atlantic Circuit. Excellent coach and communicator.</div>
+                    <a href="//localhost:1313/coaches/coach-isaac/" class="coach-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="coach-card">
+                <div class="coach-card-image-container">
+                    <img src="/mages/_mg_7044.jpg" alt="Coach Robel (RO)" class="coach-card-image">
+                </div>
+                <div class="coach-card-content">
+                    <h3 class="coach-card-name">Coach Robel (RO)</h3>
+                    <div class="coach-card-title">Coach Robel (RO)</div>
+                    <div class="coach-card-bio">123</div>
+                    <a href="//localhost:1313/coaches/coach-robel-ro/" class="coach-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="coach-card">
+                <div class="coach-card-image-container">
+                    <img src="/x" alt="Coach Sah" class="coach-card-image">
+                </div>
+                <div class="coach-card-content">
+                    <h3 class="coach-card-name">Coach Sah</h3>
+                    <div class="coach-card-title">Coach Sah</div>
+                    <div class="coach-card-bio">x</div>
+                    <a href="//localhost:1313/coaches/coach-sah/" class="coach-card-link">View Profile</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    
+    
+    <footer class="container">
+        <div class="footer-nav">
+            <a href="/" role="button">Home</a>
+            <a href="/about/" role="button">About Us</a>
+            <a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer" role="button">Donate</a>
+        </div>
+    </footer>
+    
+    
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+</body>
+</html> 

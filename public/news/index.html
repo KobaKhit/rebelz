@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News | Team Rebelz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+         
+         
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .news-card {
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 1rem;
+        }
+        
+        .news-title {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-bottom: 0.75rem;
+        }
+        
+        .news-summary {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .news-link {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .news-link:hover {
+            background-color: var(--primary-hover);
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="container">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/news/" class="active">News</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer">Donate</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <header  >
+            
+            <div style="text-align: center;">
+                <img style='width: 20vw' src="/images/coach-ice-logo.png" alt="Coach ICE" class="coach-image">
+                <h1>Coach's Corner with Coach ICE</h1>
+            </div>
+        </header>
+        
+        <div class="news-grid">
+            
+            <div class="news-card">
+                
+                <div class="news-content">
+                    <h2 class="news-title">Summer Tournament Success</h2>
+                    <div class="news-meta">
+                        <span>July 15, 2023</span>
+                        <span>By: Coach Isaac</span>
+                    </div>
+                    <div class="news-summary">Team Rebelz dominated the summer tournament, bringing home the championship trophy after an intense final game.</div>
+                    <a href="//localhost:1313/news/2023-07-15-summer-tournament-success/" class="news-link">Read More</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    
+    <footer class="container">
+        <div class="footer-nav">
+            <a href="/" role="button">Home</a>
+            <a href="/about/" role="button">About Us</a>
+            <a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer" role="button">Donate</a>
+        </div>
+    </footer>
+    
+    
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              if (!window.location.pathname.startsWith('/admin/')) {
+                document.location.href = "/admin/";
+              }
+            });
+          }
+        });
+      }
+    </script>
+</body>
+</html> 

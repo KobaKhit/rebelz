@@ -1,0 +1,1464 @@
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>`<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+	<meta name="generator" content="Hugo 0.126.1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rebelz Basketball</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="prefetch" href="https://stagents.streamlit.app/">
+    
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        :root {
+            --primary: #e63946;
+            --primary-hover: #c1121f;
+            --primary-focus: rgba(230, 57, 70, 0.25);
+            --background-color: #000000;
+            --card-background-color: #121212;
+            --card-sectionning-background-color: #1e1e1e;
+            --card-border-color: #333;
+            --color: #ffffff;
+            --h1-color: #ffffff;
+            --h2-color: #e63946;
+            --h3-color: #e63946;
+            --h4-color: #ffffff;
+            --h5-color: #ffffff;
+            --h6-color: #ffffff;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .two-columns {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 1rem;
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 0.25rem;
+        }
+        
+        .logo-image {
+            max-width: 100%;
+            max-height: 300px;
+        }
+        
+        .register-button {
+            width: 100%;
+            margin: 0 0 1rem 0;
+            background-color: var(--primary);
+            border-color: var(--primary);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .register-button:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+        }
+        
+        article {
+            margin: 0 0 1rem 0;
+            padding: 1rem;
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        article header {
+            margin-bottom: 0rem;
+            padding-bottom: 0.5rem;
+            border-bottom: none;
+            text-align: center;
+            background-color: transparent;
+        }
+        
+        article header h2 {
+            margin: 0;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 10px 0 10px;
+            position: relative;
+        }
+        
+        .coach-item, .player-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--card-sectionning-background-color);
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.25rem;
+            border: 1px solid var(--card-border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 0.9rem;
+        }
+        
+        .coach-item:hover, .player-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .coach-image, .player-image {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 2px solid var(--primary);
+        }
+        
+        .coach-image {
+            border-radius: 50%;
+        }
+        
+        .player-image {
+            border-radius: 0.25rem;
+        }
+        
+        .info {
+            flex-grow: 1;
+        }
+        
+        .name {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+        
+        .title {
+            font-style: italic;
+            color: #aaa;
+            margin-bottom: 0.25rem;
+            font-size: 0.8rem;
+        }
+        
+        .bio {
+            font-size: 0.8rem;
+            color: #dddddd;
+            line-height: 1.3;
+        }
+        
+        .teams-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .team-header {
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem 0.25rem 0 0;
+            padding: 0.75rem;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .team-players {
+            background-color: var(--card-sectionning-background-color);
+            border: 1px solid var(--card-border-color);
+            border-top: none;
+            border-radius: 0 0 0.25rem 0.25rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .footer-nav {
+            text-align: center;
+            margin: 1rem 0;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-nav a {
+            margin: 0 0.5rem;
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            transition: background-color 0.2s, color 0.2s;
+        }
+        
+        .footer-nav a:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+            
+            .teams-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .player-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: var(--card-sectionning-background-color);
+            padding: 0.75rem;
+            margin-bottom: 0.4rem;
+            border-radius: 0.25rem;
+            border: 1px solid var(--card-border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 0.85rem;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .player-item a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-indent: -9999px;
+            z-index: 1;
+        }
+        
+        .player-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 2px solid var(--primary);
+            border-radius: 0.25rem;
+        }
+        
+        .player-item .name {
+            font-size: 0.9rem;
+            margin-bottom: 0.15rem;
+        }
+        
+        .player-item .title {
+            font-size: 0.75rem;
+            margin-bottom: 0.15rem;
+        }
+        
+        .player-item .bio {
+            font-size: 0.75rem;
+            line-height: 1.2;
+        }
+        
+        .team-players {
+            background-color: var(--card-sectionning-background-color);
+            border: 1px solid var(--card-border-color);
+            border-top: none;
+            border-radius: 0 0 0.25rem 0.25rem;
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        
+        .view-profile {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        
+        .view-profile:hover {
+            background-color: var(--primary-hover);
+        }
+        
+         
+        .videos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .video-item {
+            background-color: var(--card-sectionning-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            overflow: hidden;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;  
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-title {
+            padding: 0.75rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+         
+        #calendar {
+            background-color: #ffffff;
+            border-radius: 0.25rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            color: #333333;
+        }
+        
+        .fc-theme-standard td, .fc-theme-standard th {
+            border-color: #dddddd;
+        }
+        
+        .fc-theme-standard .fc-scrollgrid {
+            border-color: #dddddd;
+        }
+        
+        .fc-col-header-cell {
+            background-color: #f8f8f8;
+            color: #333333;
+        }
+        
+        .fc-daygrid-day-number {
+            color: #333333;
+        }
+        
+        .fc-daygrid-day.fc-day-today {
+            background-color: rgba(230, 57, 70, 0.1);
+        }
+        
+         
+        .fc-header-toolbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem !important;
+        }
+        
+        .fc-toolbar-chunk:nth-child(2) {
+            order: -1;  
+        }
+        
+        .fc-toolbar-chunk:nth-child(1),
+        .fc-toolbar-chunk:nth-child(3) {
+            align-self: stretch;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .fc-toolbar-chunk:nth-child(1) {
+            justify-content: flex-start;
+        }
+        
+        .fc-toolbar-chunk:nth-child(3) {
+            justify-content: flex-end;
+        }
+        
+        .fc-button {
+            font-size: 0.8rem !important;
+            padding: 0.3rem 0.5rem !important;
+        }
+        
+        .fc-button-primary {
+            background-color: #f8f8f8 !important;
+            border-color: #dddddd !important;
+            color: #333333 !important;
+        }
+        
+        .fc-button-primary:hover {
+            background-color: #e63946 !important;
+            border-color: #e63946 !important;
+            color: #ffffff !important;
+        }
+        
+        .fc-button-primary:not(:disabled).fc-button-active, 
+        .fc-button-primary:not(:disabled):active {
+            background-color: #e63946 !important;
+            border-color: #e63946 !important;
+            color: #ffffff !important;
+        }
+        
+        @media (max-width: 768px) {
+            .fc-toolbar-chunk {
+                width: 100%;
+                display: flex;
+                justify-content: center !important;
+                margin-bottom: 0.5rem;
+            }
+        }
+        
+         
+        .tippy-box[data-theme~='custom'] {
+            background-color: var(--card-background-color);
+            color: var(--color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tippy-box[data-theme~='custom'] .tippy-arrow {
+            color: var(--card-background-color);
+        }
+        
+        .event-tooltip {
+            padding: 0.5rem;
+            max-width: 300px;
+        }
+        
+        .event-tooltip-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .event-tooltip-datetime {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .event-tooltip-location, 
+        .event-tooltip-cost, 
+        .event-tooltip-players {
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        .event-tooltip-location a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .event-tooltip-location a:hover {
+            text-decoration: underline;
+        }
+        
+        .event-tooltip-description {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        
+         
+        .fc-today-button {
+            min-width: 0 !important;
+            width: auto !important;
+        }
+        
+         
+        .event-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .event-modal-content {
+            background-color: var(--card-background-color);
+            color: var(--color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .event-modal-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--card-border-color);
+        }
+        
+        .event-modal-details {
+            margin-bottom: 1.5rem;
+            white-space: pre-line;
+        }
+        
+        .event-modal-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .event-modal-button {
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .event-modal-button.primary {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+        }
+        
+        .event-modal-button.secondary {
+            background-color: transparent;
+            color: var(--color);
+            border: 1px solid var(--card-border-color);
+        }
+        
+         
+        .fc-event {
+            color: #c62828 !important;
+            font-weight: bold;
+        }
+        
+         
+        .fc-toolbar-title {
+            color: #333333;
+        }
+        
+         
+        .coach-item-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .coach-item-link .coach-item {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .coach-item-link:hover .coach-item {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .coach-item-link:hover .name {
+            color: var(--primary);
+        }
+
+         
+        .hidefooter {
+          position: absolute;
+          width: 100%;
+          height: 35px;
+          background: rgb(0,0,0);
+          right: 0px;
+          bottom: 0px;
+          z-index: 2;
+          display: block;
+          color: rgb(0, 0, 0);
+        }
+
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, background-color 0.2s;
+            z-index: 1000;
+        }
+
+        .chat-icon:hover {
+            transform: scale(1.1);
+            background-color: var(--primary-hover);
+        }
+
+        .chat-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .chat-popup {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background-color: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .chat-popup iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-color: black !important;
+        }
+
+        .chat-popup.active {
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .chat-popup {
+                width: 90%;
+                height: 90%;
+                bottom: 0;
+                right: 0;
+                border-radius: 10px;
+            }
+        }
+
+         
+        .fc-theme-standard .fc-list {
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background-color: var(--card-background-color);
+        }
+        
+        .fc .fc-list-empty {
+            background-color: var(--card-background-color);
+            color: var(--color);
+        }
+        
+        .fc .fc-list-day-cushion {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 14px;
+        }
+        
+        .fc .fc-list-event:hover td {
+            background-color: #2a2a2a;
+        }
+        
+        .fc .fc-list-event-dot {
+            border-color: var(--primary);
+        }
+        
+        .fc .fc-list-day th {
+            border-color: var(--card-border-color);
+        }
+        
+        .fc .fc-list-event td {
+            border-color: var(--card-border-color);
+        }
+        
+        .fc .fc-toolbar-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .fc .fc-button-primary {
+            background-color: var(--card-background-color);
+            border-color: var(--card-border-color);
+            color: var(--color);
+        }
+        
+        .fc .fc-button-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .fc .fc-button-primary:not(:disabled).fc-button-active {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .fc .fc-toolbar {
+            margin-bottom: 1rem;
+        }
+        
+         
+        #calendar {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+         
+        .event-location {
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+         
+        .fc .fc-daygrid-day-frame {
+            padding: 4px !important;  
+        }
+        
+        .fc .fc-daygrid-day-top {
+            justify-content: center;  
+            font-size: 0.85rem;      
+        }
+        
+        .fc .fc-daygrid-day-number {
+            padding: 2px;            
+        }
+        
+        .fc .fc-daygrid-day-events {
+            margin-top: 2px;         
+        }
+        
+        .fc .fc-daygrid-event {
+            padding: 2px 4px;        
+            font-size: 0.75rem;      
+        }
+        
+        .fc .fc-toolbar {
+            margin-bottom: 0.5rem;   
+        }
+        
+        .fc .fc-toolbar-title {
+            font-size: 1.25rem;      
+        }
+        
+        .fc .fc-button {
+            padding: 0.3em 0.65em;   
+            font-size: 0.8rem;       
+        }
+        
+         
+        .fc-list-day-cushion {
+            padding: 6px 8px !important;
+        }
+        
+        .fc-list-event td {
+            padding: 6px 8px !important;
+        }
+        
+         
+        .fc-daygrid-more-link {
+            font-size: 0.7rem;
+            margin-top: 1px;
+            padding: 0;
+        }
+
+         
+        .fc .fc-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .fc .fc-toolbar-title {
+            font-size: 1.2rem;
+            white-space: nowrap;
+            margin: 0;
+            padding: 0 10px;
+        }
+
+         
+        .fc .fc-button-group {
+            display: flex;
+            gap: 2px;
+        }
+
+        .fc .fc-button {
+            padding: 0.2em 0.4em;
+            font-size: 0.8rem;
+        }
+
+         
+        .fc .fc-toolbar-chunk {
+            display: flex;
+            align-items: center;
+        }
+
+         
+        @media (max-width: 576px) {
+            .fc .fc-toolbar {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+            
+            .fc .fc-toolbar-chunk {
+                flex: 0 0 auto;
+            }
+            
+            .fc .fc-toolbar-title {
+                font-size: 1rem;
+            }
+        }
+
+         
+        .chat-close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: rgba(230, 57, 70, 0.7);
+            border: none;
+            color: white;
+            font-size: 16px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+        
+        .chat-close-btn:hover {
+            opacity: 1;
+        }
+        
+         
+        .chat-popup iframe {
+            height: 100%;
+        }
+
+         
+        .hidefooter {
+            height: 0;
+        }
+
+         
+        nav details {
+            position: relative;
+        }
+        
+        nav details summary {
+            cursor: pointer;
+            color: var(--color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+        }
+        
+        nav details summary:hover {
+            color: var(--primary);
+        }
+        
+        nav details[open] summary {
+            color: var(--primary);
+        }
+        
+        nav details ul {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            min-width: 250px;
+            z-index: 1000;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+        
+        nav details ul li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav details ul li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--color);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        
+        nav details ul li a:hover {
+            background-color: var(--card-sectionning-background-color);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="container">
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/news/" class="">News</a></li>
+        <li><a href="/about/" class="">About Us</a></li>
+        <li><a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer">Donate</a></li>
+        <li><a href="/workforce-readiness/">Workforce Readiness</a></li>
+        <li>
+          <details role="list" dir="rtl">
+            <summary aria-haspopup="listbox" role="link">STEM</summary>
+            <ul role="listbox">
+              <li><a href="/stem/ai-app-development/">AI Assisted App Development</a></li>
+              <li><a href="/stem/computer-science/">Computer Science</a></li>
+              <li><a href="/stem/chess/">Chess</a></li>
+              <li><a href="/stem/drone-flight/">Drone Flight and FAA Part 107 Certification Training</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+    <main class="container">
+        <div class="two-columns">
+            <div>
+                
+                <div class="logo-container">
+                    <img src="/images/rebelz-logo.png" alt="Rebelz Basketball" class="logo-image">
+                </div>
+                
+                
+                <a href="https://forms.gle/dAc54Y42HvjAJeGa6" class="register-button" role="button" target="_blank">Register now</a>
+                
+                
+                <article>
+                    <header>
+                        <h2>Upcoming Events</h2>
+                    </header>
+                    <div class="season-info">
+                        
+                        <p><strong>Season Dates</strong>: May 27th through September 1st</p>
+<p>Leagues:</p>
+<p>-Grindhouse League - June 18 to August 20th</p>
+<p>-Christy Recreation League-  June 12 to August 2nd</p>
+
+                        
+                    </div>
+                    <div id="calendar"></div>
+                </article>
+                
+                
+                <article>
+                    <header>
+                        <h2>Coaches</h2>
+                    </header>
+                    
+                    
+                    <a href="/coaches/coach-isaac/" class="coach-item-link">
+                        <div class="coach-item">
+                            <img src="images/isaac-ugly-self.jpg" alt="Coach Isaac" class="coach-image">
+                            <div class="info">
+                                <div class="name">Coach Isaac</div>
+                                <div class="bio">Head Coach of 16U team 8 years experience as a player and a manager. Played Varsity Basketball as well as high level AAU basketball in the Mid-Atlantic Circuit.  Excellent coach and communicator. </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    
+                    <a href="/coaches/coach-robel-ro/" class="coach-item-link">
+                        <div class="coach-item">
+                            <img src="images/_mg_7044.jpg" alt="Coach Robel (RO)" class="coach-image">
+                            <div class="info">
+                                <div class="name">Coach Robel (RO)</div>
+                                <div class="bio">Head Coach of the 17U team and Assistant to Coach Isaac on 16U team. 15&#43;
+years of experience in Sports Management realm. Coach Robel played High
+School Division 2 Football, Soccer and Basketball in Virginia and Maryland
+later studying Sports Management at Drexel. 
+</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    
+                    <a href="/coaches/coach-sah/" class="coach-item-link">
+                        <div class="coach-item">
+                            <img src="NA" alt="Coach Sah " class="coach-image">
+                            <div class="info">
+                                <div class="name">Coach Sah </div>
+                                <div class="bio">A true IQ coach. Excellent with age groups 9 to 18. A programmatic thinker and and experienced individual trainer, game planer and Head Coach. A man meant to lead a basketball program. </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    
+                    <a href="/coaches/coach-deacon/" class="coach-item-link">
+                        <div class="coach-item">
+                            <img src="x" alt="Coach Deacon" class="coach-image">
+                            <div class="info">
+                                <div class="name">Coach Deacon</div>
+                                <div class="bio">12&#43; years of playing experience. A collegiate athlete and a natural coach. Eager to get to work.</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    
+                    <a href="/coaches/coach-ice/" class="coach-item-link">
+                        <div class="coach-item">
+                            <img src="x" alt="Coach Ice" class="coach-image">
+                            <div class="info">
+                                <div class="name">Coach Ice</div>
+                                <div class="bio">Excellent Basketball trainer and Head Coach. 30&#43; years of basketball as a player and coach. A disciplinarian that is proven at molding raw and unexperienced players to legit hoopers. Educates both IQ and skill. </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    
+                    <a href="/coaches/coach-charlie/" class="coach-item-link">
+                        <div class="coach-item">
+                            <img src="x" alt="Coach Charlie" class="coach-image">
+                            <div class="info">
+                                <div class="name">Coach Charlie</div>
+                                <div class="bio">12&#43; years of playing experience. A collegiate athlete and a natural coach. Excellent with younger phenomons and the dynamics of AAU and collegiate basketball. </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <a href="/coaches/" class="view-all-button" style="display: inline-block; background-color: var(--primary); color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: bold;">View All Coaches</a>
+                    </div>
+                </article>
+            </div>
+            
+            <div>
+                
+                <article>
+                    <header>
+                        <h2>Play of the Week</h2>
+                    </header>
+                    
+                    
+                    <div class="play-of-day">
+                        <div class="play-of-day-header">
+                            <h3>Spacing and Motion Offense 101</h3>
+                        </div>
+                        
+                        <div class="video-container">
+                            <div class="video-wrapper">
+                                
+                                
+                                    
+                                    <iframe src="https://www.youtube.com/embed/IDOX-R75qRc" title="Play of the Day" allowfullscreen></iframe>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="play-of-day-description">
+                            Fundamentals of Spacing and a motion offense. Any and all player involved with this program must learn and implement this foundational offensive setup then execute. It is the heart of any Rebelz Basketball team Philosophy. 
+                        </div>
+                    </div>
+                    
+                </article>
+                
+                
+                <article>
+                    <header>
+                        <h2>Players</h2>
+                    </header>
+                    
+                    <div class="teams-container">
+                        
+                        <div>
+                            <div class="team-header">Grindhouse League </div>
+                            <div class="team-players">
+                                
+                                <div class="player-item">
+                                    <a href="/players/shiheed-rice-sloan/">View Shiheed Rice-Sloan's Profile</a>
+                                    <img src="images/heedy.png" alt="Shiheed Rice-Sloan" class="player-image">
+                                    <div class="info">
+                                        <div class="name">Shiheed Rice-Sloan</div>
+                                        <div class="title">Forward | 6&#39;</div>
+                                        <div class="bio">17U Team Captain. Sharpshooter, defensive asset and natural leader.</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="player-item">
+                                    <a href="/players/kye/">View Kye's Profile</a>
+                                    <img src="images/more-than-basketball-logo.webp" alt="Kye" class="player-image">
+                                    <div class="info">
+                                        <div class="name">Kye</div>
+                                        <div class="title">Point Guard | 6&#39;</div>
+                                        <div class="bio">Floor general with excellent court vision and lethal 3 point accuracy. 3 Level Scorer with an excellent understanding of the fundamentals of basketball. A Point Guard capable of running an offense and manipulating any defense.  </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="player-item">
+                                    <a href="/players/robert-towns/">View Robert Towns's Profile</a>
+                                    <img src="images/more-than-basketball-logo.webp" alt="Robert Towns" class="player-image">
+                                    <div class="info">
+                                        <div class="name">Robert Towns</div>
+                                        <div class="title">SF | 6&#39;1</div>
+                                        <div class="bio">Swiss Army Knife. Capable of leading an offense and change into lethal off ball threat as needed. 
+
+3 Level Scorer, excellent passer and fierce defender. </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="player-item">
+                                    <a href="/players/yasir-p/">View Yasir P.'s Profile</a>
+                                    <img src="images/more-than-basketball-logo.webp" alt="Yasir P." class="player-image">
+                                    <div class="info">
+                                        <div class="name">Yasir P.</div>
+                                        <div class="title">Power Forward | 6&#39;5&#34;</div>
+                                        <div class="bio">Versatile and Crafty Forward with advanced dribbling capacity on the Perimeter and advanced strength in the paint. A multi-dimensional player that can serve as a pillar of an offense and defense. </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="player-item">
+                                    <a href="/players/michael-chepyshev/">View Michael Chepyshev's Profile</a>
+                                    <img src="images/more-than-basketball-logo.webp" alt="Michael Chepyshev" class="player-image">
+                                    <div class="info">
+                                        <div class="name">Michael Chepyshev</div>
+                                        <div class="title">Center | 6&#39;6&#34;</div>
+                                        <div class="bio">Rim protector with equal parts strength and mobility. Has capacity to serve as the anchor of a defense, especially a zone defense. Offensive package includes pick and roll, dunker spot actions and a reliable 3 point shot. </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="player-item">
+                                    <a href="/players/nate/">View Nate 's Profile</a>
+                                    <img src="images/more-than-basketball-logo.webp" alt="Nate " class="player-image">
+                                    <div class="info">
+                                        <div class="name">Nate </div>
+                                        <div class="title">Guard | 6</div>
+                                        <div class="bio">Two-Way Guard with fundamental understanding of the game. Can be used as an initiator in an offense while serving as a lethal off ball threat. 3 Level Scorer and rugged defender. </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="player-item">
+                                    <a href="/players/lamont-harris/">View Lamont Harris's Profile</a>
+                                    <img src="images/more-than-basketball-logo.webp" alt="Lamont Harris" class="player-image">
+                                    <div class="info">
+                                        <div class="name">Lamont Harris</div>
+                                        <div class="title">Guard | 5’7</div>
+                                        <div class="bio">All-Around Point Guard and Floor General with the capacity to switch to an off-ball nightmare. Great 3 point shooter, high IQ and Coachable. </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="player-item">
+                                    <a href="/players/sayid/">View Sayid 's Profile</a>
+                                    <img src="images/more-than-basketball-logo.webp" alt="Sayid " class="player-image">
+                                    <div class="info">
+                                        <div class="name">Sayid </div>
+                                        <div class="title">Guard | 6&#39;1</div>
+                                        <div class="bio">Athletic guard/wing with lethal 3 point accuracy. Rugged defender. </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="player-item">
+                                    <a href="/players/trent/">View Trent's Profile</a>
+                                    <img src="images/more-than-basketball-logo.webp" alt="Trent" class="player-image">
+                                    <div class="info">
+                                        <div class="name">Trent</div>
+                                        <div class="title">Forward | 6&#39;4</div>
+                                        <div class="bio">Athletic wing with lethal 3 point accuracy, Rugged defense and rare rebounding ability. A player that can change the interior presence of a team offensively and defensively  </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="player-item">
+                                    <a href="/players/ahnaf-mollah/">View Ahnaf Mollah's Profile</a>
+                                    <img src="images/more-than-basketball-logo.webp" alt="Ahnaf Mollah" class="player-image">
+                                    <div class="info">
+                                        <div class="name">Ahnaf Mollah</div>
+                                        <div class="title">Guard | 5&#39;10</div>
+                                        <div class="bio">Speedy shooting guard with excellent work ethic. Offensive package will develop into a lethal 3 level scorer.  Ahnaf is a matchup nightmare in 1v1 situations. </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="player-item">
+                                    <a href="/players/kane/">View Kane's Profile</a>
+                                    <img src="x" alt="Kane" class="player-image">
+                                    <div class="info">
+                                        <div class="name">Kane</div>
+                                        <div class="title">G | 6&#39;2</div>
+                                        <div class="bio">2 way beast. 15yo playing like 18. excellent work ethic and attention to detail in personal development. </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </article>
+                
+            </div>
+        </div>
+    </main>
+    
+    
+    <footer class="container">
+        <div class="footer-nav">
+            <a href="/" role="button">Home</a>
+            <a href="/about/" role="button">About Us</a>
+            <a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer" role="button">Donate</a>
+        </div>
+    </footer>
+    
+    
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              if (!window.location.pathname.startsWith('/admin/')) {
+                document.location.href = "/admin/";
+              }
+            });
+          }
+        });
+      }
+    </script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+
+    
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css">
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'listMonth',
+          headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'listMonth,dayGridMonth'
+          },
+          height: 'auto',
+          
+          
+          dayMaxEventRows: 2,
+          
+          
+          eventTimeFormat: {
+            hour: '2-digit',
+            minute: '2-digit',
+            meridiem: 'short',
+            omitZeroMinute: true
+          },
+          
+          
+          views: {
+            dayGridMonth: {
+              dayHeaderFormat: { weekday: 'short' },
+              fixedWeekCount: false
+            },
+            listMonth: {
+              listDayFormat: { weekday: 'short', month: 'short', day: 'numeric' },
+              listDaySideFormat: false
+            }
+          },
+          
+          
+          eventDidMount: function(info) {
+            var tooltipText = `
+              ${info.event.title}
+              Date: ${new Date(info.event.start).toLocaleDateString()}
+              Time: ${new Date(info.event.start).toLocaleTimeString()} - ${new Date(info.event.end).toLocaleTimeString()}
+              Location: ${info.event.extendedProps.location}
+              Cost: ${info.event.extendedProps.cost}
+              Players: ${info.event.extendedProps.playersRegistered}
+            `;
+            
+            info.el.setAttribute('title', tooltipText);
+            
+            info.el.style.cursor = 'pointer';
+            info.el.addEventListener('click', function() {
+              var modal = document.getElementById('eventModal');
+              var modalTitle = document.getElementById('eventModalTitle');
+              var modalDetails = document.getElementById('eventModalDetails');
+              var modalLocation = document.getElementById('eventModalLocation');
+              var modalClose = document.getElementById('eventModalClose');
+              
+              modalTitle.textContent = info.event.title;
+              modalDetails.textContent = `
+Date: ${new Date(info.event.start).toLocaleDateString()}
+Time: ${new Date(info.event.start).toLocaleTimeString()} - ${new Date(info.event.end).toLocaleTimeString()}
+
+Location: ${info.event.extendedProps.location}
+Cost: ${info.event.extendedProps.cost}
+Players Registered: ${info.event.extendedProps.playersRegistered}
+
+${info.event.extendedProps.description}`;
+              
+              modalLocation.onclick = function() {
+                window.open(info.event.extendedProps.locationUrl, '_blank');
+                modal.style.display = 'none';
+              };
+              
+              modalClose.onclick = function() {
+                modal.style.display = 'none';
+              };
+              
+              modal.style.display = 'flex';
+              
+              modal.onclick = function(event) {
+                if (event.target === modal) {
+                  modal.style.display = 'none';
+                }
+              };
+            });
+            
+            if (info.view.type === 'listMonth') {
+              var timeEl = info.el.querySelector('.fc-list-event-time');
+              if (timeEl) {
+                timeEl.style.fontSize = '0.85rem';
+                timeEl.style.color = '#aaa';
+                timeEl.style.width = '120px';
+              }
+              
+              var titleEl = info.el.querySelector('.fc-list-event-title');
+              if (titleEl) {
+                titleEl.style.fontWeight = 'bold';
+                
+                var locationEl = document.createElement('div');
+                locationEl.className = 'event-location';
+                locationEl.textContent = info.event.extendedProps.location;
+                locationEl.style.fontSize = '0.8rem';
+                locationEl.style.color = '#aaa';
+                locationEl.style.marginTop = '2px';
+                
+                titleEl.appendChild(locationEl);
+              }
+              
+              info.el.style.padding = '8px 12px';
+            }
+          },
+          events: [
+            
+            {
+              title: '15 to 18 AGE GROUP TRY OUT- FREE ',
+              start: '2025-05-27T17:00:00',
+              end: '2025-05-27T21:00:00',
+              extendedProps: {
+                location: 'Lucien Blackwell Community Center',
+                locationUrl: 'https:\/\/www.yelp.com\/biz\/lucien-blackwell-center-philadelphia',
+                cost: 'Free',
+                playersRegistered:  0 ,
+                description: 'Show up, show out. \n\nFree Scouting Reports and 60second highlight provided. \n\nAn opportunity of a lifetime. '
+              },
+              backgroundColor: '#e63946',
+              borderColor: '#e63946'
+            },
+            
+            {
+              title: 'Grindhouse League - Wed\/Friday 4pm to 7pm.',
+              start: '2025-06-18T17:30:00',
+              end: '2025-06-18T20:30:00',
+              extendedProps: {
+                location: 'Second Ward Playground',
+                locationUrl: 'https:\/\/www.google.com\/search?q=2nd\u002bWard\u002bPlayground\u0026rlz=1C5CHFA_enUS970US970\u0026oq=2nd\u002bWard\u002bPlayground\u0026gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBBzM4OGowajSoAgCwAgE\u0026sourceid=chrome\u0026ie=UTF-8',
+                cost: '0',
+                playersRegistered:  10 ,
+                description: 'Extremely competitive Summer League from June to August.  '
+              },
+              backgroundColor: '#e63946',
+              borderColor: '#e63946'
+            },
+            
+          ]
+        });
+        
+        calendar.render();
+      });
+    </script>
+
+    
+    <div id="tooltip-test" style="margin-top: 10px; padding: 10px; background-color: #333; text-align: center; cursor: pointer;">
+      Hover me to test tooltips
+    </div>
+
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        
+        tippy('#tooltip-test', {
+          content: 'If you can see this, tooltips are working!',
+          placement: 'top',
+          theme: 'custom'
+        });
+        
+        
+      });
+    </script>
+
+    
+    <div id="eventModal" class="event-modal">
+      <div class="event-modal-content">
+        <div id="eventModalTitle" class="event-modal-title"></div>
+        <div id="eventModalDetails" class="event-modal-details"></div>
+        <div class="event-modal-buttons">
+          <button id="eventModalClose" class="event-modal-button secondary">Close</button>
+          <button id="eventModalLocation" class="event-modal-button primary">View Location</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="chat-icon" onclick="toggleChat()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+            <path d="M7 9h10v2H7zm0-3h10v2H7zm0 6h7v2H7z"/>
+        </svg>
+    </div>
+
+    <div class="chat-popup" id="chatPopup">
+        <div class="chat-close-btn" onclick="toggleChat()">×</div>
+        <div class="hidefooter"></div>
+        <iframe src="https://stagents.streamlit.app/?embedded=true&embed=true" title="Chat Assistant" frameBorder="0"></iframe>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const popup = document.getElementById('chatPopup');
+            popup.classList.toggle('active');
+        }
+
+        
+        document.addEventListener('click', function(event) {
+            const popup = document.getElementById('chatPopup');
+            const chatIcon = document.querySelector('.chat-icon');
+            
+            if (!popup.contains(event.target) && !chatIcon.contains(event.target)) {
+                popup.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html> 

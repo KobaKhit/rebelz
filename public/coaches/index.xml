@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coaches on Rebelz Basketball</title>
+    <link>//localhost:1313/coaches/</link>
+    <description>Recent content in Coaches on Rebelz Basketball</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="//localhost:1313/coaches/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coach Charlie</title>
+      <link>//localhost:1313/coaches/coach-charlie/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/coaches/coach-charlie/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Coach Deacon</title>
+      <link>//localhost:1313/coaches/coach-deacon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/coaches/coach-deacon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Coach ICE</title>
+      <link>//localhost:1313/coaches/coach-ice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/coaches/coach-ice/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Coach Isaac</title>
+      <link>//localhost:1313/coaches/coach-isaac/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/coaches/coach-isaac/</guid>
+      <description>Coach Isaac specializes in player development with a focus on guard skills and shooting technique. His training sessions emphasize fundamentals, basketball IQ, and game-situation drills.&#xA;Players under his guidance develop not only their basketball skills but also important life skills like time management, leadership, and resilience.</description>
+    </item>
+    <item>
+      <title>Coach Robel (RO)</title>
+      <link>//localhost:1313/coaches/coach-robel-ro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/coaches/coach-robel-ro/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Coach Sah</title>
+      <link>//localhost:1313/coaches/coach-sah/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/coaches/coach-sah/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

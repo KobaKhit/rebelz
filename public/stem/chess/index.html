@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REBELZ Chess Collective - Rebelz Basketball</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        :root {
+            --primary: #e63946;
+            --primary-hover: #c1121f;
+            --primary-focus: rgba(230, 57, 70, 0.25);
+            --background-color: #000000;
+            --card-background-color: #121212;
+            --card-sectionning-background-color: #1e1e1e;
+            --card-border-color: #333;
+            --color: #ffffff;
+            --h1-color: #ffffff;
+            --h2-color: #e63946;
+            --h3-color: #e63946;
+            --h4-color: #ffffff;
+            --h5-color: #ffffff;
+            --h6-color: #ffffff;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background-color: var(--card-background-color);
+            border-radius: 0.25rem;
+            border: 1px solid var(--card-border-color);
+        }
+        
+        .logo {
+            max-width: 150px;
+            margin-bottom: 1rem;
+        }
+        
+        .content {
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .content h1 {
+            color: var(--h1-color);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content h2 {
+            color: var(--h2-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content h3 {
+            color: var(--h3-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .content ul, .content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .content strong {
+            color: var(--primary);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            transition: background-color 0.2s;
+        }
+        
+        .back-link:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+        
+        .program-meta {
+            background-color: var(--card-sectionning-background-color);
+            padding: 1rem;
+            border-radius: 0.25rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .program-meta p {
+            margin: 0;
+            font-style: italic;
+        }
+
+         
+        nav details {
+            position: relative;
+        }
+        
+        nav details summary {
+            cursor: pointer;
+            color: var(--color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+        }
+        
+        nav details summary:hover {
+            color: var(--primary);
+        }
+        
+        nav details[open] summary {
+            color: var(--primary);
+        }
+        
+        nav details ul {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            min-width: 250px;
+            z-index: 1000;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+        
+        nav details ul li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav details ul li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--color);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        
+        nav details ul li a:hover {
+            background-color: var(--card-sectionning-background-color);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="container">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer">Donate</a></li>
+        <li><a href="/workforce-readiness/">Workforce Readiness</a></li>
+        <li>
+          <details role="list" dir="rtl">
+            <summary aria-haspopup="listbox" role="link">STEM</summary>
+            <ul role="listbox">
+              <li><a href="/stem/ai-app-development/">AI Assisted App Development</a></li>
+              <li><a href="/stem/computer-science/">Computer Science</a></li>
+              <li><a href="/stem/chess/">Chess</a></li>
+              <li><a href="/stem/drone-flight/">Drone Flight and FAA Part 107 Certification Training</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container">
+        
+        <div class="header">
+            <img src="/images/rebelz-logo.png" alt="Rebelz Basketball" class="logo">
+            <h1>REBELZ Chess Collective</h1>
+        </div>
+
+        
+        <a href="/" class="back-link">← Back to Home</a>
+
+        
+        
+        <div class="program-meta">
+            <p>Strategic chess education program developing critical thinking, problem-solving, and analytical skills through the game of chess.</p>
+        </div>
+        
+
+        
+        <div class="content">
+            <h2 id="what-youll-learn">What You&rsquo;ll Learn</h2>
+<ul>
+<li><strong>Chess Fundamentals</strong>: Piece movement, basic rules, and game notation</li>
+<li><strong>Strategic Thinking</strong>: Pattern recognition, planning, and decision-making</li>
+<li><strong>Tactical Combinations</strong>: Pins, forks, skewers, and discovered attacks</li>
+<li><strong>Opening Principles</strong>: Development, center control, and king safety</li>
+<li><strong>Endgame Techniques</strong>: Basic checkmate patterns and pawn promotion</li>
+<li><strong>Game Analysis</strong>: Using chess engines and databases for improvement</li>
+<li><strong>Tournament Play</strong>: Competition rules, time management, and sportsmanship</li>
+</ul>
+<p>The Rebelz Chess Collective is a strategy club designed to build mental discipline, patience, foresight, and emotional control. By engaging in structured chess instruction, inter-community matches, and tactical workshops, participants sharpen the very same cognitive muscles required on the court: anticipation, pattern recognition, and decision-making under pressure.</p>
+<p> Our goal is to create a culture where young athletes understand that <strong>mental strength is as vital as physical skill</strong>. Chess also serves as a cross-generational bridge—uniting youth with senior citizens in the community for shared play and mentorship.</p>
+
+        </div>
+    </main>
+</body>
+</html> 

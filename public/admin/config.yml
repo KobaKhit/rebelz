@@ -1,0 +1,209 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Media files configuration
+media_folder: "static/images" # Media files will be stored here
+public_folder: "/images" # The src attribute for uploaded media
+
+collections:
+  - name: "coaches"
+    label: "Coaches"
+    files:
+      - file: "data/coaches.yaml"
+        label: "Coaches List"
+        name: "coaches-list"
+        fields:
+          - label: "Coaches"
+            name: "coaches"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Image", name: "image", widget: "string"}
+              - {label: "Bio", name: "bio", widget: "text"}
+              
+  - name: "coach_pages"
+    label: "Coach Pages"
+    folder: "content/coaches"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Position", name: "position_title", widget: "string"}
+      - {label: "Image", name: "image", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "text"}
+      - {label: "Coaching Philosophy", name: "philosophy", widget: "text", required: false}
+      - label: "Achievements"
+        name: "achievements"
+        widget: "list"
+        required: false
+        field: 
+          label: "Achievement"
+          name: "achievement"
+          widget: "string"
+      - {label: "Experience", name: "experience", widget: "markdown", required: false}
+      - {label: "Additional Information", name: "body", widget: "markdown", required: false} 
+
+  - name: "players"
+    label: "Players"
+    files:
+      - file: "data/players.yaml"
+        label: "Players List"
+        name: "players-list"
+        fields:
+          - label: "Teams"
+            name: "teams"
+            widget: "list"
+            fields:
+              - {label: "Team Name", name: "name", widget: "string"}
+              - label: "Players"
+                name: "players"
+                widget: "list"
+                fields:
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Position", name: "position", widget: "string"}
+                  - {label: "Height", name: "height", widget: "string"}
+                  - {label: "Image", name: "image", widget: "string"}
+                  - {label: "Bio", name: "bio", widget: "text"}
+
+  - name: "player_pages"
+    label: "Player Pages"
+    folder: "content/players"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Position", name: "position", widget: "string"}
+      - {label: "Height", name: "height", widget: "string"}
+      - {label: "Image", name: "image", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "text"}
+      - {label: "Team", name: "team", widget: "select", options: ["17U", "16U"]}
+      - label: "Videos"
+        name: "videos"
+        widget: "list"
+        required: false
+        field: 
+          label: "YouTube Video URL"
+          name: "video"
+          widget: "string"
+          hint: "Regular YouTube URLs like https://www.youtube.com/watch?v=dqkU8dvj_SY are supported"
+      - label: "Stats"
+        name: "stats"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Season", name: "season", widget: "string"}
+          - {label: "Points Per Game", name: "ppg", widget: "number", value_type: "float"}
+          - {label: "Rebounds Per Game", name: "rpg", widget: "number", value_type: "float"}
+          - {label: "Assists Per Game", name: "apg", widget: "number", value_type: "float"}
+          - {label: "Field Goal Percentage", name: "fgp", widget: "string"}
+          - {label: "Three Point Percentage", name: "tpp", widget: "string"}
+
+  - name: "events"
+    label: "Events"
+    files:
+      - file: "data/events.yaml"
+        label: "Events Calendar"
+        name: "events-calendar"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Start Time", name: "start", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ss", date_format: "YYYY-MM-DD", time_format: "HH:mm"}
+              - {label: "End Time", name: "end", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ss", date_format: "YYYY-MM-DD", time_format: "HH:mm"}
+              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Location URL", name: "locationUrl", widget: "string", hint: "Google Maps or other location link"}
+              - {label: "Cost", name: "cost", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Players Registered", name: "playersRegistered", widget: "number", value_type: "int"}
+
+  - name: "playofday"
+    label: "Play of the Day"
+    files:
+      - file: "data/playofday.yaml"
+        label: "Featured Video"
+        name: "featured-video"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "YouTube Video URL", name: "videoUrl", widget: "string", hint: "Supports multiple formats: https://www.youtube.com/watch?v=dQw4w9WgXcQ, https://youtu.be/dQw4w9WgXcQ, or https://youtu.be/c3uwIWhpT-0?si=M-0hn2mzxIsYbfjb"}
+          - {label: "Description", name: "description", widget: "text"}
+
+  - name: "blog"
+    label: "News"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Summary", name: "summary", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Author", name: "author", widget: "string", default: "Team Rebelz"}
+
+  - name: "season_info"
+    label: "Season Info"
+    files:
+      - file: "data/season_info.yaml"
+        label: "Season Information"
+        name: "season-information"
+        fields:
+          - {label: "Content", name: "content", widget: "markdown", hint: "This text appears in the Season Info section on the homepage. You can use markdown formatting."}
+
+  - name: "about_page"
+    label: "About Page"
+    files:
+      - file: "data/about.yaml"
+        label: "About Us Content"
+        name: "about-content"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Mission Statement", name: "mission", widget: "text"}
+          - {label: "Main Content", name: "content", widget: "markdown"}
+          - label: "Staff Members"
+            name: "staff"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Image", name: "image", widget: "string"}
+              - {label: "Bio", name: "bio", widget: "text"}
+
+  - name: "knowledge_base"
+    label: "AI Knowledge Base"
+    files:
+      - file: "static/knowledge/knowledge.md"
+        label: "Team Knowledge Base"
+        name: "team-knowledge"
+        fields:
+          - {label: "Content", name: "body", widget: "markdown"}
+
+  - name: "stem_pages"
+    label: "STEM Programs"
+    folder: "content/stem"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Type", name: "type", widget: "hidden", default: "stem"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Content", name: "body", widget: "markdown"}
+
+  - name: "workforce_readiness"
+    label: "Workforce Readiness"
+    folder: "content/workforce-readiness"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Type", name: "type", widget: "hidden", default: "workforce"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Content", name: "body", widget: "markdown"}
+
+  

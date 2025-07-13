@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workforce Readiness on Rebelz Basketball</title>
+    <link>//localhost:1313/workforce-readiness/</link>
+    <description>Recent content in Workforce Readiness on Rebelz Basketball</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="//localhost:1313/workforce-readiness/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Computer Science - Rebelz Basketball</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        :root {
+            --primary: #e63946;
+            --primary-hover: #c1121f;
+            --primary-focus: rgba(230, 57, 70, 0.25);
+            --background-color: #000000;
+            --card-background-color: #121212;
+            --card-sectionning-background-color: #1e1e1e;
+            --card-border-color: #333;
+            --color: #ffffff;
+            --h1-color: #ffffff;
+            --h2-color: #e63946;
+            --h3-color: #e63946;
+            --h4-color: #ffffff;
+            --h5-color: #ffffff;
+            --h6-color: #ffffff;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background-color: var(--card-background-color);
+            border-radius: 0.25rem;
+            border: 1px solid var(--card-border-color);
+        }
+        
+        .logo {
+            max-width: 150px;
+            margin-bottom: 1rem;
+        }
+        
+        .content {
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .content h1 {
+            color: var(--h1-color);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content h2 {
+            color: var(--h2-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content h3 {
+            color: var(--h3-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .content ul, .content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .content strong {
+            color: var(--primary);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            transition: background-color 0.2s;
+        }
+        
+        .back-link:hover {
+            background-color: var(--primary-hover);
+            color: white;
+        }
+        
+        .program-meta {
+            background-color: var(--card-sectionning-background-color);
+            padding: 1rem;
+            border-radius: 0.25rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .program-meta p {
+            margin: 0;
+            font-style: italic;
+        }
+
+         
+        nav details {
+            position: relative;
+        }
+        
+        nav details summary {
+            cursor: pointer;
+            color: var(--color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+        }
+        
+        nav details summary:hover {
+            color: var(--primary);
+        }
+        
+        nav details[open] summary {
+            color: var(--primary);
+        }
+        
+        nav details ul {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            min-width: 250px;
+            z-index: 1000;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+        
+        nav details ul li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav details ul li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--color);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        
+        nav details ul li a:hover {
+            background-color: var(--card-sectionning-background-color);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="container">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer">Donate</a></li>
+        <li><a href="/workforce-readiness/">Workforce Readiness</a></li>
+        <li>
+          <details role="list" dir="rtl">
+            <summary aria-haspopup="listbox" role="link">STEM</summary>
+            <ul role="listbox">
+              <li><a href="/stem/ai-app-development/">AI Assisted App Development</a></li>
+              <li><a href="/stem/computer-science/">Computer Science</a></li>
+              <li><a href="/stem/chess/">Chess</a></li>
+              <li><a href="/stem/drone-flight/">Drone Flight and FAA Part 107 Certification Training</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container">
+        
+        <div class="header">
+            <img src="/images/rebelz-logo.png" alt="Rebelz Basketball" class="logo">
+            <h1>Computer Science</h1>
+        </div>
+
+        
+        <a href="/" class="back-link">← Back to Home</a>
+
+        
+        
+        <div class="program-meta">
+            <p>Comprehensive computer science education covering programming, algorithms, data structures, and software engineering principles.</p>
+        </div>
+        
+
+        
+        <div class="content">
+            <h1 id="computer-science">Computer Science</h1>
+<h2 id="program-overview">Program Overview</h2>
+<p>Our Computer Science program provides a comprehensive foundation in computational thinking, programming, and software development. Students will explore the fundamental concepts that power modern technology while developing practical skills for the digital age.</p>
+<h2 id="what-youll-learn">What You&rsquo;ll Learn</h2>
+<ul>
+<li><strong>Programming Languages</strong>: Python, Java, JavaScript, C++, and more</li>
+<li><strong>Data Structures &amp; Algorithms</strong>: Arrays, linked lists, trees, sorting, searching</li>
+<li><strong>Software Engineering</strong>: Design patterns, testing, debugging, and best practices</li>
+<li><strong>Database Systems</strong>: SQL, NoSQL, database design and optimization</li>
+<li><strong>Web Development</strong>: Front-end and back-end development</li>
+<li><strong>Computer Networks</strong>: Internet protocols, security, and distributed systems</li>
+<li><strong>Operating Systems</strong>: Process management, memory allocation, file systems</li>
+</ul>
+<h2 id="program-structure">Program Structure</h2>
+<h3 id="foundation-level-weeks-1-6">Foundation Level (Weeks 1-6)</h3>
+<ul>
+<li>Introduction to programming with Python</li>
+<li>Basic data structures and algorithms</li>
+<li>Problem-solving methodologies</li>
+<li>Version control with Git</li>
+</ul>
+<h3 id="intermediate-level-weeks-7-12">Intermediate Level (Weeks 7-12)</h3>
+<ul>
+<li>Object-oriented programming</li>
+<li>Advanced data structures</li>
+<li>Database design and SQL</li>
+<li>Web development fundamentals</li>
+</ul>
+<h3 id="advanced-level-weeks-13-18">Advanced Level (Weeks 13-18)</h3>
+<ul>
+<li>Software engineering principles</li>
+<li>System design concepts</li>
+<li>Advanced algorithms</li>
+<li>Capstone project development</li>
+</ul>
+<h2 id="core-subjects">Core Subjects</h2>
+<h3 id="programming-fundamentals">Programming Fundamentals</h3>
+<ul>
+<li>Variables, functions, and control structures</li>
+<li>Object-oriented programming concepts</li>
+<li>Code organization and documentation</li>
+<li>Debugging and testing strategies</li>
+</ul>
+<h3 id="data-structures--algorithms">Data Structures &amp; Algorithms</h3>
+<ul>
+<li>Arrays, stacks, queues, and linked lists</li>
+<li>Trees, graphs, and hash tables</li>
+<li>Sorting and searching algorithms</li>
+<li>Algorithm analysis and complexity</li>
+</ul>
+<h3 id="software-development">Software Development</h3>
+<ul>
+<li>Software development lifecycle</li>
+<li>Agile methodologies</li>
+<li>Code review and collaboration</li>
+<li>Project management tools</li>
+</ul>
+<h3 id="database-systems">Database Systems</h3>
+<ul>
+<li>Relational database design</li>
+<li>SQL queries and optimization</li>
+<li>NoSQL databases</li>
+<li>Data modeling and normalization</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Strong mathematical foundation (Algebra II recommended)</li>
+<li>Logical thinking and problem-solving skills</li>
+<li>Basic computer literacy</li>
+<li>Commitment to continuous learning</li>
+</ul>
+<h2 id="tools-and-technologies">Tools and Technologies</h2>
+<ul>
+<li><strong>Programming Languages</strong>: Python, Java, JavaScript, C++, HTML/CSS</li>
+<li><strong>Development Tools</strong>: Visual Studio Code, IntelliJ IDEA, Git, GitHub</li>
+<li><strong>Databases</strong>: MySQL, PostgreSQL, MongoDB</li>
+<li><strong>Frameworks</strong>: React, Node.js, Spring Boot</li>
+<li><strong>Cloud Platforms</strong>: AWS, Google Cloud, Microsoft Azure</li>
+</ul>
+<h2 id="career-pathways">Career Pathways</h2>
+<p>This program prepares students for careers in:</p>
+<ul>
+<li>Software Development</li>
+<li>Web Development</li>
+<li>Data Science</li>
+<li>Cybersecurity</li>
+<li>Systems Administration</li>
+<li>Database Administration</li>
+<li>Technical Project Management</li>
+<li>Software Quality Assurance</li>
+</ul>
+<h2 id="industry-certifications">Industry Certifications</h2>
+<p>Students can work toward industry-recognized certifications:</p>
+<ul>
+<li><strong>Programming</strong>: Python Institute PCAP, Oracle Java Certification</li>
+<li><strong>Cloud</strong>: AWS Certified Cloud Practitioner, Google Cloud Associate</li>
+<li><strong>Database</strong>: MySQL Certified Developer, MongoDB Certified Developer</li>
+<li><strong>Web</strong>: Google Mobile Web Specialist, Microsoft Technology Associate</li>
+</ul>
+<h2 id="schedule-and-duration">Schedule and Duration</h2>
+<ul>
+<li><strong>Duration</strong>: 18 weeks (full program)</li>
+<li><strong>Schedule</strong>: TBD</li>
+<li><strong>Format</strong>: Hybrid learning with hands-on labs</li>
+<li><strong>Class Size</strong>: Limited to 20 students</li>
+<li><strong>Prerequisites</strong>: Math placement test required</li>
+</ul>
+<h2 id="student-projects">Student Projects</h2>
+<p>Throughout the program, students will complete:</p>
+<ul>
+<li>Individual coding assignments</li>
+<li>Group software projects</li>
+<li>Database design projects</li>
+<li>Web application development</li>
+<li>Final capstone project</li>
+</ul>
+<h2 id="registration">Registration</h2>
+<p>Interested in launching your computer science career? Contact us to learn about upcoming sessions, prerequisites, and enrollment requirements.</p>
+<hr>
+<p><em>This program is part of the Philadelphia Rebelz STEM initiative, preparing students for high-demand careers in technology.</em></p>
+
+        </div>
+    </main>
+</body>
+</html> 

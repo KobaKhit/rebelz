@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stems on Rebelz Basketball</title>
+    <link>//localhost:1313/stem/</link>
+    <description>Recent content in Stems on Rebelz Basketball</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Jul 2025 19:22:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/stem/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drone Flight and FAA Part 107 Certification Training</title>
+      <link>//localhost:1313/stem/drone-flight/</link>
+      <pubDate>Sun, 13 Jul 2025 19:22:00 +0000</pubDate>
+      <guid>//localhost:1313/stem/drone-flight/</guid>
+      <description>What You&amp;rsquo;ll Learn FAA Regulations: Part 107 rules, airspace classifications, and legal requirements Drone Technology: Aircraft systems, sensors, cameras, and GPS navigation Flight Operations: Pre-flight planning, weather assessment, and safety protocols Aerial Photography/Videography: Camera operation, composition, and post-processing Data Collection: Mapping, surveying, and inspection techniques Emergency Procedures: Risk management and emergency response Business Applications: Commercial drone operations and career opportunities Drone Flight School &amp;amp; FAA Part 107 Certification Track&#xA;Through our Drone Flight School, participants are introduced to hands-on STEM learning with real-world applications.</description>
+    </item>
+    <item>
+      <title>REBELZ Chess Collective</title>
+      <link>//localhost:1313/stem/chess/</link>
+      <pubDate>Sun, 13 Jul 2025 19:21:00 +0000</pubDate>
+      <guid>//localhost:1313/stem/chess/</guid>
+      <description>What You&amp;rsquo;ll Learn Chess Fundamentals: Piece movement, basic rules, and game notation Strategic Thinking: Pattern recognition, planning, and decision-making Tactical Combinations: Pins, forks, skewers, and discovered attacks Opening Principles: Development, center control, and king safety Endgame Techniques: Basic checkmate patterns and pawn promotion Game Analysis: Using chess engines and databases for improvement Tournament Play: Competition rules, time management, and sportsmanship The Rebelz Chess Collective is a strategy club designed to build mental discipline, patience, foresight, and emotional control.</description>
+    </item>
+    <item>
+      <title>AI Assisted App Development</title>
+      <link>//localhost:1313/stem/ai-app-development/</link>
+      <pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stem/ai-app-development/</guid>
+      <description>What You&amp;rsquo;ll Learn AI Development Tools: Master popular AI-assisted coding platforms like GitHub Copilot, Cursor, and Claude Mobile App Development: Build native iOS and Android applications with AI assistance Web Development: Create responsive web applications using modern frameworks Machine Learning Integration: Implement AI features into your applications UI/UX Design: Design intuitive user interfaces with AI-powered design tools Project Management: Learn agile development methodologies and version control App Creation Lab – Build Your Own App</description>
+    </item>
+    <item>
+      <title>Computer Science</title>
+      <link>//localhost:1313/stem/computer-science/</link>
+      <pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stem/computer-science/</guid>
+      <description>Computer Science Program Overview Our Computer Science program provides a comprehensive foundation in computational thinking, programming, and software development. Students will explore the fundamental concepts that power modern technology while developing practical skills for the digital age.&#xA;What You&amp;rsquo;ll Learn Programming Languages: Python, Java, JavaScript, C++, and more Data Structures &amp;amp; Algorithms: Arrays, linked lists, trees, sorting, searching Software Engineering: Design patterns, testing, debugging, and best practices Database Systems: SQL, NoSQL, database design and optimization Web Development: Front-end and back-end development Computer Networks: Internet protocols, security, and distributed systems Operating Systems: Process management, memory allocation, file systems Program Structure Foundation Level (Weeks 1-6) Introduction to programming with Python Basic data structures and algorithms Problem-solving methodologies Version control with Git Intermediate Level (Weeks 7-12) Object-oriented programming Advanced data structures Database design and SQL Web development fundamentals Advanced Level (Weeks 13-18) Software engineering principles System design concepts Advanced algorithms Capstone project development Core Subjects Programming Fundamentals Variables, functions, and control structures Object-oriented programming concepts Code organization and documentation Debugging and testing strategies Data Structures &amp;amp; Algorithms Arrays, stacks, queues, and linked lists Trees, graphs, and hash tables Sorting and searching algorithms Algorithm analysis and complexity Software Development Software development lifecycle Agile methodologies Code review and collaboration Project management tools Database Systems Relational database design SQL queries and optimization NoSQL databases Data modeling and normalization Prerequisites Strong mathematical foundation (Algebra II recommended) Logical thinking and problem-solving skills Basic computer literacy Commitment to continuous learning Tools and Technologies Programming Languages: Python, Java, JavaScript, C++, HTML/CSS Development Tools: Visual Studio Code, IntelliJ IDEA, Git, GitHub Databases: MySQL, PostgreSQL, MongoDB Frameworks: React, Node.</description>
+    </item>
+  </channel>
+</rss>

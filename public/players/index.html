@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Players | Rebelz Basketball</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        :root {
+            --primary: #e63946;
+            --primary-hover: #c1121f;
+            --primary-focus: rgba(230, 57, 70, 0.25);
+            --background-color: #000000;
+            --card-background-color: #121212;
+            --card-sectionning-background-color: #1e1e1e;
+            --card-border-color: #333;
+            --color: #ffffff;
+            --h1-color: #ffffff;
+            --h2-color: #e63946;
+            --h3-color: #e63946;
+            --h4-color: #ffffff;
+            --h5-color: #ffffff;
+            --h6-color: #ffffff;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .page-title {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .team-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem 0.25rem 0 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+        }
+        
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: var(--card-sectionning-background-color);
+            border: 1px solid var(--card-border-color);
+            border-top: none;
+            border-radius: 0 0 0.25rem 0.25rem;
+            padding: 1.5rem;
+        }
+        
+        .player-card {
+            background-color: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.25rem;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .player-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .player-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .player-card-content {
+            padding: 1rem;
+        }
+        
+        .player-card-name {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+            color: var(--primary);
+        }
+        
+        .player-card-position {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 0.5rem;
+        }
+        
+        .player-card-bio {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .player-card-link {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        
+        .player-card-link:hover {
+            background-color: var(--primary-hover);
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-nav a {
+            background-color: var(--card-background-color);
+            border-color: var(--card-border-color);
+        }
+        
+        .footer-nav a:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <a href="/" class="back-link">← Back to Home</a>
+        
+        <h1 class="page-title">Players</h1>
+        
+        
+        <div class="team-header">16U</div>
+        <div class="players-grid">
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Amyr Mcclenton" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Amyr Mcclenton</h3>
+                    <div class="player-card-position">Guard | 5&#39;7</div>
+                    <div class="player-card-bio">Crafty guard with natural feel for the game. Dual Scoring and facilitating threat. Floor general.</div>
+                    <a href="//localhost:1313/players/amyr-mcclenton/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Gaoussou" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Gaoussou</h3>
+                    <div class="player-card-position">Power Forward | 5&#39;11</div>
+                    <div class="player-card-bio">Combo Guard that can go both left and right with a strong motor that results in great rebounding and defense. Coachable and hard working.</div>
+                    <a href="//localhost:1313/players/gaoussou/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Ian" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Ian</h3>
+                    <div class="player-card-position">Center | 6&#39;8&#34;</div>
+                    <div class="player-card-bio">Shot-blocker with high basketball IQ and leadership.</div>
+                    <a href="//localhost:1313/players/ian/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Mohamed Konate" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Mohamed Konate</h3>
+                    <div class="player-card-position">Point Guard | 6&#39;1&#34;</div>
+                    <div class="player-card-bio">Quick ball-handler with excellent passing ability.</div>
+                    <a href="//localhost:1313/players/mohamed-konate/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Ronald Coleman" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Ronald Coleman</h3>
+                    <div class="player-card-position">Guard | 6&#39;0&#34;</div>
+                    <div class="player-card-bio">Versatile Point guard. Excellent work ethic. Rugged defender. </div>
+                    <a href="//localhost:1313/players/ronald-coleman/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Zion Johnson" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Zion Johnson</h3>
+                    <div class="player-card-position">Forward | 6&#39;0</div>
+                    <div class="player-card-bio">Athletic Wing player with explosive scoring capacity and excellent defense.</div>
+                    <a href="//localhost:1313/players/zion-johnson/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="team-header">17U</div>
+        <div class="players-grid">
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Ahnaf Mollah" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Ahnaf Mollah</h3>
+                    <div class="player-card-position">Guard | 5&#39;10</div>
+                    <div class="player-card-bio">Speedy shooting guard with excellent work ethic. Offensive package will develop into a lethal 3 level scorer. Ahnaf is a matchup nightmare in 1v1 situations.</div>
+                    <a href="//localhost:1313/players/ahnaf-mollah/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Haafiz Webb" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Haafiz Webb</h3>
+                    <div class="player-card-position">Guard | 5&#39;11</div>
+                    <div class="player-card-bio">Scoring guard with lethal 3-point Accuracy and fierce defender. Excellent work ethic and discipline to the game.</div>
+                    <a href="//localhost:1313/players/haafiz-webb/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Jayden aka 30" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Jayden aka 30</h3>
+                    <div class="player-card-position">PG | 5&#39;9</div>
+                    <div class="player-card-bio">True Floor General. A Point of attack guard capable of running an offense and destroying defensive schemes. 
+
+Excellent dedication the game. 
+
+Elite speed and toughness. Defensive hound and natural leader. </div>
+                    <a href="//localhost:1313/players/jay/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="JB" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">JB</h3>
+                    <div class="player-card-position">Guard | 6&#39;</div>
+                    <div class="player-card-bio">Crafty Combo guard with foundational understanding of on-ball and off ball guard play. Tough and smart serving as a defensive asset and lethal off-ball threat.</div>
+                    <a href="//localhost:1313/players/jb/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Kye" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Kye</h3>
+                    <div class="player-card-position">Point Guard | 6&#39;</div>
+                    <div class="player-card-bio">Floor general with excellent court vision and lethal 3 point accuracy. 3 Level Scorer with an excellent understanding of the fundamentals of basketball. A Point Guard capable of running an offense and manipulating any defense.  </div>
+                    <a href="//localhost:1313/players/kye/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Lamont Harris" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Lamont Harris</h3>
+                    <div class="player-card-position">Guard | 5&#39;7</div>
+                    <div class="player-card-bio">All-Around Point Guard and Floor General with the capacity to switch to an off-ball nightmare. Great 3 point shooter, high IQ and Coachable.</div>
+                    <a href="//localhost:1313/players/lamont-harris/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Michael Chepyshev" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Michael Chepyshev</h3>
+                    <div class="player-card-position">Center | 6&#39;6&#34;</div>
+                    <div class="player-card-bio">Rim protector with equal parts strength and mobility. Has capacity to serve as the anchor of a defense, especially a zone defense. Offensive package includes pick and roll, dunker spot actions and a reliable 3 point shot.</div>
+                    <a href="//localhost:1313/players/michael-chepyshev/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Muhammad Asadullah" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Muhammad Asadullah</h3>
+                    <div class="player-card-position">Forward | 6&#39;</div>
+                    <div class="player-card-bio">Athletic player with excellent slashing ability.</div>
+                    <a href="//localhost:1313/players/muhammad-asadullah/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Nate" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Nate</h3>
+                    <div class="player-card-position">Guard | 6&#39;</div>
+                    <div class="player-card-bio">Two-Way Guard with fundamental understanding of the game. Can be used as an initiator in an offense while serving as a lethal off ball threat. 3 Level Scorer and rugged defender.</div>
+                    <a href="//localhost:1313/players/nate/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Robert Towns " class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Robert Towns </h3>
+                    <div class="player-card-position">SF | 6&#39;1</div>
+                    <div class="player-card-bio">Swiss Army Knife. Capable of leading an offense and change into lethal off ball threat as needed. 
+
+3 Level Scorer, excellent passer and fierce defender. </div>
+                    <a href="//localhost:1313/players/robert-towns/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Sayid " class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Sayid </h3>
+                    <div class="player-card-position">SG | 6&#39;1</div>
+                    <div class="player-card-bio">Athletic guard/wing with lethal 3 point accuracy. Rugged defender. </div>
+                    <a href="//localhost:1313/players/sayid/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/heedy.png" alt="Shiheed Rice-Sloan" class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Shiheed Rice-Sloan</h3>
+                    <div class="player-card-position">Forward | 6&#39;0</div>
+                    <div class="player-card-bio">17U Team Captain. Sharpshooter, defensive asset and natural leader.</div>
+                    <a href="//localhost:1313/players/shiheed-rice-sloan/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="player-card">
+                <img src="/images/more-than-basketball-logo.webp" alt="Yasir P." class="player-card-image">
+                <div class="player-card-content">
+                    <h3 class="player-card-name">Yasir P.</h3>
+                    <div class="player-card-position">Power Forward | 6&#39;5&#34;</div>
+                    <div class="player-card-bio">Versatile and Crafty Forward with advanced dribbling capacity on the Perimeter and advanced strength in the paint. A multi-dimensional player that can serve as a pillar of an offense and defense.</div>
+                    <a href="//localhost:1313/players/yasir-p/" class="player-card-link">View Profile</a>
+                </div>
+            </div>
+            
+        </div>
+        
+    </main>
+    
+    
+    <footer class="container">
+        <div class="footer-nav">
+            <a href="/" role="button">Home</a>
+            <a href="/about/" role="button">About Us</a>
+            <a href="/gofundme/" role="button">Support Our Team</a>
+        </div>
+    </footer>
+    
+    
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+</body>
+</html> 

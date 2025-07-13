@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News on Rebelz Basketball</title>
+    <link>//localhost:1313/news/</link>
+    <description>Recent content in News on Rebelz Basketball</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Jul 2023 14:30:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Summer Tournament Success</title>
+      <link>//localhost:1313/news/2023-07-15-summer-tournament-success/</link>
+      <pubDate>Sat, 15 Jul 2023 14:30:00 +0000</pubDate>
+      <guid>//localhost:1313/news/2023-07-15-summer-tournament-success/</guid>
+      <description>Team Rebelz dominated the summer tournament, bringing home the championship trophy after an intense final game.</description>
+    </item>
+  </channel>
+</rss>
