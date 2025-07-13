@@ -1,217 +1,64 @@
 ---
-title: "Workforce Readiness"
+title: Workforce Readiness
 date: 2025-01-13
 draft: false
-type: "workforce"
-description: "Comprehensive workforce development program preparing students for career success through skills training, professional development, and job placement assistance."
+type: workforce
+description: Comprehensive workforce development program preparing students for
+  career success through skills training, professional development, and job
+  placement assistance.
 ---
 
-# Workforce Readiness
 
-## Program Overview
 
-Our Workforce Readiness program is designed to prepare students for successful careers in today's competitive job market. Through a combination of skills training, professional development, and real-world experience, we equip participants with the tools they need to secure meaningful employment and advance in their chosen fields.
+## **Workforce Readiness Services**
 
-## What You'll Learn
+At the Philadelphia Rebelz Basketball Program, we recognize that true community empowerment goes far beyond the athletic court. Our commitment to holistic development extends to providing practical tools and connections that prepare youth and community members for long-term employment and economic independence. As part of our expanding Community Wellness framework, we are proud to introduce a two-track **Workforce Readiness Services Hub**, designed to serve individuals across various life stages and career paths.
 
-- **Professional Skills**: Communication, teamwork, and leadership
-- **Technical Skills**: Industry-specific training and certifications
-- **Digital Literacy**: Computer skills and online tools
-- **Financial Literacy**: Budgeting, banking, and financial planning
-- **Job Search Strategies**: Resume writing, interviewing, and networking
-- **Workplace Etiquette**: Professional behavior and workplace culture
-- **Career Planning**: Goal setting and career pathway development
+### **Track 1: Soft Skills and Career Entry Services**
 
-## Program Components
+The first track of our Workforce Readiness initiative centers on **professional soft skills development and job preparation**, with a particular focus on youth ages 14 and up, returning citizens, and individuals facing employment barriers.
 
-### Core Skills Development (Weeks 1-4)
-- Communication and interpersonal skills
-- Problem-solving and critical thinking
-- Time management and organization
-- Digital literacy and computer skills
+Participants will receive access to:
 
-### Professional Development (Weeks 5-8)
-- Resume and cover letter writing
-- Interview preparation and practice
-- Professional networking strategies
-- Workplace ethics and professionalism
+* **Resume & Cover Letter Development:** Personalized writing workshops and one-on-one resume review sessions
 
-### Industry-Specific Training (Weeks 9-12)
-- Choose from multiple career tracks
-- Hands-on training and certification prep
-- Industry partnerships and mentorship
-- Real-world project experience
 
-### Job Placement Support (Weeks 13-16)
-- Job search assistance and coaching
-- Interview scheduling and preparation
-- Follow-up support and career counseling
-- Ongoing professional development
+* **Mock Interviews:** Interactive simulations with feedback and coaching from real professionals
 
-## Career Tracks
 
-### Healthcare Support
-- Medical assistant certification
-- Patient care techniques
-- Medical terminology and procedures
-- Healthcare technology systems
+* **Job Search Navigation:** Guided access to job boards, public employment resources, and curated job fairs
 
-### Information Technology
-- Computer support specialist training
-- Network administration basics
-- Cybersecurity fundamentals
-- Help desk operations
 
-### Business Administration
-- Office management skills
-- Customer service excellence
-- Data entry and database management
-- Business communication
+* **Certification Exploration:** Assistance in locating and applying for affordable or subsidized training programs in high-demand fields such as food safety, childcare, security, and IT fundamentals
 
-### Skilled Trades
-- Basic electrical and plumbing
-- HVAC fundamentals
-- Construction safety certification
-- Tool operation and maintenance
 
-### Retail and Hospitality
-- Customer service excellence
-- Point-of-sale systems
-- Inventory management
-- Food service safety certification
 
-## Skills Assessment
+Our goal is to reduce employment friction by giving individuals the tools, language, and confidence to succeed in today’s competitive workforce.
 
-### Initial Evaluation
-- Academic skills assessment
-- Career interest inventory
-- Skills gap analysis
-- Goal setting and planning
+### **Track 2: Trade School & Direct Job Placement Pathway**
 
-### Ongoing Assessment
-- Progress tracking and monitoring
-- Skills demonstration and testing
-- Employer feedback integration
-- Continuous improvement planning
+The second track is focused on **technical trades and immediate employment opportunities**. Rebelz will function as a **navigation hub**—linking participants with certified trade programs and helping them move through the pipeline from interest to occupation.
 
-## Industry Partnerships
+Areas of focus include:
 
-We work with local employers to provide:
-- **Internship Opportunities**: Real-world work experience
-- **Job Placement**: Direct hiring partnerships
-- **Mentorship Programs**: Industry professional guidance
-- **Guest Speakers**: Career insights and networking
-- **Equipment Donations**: Access to current technology
+* **Electrician & Wiring Training Programs**
 
-## Support Services
 
-### Academic Support
-- Tutoring and study skills
-- GED preparation assistance
-- Basic math and English skills
-- Computer literacy training
+* **HVAC, Plumbing, and Welding School Connections**
 
-### Personal Development
-- Life skills coaching
-- Financial literacy education
-- Transportation assistance
-- Childcare resources
 
-### Career Services
-- Resume and interview coaching
-- Job search assistance
-- Professional wardrobe support
-- Networking event access
+* **Mechanic and Automotive Certification Resources**
 
-## Prerequisites
 
-- High school diploma or GED (or working toward completion)
-- Basic reading and math skills
-- Commitment to program attendance
-- Willingness to learn and grow professionally
+* **Construction & Union Apprenticeship Navigation**
 
-## Program Features
 
-### Flexible Scheduling
-- Full-time and part-time options
-- Evening and weekend classes
-- Online and hybrid learning
-- Accelerated track availability
+* **Job Matching & Interview Referral Services**
 
-### Personalized Learning
-- Individual career planning
-- Customized skill development
-- One-on-one coaching
-- Flexible pace progression
 
-### Real-World Experience
-- Internship placements
-- Job shadowing opportunities
-- Mock interviews with employers
-- Networking events and job fairs
 
-## Success Metrics
+By establishing partnerships with local unions, trade schools, and apprenticeship programs, Rebelz aims to become a **launchpad for sustainable careers** in skilled labor—particularly for those who prefer hands-on, non-college routes to employment.
 
-### Employment Outcomes
-- **Job Placement Rate**: 85% within 6 months
-- **Wage Improvement**: Average 40% increase
-- **Career Advancement**: 60% promoted within 2 years
-- **Job Retention**: 90% retention after 1 year
+### **Our Vision**
 
-### Skills Development
-- Industry-recognized certifications
-- Improved soft skills assessments
-- Enhanced digital literacy
-- Professional portfolio development
-
-## Financial Assistance
-
-### Funding Options
-- Workforce Innovation and Opportunity Act (WIOA) funding
-- Pell Grant eligibility
-- Employer-sponsored training
-- Scholarship opportunities
-
-### Support Services
-- Transportation vouchers
-- Childcare assistance
-- Equipment and supplies
-- Emergency financial assistance
-
-## Schedule and Duration
-
-- **Duration**: 16 weeks (full program)
-- **Schedule**: Multiple start dates throughout the year
-- **Format**: Hybrid learning with hands-on components
-- **Class Size**: Limited to 15 students per cohort
-- **Support**: Ongoing career services for 2 years post-graduation
-
-## Registration Process
-
-1. **Initial Consultation**: Career counseling and program overview
-2. **Skills Assessment**: Academic and career readiness evaluation
-3. **Program Selection**: Choose career track and schedule
-4. **Enrollment**: Complete application and funding arrangements
-5. **Orientation**: Program introduction and goal setting
-
-## Post-Program Support
-
-### Ongoing Services
-- Career counseling and coaching
-- Job search assistance
-- Professional development workshops
-- Alumni networking events
-
-### Advancement Opportunities
-- Continuing education pathways
-- Advanced certification programs
-- Leadership development training
-- Entrepreneurship support
-
-## Registration
-
-Ready to take the next step in your career? Contact us to schedule your initial consultation and learn about upcoming program sessions.
-
----
-
-*This program is part of the Philadelphia Rebelz comprehensive development initiative, combining athletic excellence with career preparation to create pathways to success.* 
+The Rebelz Workforce Readiness Services are rooted in our broader mission: to **create self-sufficient, confident individuals** who can build purposeful lives, support their families, and contribute positively to their communities. This initiative not only enhances our athletic program but makes Rebelz a vital resource for lifelong growth and opportunity.
