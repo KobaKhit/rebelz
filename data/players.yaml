@@ -57,13 +57,6 @@ teams:
         height: 6'1
         bio: "Athletic guard/wing with lethal 3 point accuracy. Rugged defender. "
         image: images/more-than-basketball-logo.webp
-      - name: Trent
-        position: Forward
-        height: 6'4
-        image: images/more-than-basketball-logo.webp
-        bio: "Athletic wing with lethal 3 point accuracy, Rugged defense and rare
-          rebounding ability. A player that can change the interior presence of
-          a team offensively and defensively  "
       - name: Ahnaf Mollah
         position: Guard
         height: 5'10
@@ -71,9 +64,3 @@ teams:
           develop into a lethal 3 level scorer.  Ahnaf is a matchup nightmare in
           1v1 situations. "
         image: images/more-than-basketball-logo.webp
-      - name: Kane
-        position: G
-        height: 6'2
-        image: x
-        bio: "2 way beast. 15yo playing like 18. excellent work ethic and attention to
-          detail in personal development. "
