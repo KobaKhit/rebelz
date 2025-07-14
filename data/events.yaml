@@ -20,3 +20,11 @@ events:
     cost: "0"
     description: "Extremely competitive Summer League from June to August.  "
     playersRegistered: 10
+  - title: Grindhouse Game 3
+    start: 2025-07-16T19:15:00
+    end: 2025-07-16T20:15:00
+    location: Watkins Senior Center Upper Darby
+    locationUrl: https://share.google/jDQn7QtKgSaDGfKwU
+    cost: "0"
+    description: "Game 3 of the REBELZ crew. 2-0 record going into game 3. "
+    playersRegistered: 9
