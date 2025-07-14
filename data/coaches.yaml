@@ -1,9 +1,4 @@
 coaches:
-  - name: Coach Isaac
-    image: images/isaac-ugly-self.jpg
-    bio: "Head Coach of 16U team 8 years experience as a player and a manager.
-      Played Varsity Basketball as well as high level AAU basketball in the
-      Mid-Atlantic Circuit.  Excellent coach and communicator. "
   - name: Coach Robel (RO)
     image: images/_mg_7044.jpg
     bio: |
@@ -11,15 +6,23 @@ coaches:
       years of experience in Sports Management realm. Coach Robel played High
       School Division 2 Football, Soccer and Basketball in Virginia and Maryland
       later studying Sports Management at Drexel. 
+  - name: Coach Deacon
+    image: x
+    bio: >-
+      Head Coach of the Grindhouse League.
+
+
+      12+ years of Basketball playing experience. A collegiate athlete and a natural coach. 
+  - name: Coach Isaac
+    image: images/isaac-ugly-self.jpg
+    bio: "Head Coach of 16U team 8 years experience as a player and a manager.
+      Played Varsity Basketball as well as high level AAU basketball in the
+      Mid-Atlantic Circuit.  Excellent coach and communicator. "
   - name: "Coach Sah "
     image: NA
     bio: "A true IQ coach. Excellent with age groups 9 to 18. A programmatic thinker
       and and experienced individual trainer, game planer and Head Coach. A man
       meant to lead a basketball program. "
-  - name: Coach Deacon
-    image: x
-    bio: 12+ years of playing experience. A collegiate athlete and a natural coach.
-      Eager to get to work.
   - name: Coach Ice
     bio: "Excellent Basketball trainer and Head Coach. 30+ years of basketball as a
       player and coach. A disciplinarian that is proven at molding raw and
