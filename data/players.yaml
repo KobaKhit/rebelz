@@ -5,7 +5,7 @@ teams:
         position: Forward
         height: 6'
         image: images/heedy.png
-        bio: 17U Team Captain. Sharpshooter, defensive asset and natural leader.
+        bio: Team Captain. Sharpshooter, defensive asset and natural leader.
       - name: Kye
         position: Point Guard
         height: 6'
@@ -114,7 +114,12 @@ teams:
         image: /images/rebelz-logo-old.png
         bio: All around player. Balanced and calm under pressure. (Defensive Hound)
       - name: RaSheed
-        position: SF
+        position: PF
         height: 6'3
         image: /images/rebelz-logo-old.png
         bio: All around offensive savant. Shot creator. (Closer)
+      - name: Shiheed Rice-Sloan
+        position: PF
+        height: 6'2
+        image: /images/rebelz-logo-old.png
+        bio: Sharpshooter, defensive asset and natural leader.
