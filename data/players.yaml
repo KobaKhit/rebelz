@@ -69,10 +69,20 @@ teams:
       - name: IAN
         position: SG
         height: 5'8
-        image: x
-        bio: x
+        image: /images/rebelz-logo-old.png
+        bio: Can SCORE
       - name: Aser
         position: PG
         height: 5'8
         bio: Lefty Sniper
-        image: x
+        image: /images/rebelz-logo-old.png
+      - name: "Nelly "
+        position: SF
+        height: 5'11
+        image: /images/rebelz-logo-old.png
+        bio: "Left Sniper and Defensive hound. "
+      - name: Zion
+        position: PG
+        height: 5'5
+        image: /images/rebelz-logo-old.png
+        bio: "All around player with high IQ. "
