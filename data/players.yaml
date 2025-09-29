@@ -108,3 +108,13 @@ teams:
         height: 6'2
         image: /images/rebelz-logo-old.png
         bio: Lefty Sniper, great passer and born leader. (Glue Guy)
+      - name: Mu
+        position: SF
+        height: 6'2
+        image: /images/rebelz-logo-old.png
+        bio: All around player. Balanced and calm under pressure. (Defensive Hound)
+      - name: RaSheed
+        position: SF
+        height: 6'3
+        image: /images/rebelz-logo-old.png
+        bio: All around offensive savant. Shot creator. (Closer)
