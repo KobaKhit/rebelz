@@ -9,7 +9,7 @@ teams:
       - name: Kye
         position: Point Guard
         height: 6'
-        image: images/more-than-basketball-logo.webp
+        image: /images/rebelz-logo-old.png
         bio: "Floor general with excellent court vision and lethal 3 point accuracy. 3
           Level Scorer with an excellent understanding of the fundamentals of
           basketball. A Point Guard capable of running an offense and
@@ -23,18 +23,18 @@ teams:
 
 
           3 Level Scorer, excellent passer and fierce defender. 
-        image: images/more-than-basketball-logo.webp
+        image: /images/rebelz-logo-old.png
       - name: Yasir P.
         position: Power Forward
         height: 6'5"
-        image: images/more-than-basketball-logo.webp
+        image: /images/rebelz-logo-old.png
         bio: "Versatile and Crafty Forward with advanced dribbling capacity on the
           Perimeter and advanced strength in the paint. A multi-dimensional
           player that can serve as a pillar of an offense and defense. "
       - name: Michael Chepyshev
         position: Center
         height: 6'6"
-        image: images/more-than-basketball-logo.webp
+        image: /images/rebelz-logo-old.png
         bio: "Rim protector with equal parts strength and mobility. Has capacity to
           serve as the anchor of a defense, especially a zone defense. Offensive
           package includes pick and roll, dunker spot actions and a reliable 3
@@ -42,28 +42,28 @@ teams:
       - name: "Nate "
         position: Guard
         height: "6"
-        image: images/more-than-basketball-logo.webp
+        image: /images/rebelz-logo-old.png
         bio: "Two-Way Guard with fundamental understanding of the game. Can be used as
           an initiator in an offense while serving as a lethal off ball threat.
           3 Level Scorer and rugged defender. "
       - name: Lamont Harris
         position: Guard
         height: 5’7
-        image: images/more-than-basketball-logo.webp
+        image: /images/rebelz-logo-old.png
         bio: "All-Around Point Guard and Floor General with the capacity to switch to an
           off-ball nightmare. Great 3 point shooter, high IQ and Coachable. "
       - name: "Sayid "
         position: Guard
         height: 6'1
         bio: "Athletic guard/wing with lethal 3 point accuracy. Rugged defender. "
-        image: images/more-than-basketball-logo.webp
+        image: /images/rebelz-logo-old.png
       - name: Ahnaf Mollah
         position: Guard
         height: 5'10
         bio: "Speedy shooting guard with excellent work ethic. Offensive package will
           develop into a lethal 3 level scorer.  Ahnaf is a matchup nightmare in
           1v1 situations. "
-        image: images/more-than-basketball-logo.webp
+        image: /images/rebelz-logo-old.png
   - name: Rebelz 2.0
     players:
       - name: IAN
