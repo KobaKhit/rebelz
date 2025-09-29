@@ -15,11 +15,14 @@ items:
       - images/screenshot_20250928-234800_instagram.jpg
       - images/screenshot_20250928-234749_instagram.jpg
       - images/20250820_171952.jpg
-  - name: RebelZ Clinic 2025
+  - name: RebelZ Clinic 2025 sponsored by "Connexus Technology"
     description: The Christian Academy
     images:
       - path: /images/1740421779482.jpg
       - path: /images/screenshot_20250906-014307_drive.jpg
+      - x
+      - x
+      - x
   - name: Free School Gear Giveaway
     description: Community outreach program
     images:
