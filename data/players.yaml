@@ -66,36 +66,41 @@ teams:
         image: /images/rebelz-logo-old.png
   - name: 18+ Men's League Team A
     players:
-      - name: Pablo
-        position: PG
-        height: "6"
-        image: /images/rebelz-logo-old.png
-        bio: PG maestro
       - name: Nick
         position: SG
         height: 6'1
         image: /images/rebelz-logo-old.png
         bio: All around hooper. (Defensive HOund)
-      - name: Mu
-        position: SF
-        height: 6'2
-        image: /images/rebelz-logo-old.png
-        bio: All around player. Balanced and calm under pressure. (Defensive Hound)
       - name: 30 aka Diego
         position: PF
         height: 6'1
         image: /images/rebelz-logo-old.png
         bio: Lefty Sniper and all around hooper. (Defensive Hound)
-      - name: Omar
-        position: C
-        height: 6'5
-        image: /images/rebelz-logo-old.png
-        bio: Aggressive Scorer and all around hustle player. (Defensive Hound)
       - name: Shiheed Rice-Sloan
         position: PF
         height: 6'2
         image: /images/rebelz-logo-old.png
         bio: Sharpshooter, defensive asset and natural leader.
+      - name: Mu
+        position: SF
+        height: 6'2
+        image: /images/rebelz-logo-old.png
+        bio: All around player. Balanced and calm under pressure. (Defensive Hound)
+      - name: Omar
+        position: C
+        height: 6'5
+        image: /images/rebelz-logo-old.png
+        bio: Aggressive Scorer and all around hustle player. (Defensive Hound)
+      - name: "Koba Khit. "
+        position: C
+        height: 6'6
+        image: x
+        bio: European Center
+      - name: Pablo
+        position: PG
+        height: "6"
+        image: /images/rebelz-logo-old.png
+        bio: PG maestro
       - name: Isaac
         position: SG
         height: 6'2
@@ -116,11 +121,12 @@ teams:
         height: 6'3
         image: /images/rebelz-logo-old.png
         bio: All around offensive savant. Shot creator. (Closer)
-      - name: "Koba Khit. "
+      - name: Robel
         position: C
-        height: 6'6
+        height: 6'2
         image: x
-        bio: European Center
+        bio: "Hustler. Excellent Rebounder, Defender and Facilitator. Mid-range offense
+          worth noting. Team player till the end. "
   - name: Rebelz 2.0
     players:
       - name: IAN
