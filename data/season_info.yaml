@@ -19,8 +19,9 @@ items:
   - name: Free School Gear Giveaway
     description: Community outreach program
     images:
-      - vid_20250906_172936_922-1-.mp4
+      - images/z.jpg
       - path: /images/screenshot_20250908-170959_chrome.jpg
+      - images/z.jpg
   - name: " Phila RebelZ Tryouts conducted at Lucien Blackwell Center:"
     description: "Open tryouts w/ 48 players in attendance and 75 people total for 3
       hours. "
