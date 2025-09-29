@@ -76,6 +76,21 @@ teams:
         height: 6'1
         image: /images/rebelz-logo-old.png
         bio: All around hooper. (Defensive HOund)
+      - name: 30 aka Diego
+        position: PF
+        height: 6'1
+        image: /images/rebelz-logo-old.png
+        bio: Lefty Sniper and all around hooper. (Defensive Hound)
+      - name: Shiheed Rice-Sloan
+        position: PF
+        height: 6'2
+        image: /images/rebelz-logo-old.png
+        bio: Sharpshooter, defensive asset and natural leader.
+      - name: Mu
+        position: SF
+        height: 6'2
+        image: /images/rebelz-logo-old.png
+        bio: All around player. Balanced and calm under pressure. (Defensive Hound)
       - name: Omar
         position: C
         height: 6'5
@@ -86,21 +101,6 @@ teams:
         height: 6'2
         image: /images/rebelz-logo-old.png
         bio: Lefty Sniper, great passer and born leader. (Glue Guy)
-      - name: Mu
-        position: SF
-        height: 6'2
-        image: /images/rebelz-logo-old.png
-        bio: All around player. Balanced and calm under pressure. (Defensive Hound)
-      - name: RaSheed
-        position: PF
-        height: 6'3
-        image: /images/rebelz-logo-old.png
-        bio: All around offensive savant. Shot creator. (Closer)
-      - name: Shiheed Rice-Sloan
-        position: PF
-        height: 6'2
-        image: /images/rebelz-logo-old.png
-        bio: Sharpshooter, defensive asset and natural leader.
       - name: Lamont Harris
         position: PG
         height: "6"
@@ -111,11 +111,11 @@ teams:
         height: 6'2
         image: /images/rebelz-logo-old.png
         bio: Scoring Wing
-      - name: 30 aka Diego
+      - name: RaSheed
         position: PF
-        height: 6'1
+        height: 6'3
         image: /images/rebelz-logo-old.png
-        bio: Lefty Sniper and all around hooper. (Defensive Hound)
+        bio: All around offensive savant. Shot creator. (Closer)
   - name: Rebelz 2.0
     players:
       - name: IAN
