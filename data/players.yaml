@@ -91,11 +91,6 @@ teams:
         height: 6'5
         image: /images/rebelz-logo-old.png
         bio: Aggressive Scorer and all around hustle player. (Defensive Hound)
-      - name: "Koba Khit. "
-        position: C
-        height: 6'6
-        image: x
-        bio: European Center
       - name: Pablo
         position: PG
         height: "6"
@@ -106,21 +101,26 @@ teams:
         height: 6'2
         image: /images/rebelz-logo-old.png
         bio: Lefty Sniper, great passer and born leader. (Glue Guy)
-      - name: Lamont Harris
-        position: PG
-        height: "6"
-        image: /images/rebelz-logo-old.png
-        bio: Scoring PG with high IQ. (Sniper)
       - name: Jamar
         position: SF
         height: 6'2
         image: /images/rebelz-logo-old.png
         bio: Scoring Wing
+      - name: Lamont Harris
+        position: PG
+        height: "6"
+        image: /images/rebelz-logo-old.png
+        bio: Scoring PG with high IQ. (Sniper)
       - name: RaSheed
         position: PF
         height: 6'3
         image: /images/rebelz-logo-old.png
         bio: All around offensive savant. Shot creator. (Closer)
+      - name: "Koba Khit. "
+        position: C
+        height: 6'6
+        image: x
+        bio: European Center
       - name: Robel
         position: C
         height: 6'2
