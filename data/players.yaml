@@ -64,28 +64,6 @@ teams:
           develop into a lethal 3 level scorer.  Ahnaf is a matchup nightmare in
           1v1 situations. "
         image: /images/rebelz-logo-old.png
-  - name: Rebelz 2.0
-    players:
-      - name: IAN
-        position: SG
-        height: 5'8
-        image: /images/rebelz-logo-old.png
-        bio: Can SCORE
-      - name: Aser
-        position: PG
-        height: 5'8
-        bio: Lefty Sniper
-        image: /images/rebelz-logo-old.png
-      - name: "Nelly "
-        position: SF
-        height: 5'11
-        image: /images/rebelz-logo-old.png
-        bio: "Left Sniper and Defensive hound. "
-      - name: Zion
-        position: PG
-        height: 5'5
-        image: /images/rebelz-logo-old.png
-        bio: "All around player with high IQ. "
   - name: 18+ Men's League Team A
     players:
       - name: Pablo
@@ -123,3 +101,30 @@ teams:
         height: 6'2
         image: /images/rebelz-logo-old.png
         bio: Sharpshooter, defensive asset and natural leader.
+      - name: Lamont Harris
+        position: PG
+        height: "6"
+        image: /images/rebelz-logo-old.png
+        bio: Scoring PG with high IQ. (Sniper)
+  - name: Rebelz 2.0
+    players:
+      - name: IAN
+        position: SG
+        height: 5'8
+        image: /images/rebelz-logo-old.png
+        bio: Can SCORE
+      - name: Aser
+        position: PG
+        height: 5'8
+        bio: Lefty Sniper
+        image: /images/rebelz-logo-old.png
+      - name: "Nelly "
+        position: SF
+        height: 5'11
+        image: /images/rebelz-logo-old.png
+        bio: "Left Sniper and Defensive hound. "
+      - name: Zion
+        position: PG
+        height: 5'5
+        image: /images/rebelz-logo-old.png
+        bio: "All around player with high IQ. "
