@@ -1,0 +1,54 @@
+products:
+  - name: "Red Team Jersey"
+    category: "jerseys"
+    color: "red"
+    sizes: ["m", "l", "xl"]
+    price: "$45.00"
+    description: "Official Rebelz Basketball team jersey in red. High-quality material with team colors and logo."
+    image: "/images/rebelz-logo.png"
+    available: true
+    
+  - name: "Navy Team Hoodie"
+    category: "hoodies"
+    color: "navy"
+    sizes: ["s", "m", "l", "xl"]
+    price: "$35.00"
+    description: "Comfortable navy hoodie with Rebelz Basketball logo. Perfect for showing team spirit."
+    image: "/images/rebelz-logo.png"
+    available: true
+    
+  - name: "Official Basketball"
+    category: "equipment"
+    color: "black"
+    sizes: []
+    price: "$25.00"
+    description: "Official size basketball with Rebelz Basketball branding."
+    image: "/images/rebelz-logo.png"
+    available: true
+    
+  - name: "White Team T-Shirt"
+    category: "tshirts"
+    color: "white"
+    sizes: ["xs", "s", "m", "l", "xl", "xxl"]
+    price: "$20.00"
+    description: "Classic white t-shirt with Rebelz Basketball logo. Comfortable cotton blend."
+    image: "/images/rebelz-logo.png"
+    available: true
+    
+  - name: "Blue Team Shorts"
+    category: "shorts"
+    color: "blue"
+    sizes: ["s", "m", "l", "xl"]
+    price: "$30.00"
+    description: "Performance basketball shorts in team blue. Moisture-wicking fabric."
+    image: "/images/rebelz-logo.png"
+    available: true
+    
+  - name: "Team Cap"
+    category: "accessories"
+    color: "black"
+    sizes: []
+    price: "$15.00"
+    description: "Adjustable cap with embroidered Rebelz Basketball logo."
+    image: "/images/rebelz-logo.png"
+    available: true

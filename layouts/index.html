@@ -260,6 +260,28 @@
             color: var(--primary);
         }
         
+        .nav-gear-btn {
+            background-color: white !important;
+            border: 3px solid black !important;
+            color: #DAA520 !important; /* Dark gold */
+            text-shadow: 
+                -1px -1px 0 black,
+                1px -1px 0 black,
+                -1px 1px 0 black,
+                1px 1px 0 black !important;
+            font-weight: bold !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+        }
+        
+        .nav-gear-btn:hover {
+            background-color: #f8f8f8 !important;
+            color: #B8860B !important; /* Darker gold on hover */
+            border-color: black !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+        }
+        
         .logo-container {
             text-align: center;
             margin-bottom: 0.5rem;
@@ -1393,6 +1415,9 @@
             </div>
             <div class="nav-item nav-register">
                 <a href="https://forms.gle/dAc54Y42HvjAJeGa6" target="_blank" class="nav-register-btn">Register Now</a>
+            </div>
+            <div class="nav-item">
+                <a href="/shop/" class="nav-gear-btn">Gear</a>
             </div>
         </div>
     </div>

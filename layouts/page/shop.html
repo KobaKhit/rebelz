@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #e63946;
+            --primary-light: #ff4757;
+            --primary-dark: #d63031;
+            --secondary: #2d3436;
+            --secondary-light: #636e72;
+            --accent: #0984e3;
+            --background: #ffffff;
+            --surface: #f8f9fa;
+            --surface-dark: #e9ecef;
+            --text-primary: #2d3436;
+            --text-secondary: #636e72;
+            --text-light: #b2bec3;
+            --border: #ddd;
+            --border-light: #f1f2f6;
+            --shadow-light: rgba(0, 0, 0, 0.05);
+            --shadow-medium: rgba(0, 0, 0, 0.1);
+            --shadow-strong: rgba(0, 0, 0, 0.15);
+            --radius: 16px;
+            --radius-small: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-small);
+            transition: all 0.2s ease;
+            background-color: var(--surface);
+            border: 1px solid var(--border-light);
+        }
+
+        .back-link:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.2);
+        }
+
+        .product-showcase {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 24px var(--shadow-light);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .product-showcase:hover {
+            box-shadow: 0 8px 32px var(--shadow-medium);
+            transform: translateY(-2px);
+        }
+
+        .product-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+
+        .product-image-section {
+            background: var(--surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .product-image {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: var(--radius-small);
+            transition: all 0.3s ease;
+        }
+
+        .product-details {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-header {
+            margin-bottom: 2rem;
+        }
+
+        .product-title {
+            color: var(--text-primary);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .filters-section {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .filters-title {
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+
+        .filter-select {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-small);
+            padding: 0.75rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1rem;
+            padding-right: 2.5rem;
+        }
+
+        .filter-select:hover {
+            border-color: var(--primary);
+            box-shadow: 0 2px 8px var(--shadow-light);
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+        }
+
+        .purchase-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .buy-button {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            padding: 1.25rem 2.5rem;
+            border-radius: var(--radius-small);
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(230, 57, 70, 0.2);
+        }
+
+        .buy-button:hover {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(230, 57, 70, 0.4);
+        }
+
+        .buy-button:active {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.3);
+        }
+
+        .buy-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .buy-button:hover::before {
+            left: 100%;
+        }
+
+        .buy-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: currentColor;
+        }
+
+        .price-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: var(--surface);
+            border-radius: var(--radius-small);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .price-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+
+        .price-value {
+            color: var(--primary);
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .no-product-message {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .no-product-message h3 {
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .product-content {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image-section {
+                min-height: 250px;
+                padding: 1.5rem;
+            }
+
+            .product-details {
+                padding: 1.5rem;
+            }
+
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.75rem;
+            }
+
+            .product-title {
+                font-size: 1.5rem;
+            }
+
+            .product-price {
+                font-size: 1.25rem;
+            }
+
+            .buy-button {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .purchase-section {
+                margin-top: 1rem;
+            }
+
+            .price-info {
+                margin-bottom: 0.75rem;
+            }
+
+            .price-value {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="/images/rebelz-logo.png" alt="Rebelz Basketball" style="max-width: 150px; margin-bottom: 1rem;">
+            <h1>{{ .Title }}</h1>
+            <p>Explore our premium basketball merchandise</p>
+        </div>
+
+        <!-- Back Link -->
+        <a href="/" class="back-link">
+            ← Back to Home
+        </a>
+
+        <!-- Product Showcase -->
+        <div class="product-showcase fade-in" id="productShowcase">
+            <div class="product-content">
+                <div class="product-image-section">
+                    <img id="productImage" src="/images/rebelz-logo.png" alt="Product Image" class="product-image">
+                </div>
+                
+                <div class="product-details">
+                    <div class="product-header">
+                        <h2 id="productTitle" class="product-title">Select a product</h2>
+                        <p id="productDescription" class="product-description">
+                            Use the filters below to browse our available merchandise.
+                        </p>
+                    </div>
+                    
+                    <div class="purchase-section" id="purchaseSection" style="display: none;">
+                        <div class="price-info">
+                            <span class="price-label">Price</span>
+                            <span id="productPrice" class="price-value">$0.00</span>
+                        </div>
+                        
+                        <button id="buyButton" class="buy-button" onclick="handlePurchase()">
+                            <svg class="buy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6.01"/>
+                            </svg>
+                            Purchase Now
+                        </button>
+                        
+                        <div style="text-align: center; margin-top: 0.5rem;">
+                            <small style="color: var(--text-secondary); font-size: 0.85rem;">
+                                🔒 Secure checkout • Free shipping on orders over $50
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filters-section">
+                <h3 class="filters-title">Find Your Perfect Item</h3>
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label class="filter-label" for="categoryFilter">Category</label>
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="jerseys">Jerseys</option>
+                            <option value="hoodies">Hoodies & Sweatshirts</option>
+                            <option value="tshirts">T-Shirts</option>
+                            <option value="shorts">Shorts</option>
+                            <option value="equipment">Basketball Equipment</option>
+                            <option value="accessories">Accessories</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label" for="colorFilter">Color</label>
+                        <select id="colorFilter" class="filter-select">
+                            <option value="">All Colors</option>
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                            <option value="gray">Gray</option>
+                            <option value="navy">Navy</option>
+                            <option value="gold">Gold</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label" for="sizeFilter">Size</label>
+                        <select id="sizeFilter" class="filter-select">
+                            <option value="">All Sizes</option>
+                            <option value="xs">XS</option>
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                            <option value="xxl">XXL</option>
+                            <option value="youth-s">Youth S</option>
+                            <option value="youth-m">Youth M</option>
+                            <option value="youth-l">Youth L</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- No Product Message -->
+        <div class="no-product-message" id="noProductMessage" style="display: none;">
+            <h3>No products match your selection</h3>
+            <p>Try adjusting your filters to see more options.</p>
+        </div>
+
+        <!-- Hidden product data for JavaScript -->
+        <script type="application/json" id="productData">
+        {{ with .Site.Data.shop_products }}
+        {{ if .products }}
+        {{ .products | jsonify }}
+        {{ else }}
+        [
+            {
+                "name": "Red Team Jersey",
+                "category": "jerseys",
+                "color": "red",
+                "sizes": ["m", "l", "xl"],
+                "price": "$45.00",
+                "description": "Official Rebelz Basketball team jersey in red. High-quality material with team colors and logo.",
+                "image": "/images/rebelz-logo.png",
+                "available": true
+            },
+            {
+                "name": "Navy Team Hoodie",
+                "category": "hoodies",
+                "color": "navy",
+                "sizes": ["s", "m", "l", "xl"],
+                "price": "$35.00",
+                "description": "Comfortable navy hoodie with Rebelz Basketball logo. Perfect for showing team spirit.",
+                "image": "/images/rebelz-logo.png",
+                "available": true
+            }
+        ]
+        {{ end }}
+        {{ else }}
+        []
+        {{ end }}
+        </script>
+    </div>
+
+    <script>
+        // Load product data
+        const productData = JSON.parse(document.getElementById('productData').textContent);
+        let currentProducts = productData.filter(p => p.available);
+        let currentProductIndex = 0;
+
+        // Current product for purchase
+        let currentProduct = null;
+
+        // Update product display
+        function updateProductDisplay(product) {
+            currentProduct = product;
+            
+            if (!product) {
+                document.getElementById('productTitle').textContent = 'No products available';
+                document.getElementById('productDescription').textContent = 'Try adjusting your filters.';
+                document.getElementById('productImage').src = '/images/rebelz-logo.png';
+                document.getElementById('purchaseSection').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('productTitle').textContent = product.name;
+            document.getElementById('productPrice').textContent = product.price;
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('productImage').src = product.image;
+            document.getElementById('purchaseSection').style.display = 'flex';
+            
+            // Add fade-in animation
+            document.getElementById('productShowcase').classList.remove('fade-in');
+            setTimeout(() => {
+                document.getElementById('productShowcase').classList.add('fade-in');
+            }, 50);
+        }
+
+        // Handle purchase
+        function handlePurchase() {
+            if (!currentProduct) {
+                alert('Please select a product first.');
+                return;
+            }
+
+            // Create purchase data
+            const purchaseData = {
+                product: currentProduct,
+                timestamp: new Date().toISOString(),
+                selectedFilters: {
+                    category: document.getElementById('categoryFilter').value,
+                    color: document.getElementById('colorFilter').value,
+                    size: document.getElementById('sizeFilter').value
+                }
+            };
+
+            // For now, show purchase confirmation
+            // In production, this would integrate with payment processor
+            showPurchaseModal(purchaseData);
+        }
+
+        // Show purchase confirmation modal
+        function showPurchaseModal(purchaseData) {
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                backdrop-filter: blur(5px);
+            `;
+
+            modal.innerHTML = `
+                <div style="
+                    background: white;
+                    padding: 2rem;
+                    border-radius: 16px;
+                    max-width: 400px;
+                    width: 90%;
+                    text-align: center;
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                ">
+                    <div style="color: #e63946; font-size: 3rem; margin-bottom: 1rem;">🛒</div>
+                    <h3 style="color: #2d3436; margin-bottom: 1rem; font-size: 1.5rem;">Ready to Purchase?</h3>
+                    <p style="color: #636e72; margin-bottom: 1.5rem;">
+                        <strong>${purchaseData.product.name}</strong><br>
+                        ${purchaseData.product.price}
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <button onclick="this.parentElement.parentElement.parentElement.remove()" style="
+                            background: #f8f9fa;
+                            border: 1px solid #e9ecef;
+                            padding: 0.75rem 1.5rem;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            font-weight: 500;
+                        ">Cancel</button>
+                        <button onclick="completePurchase()" style="
+                            background: linear-gradient(135deg, #e63946, #d63031);
+                            color: white;
+                            border: none;
+                            padding: 0.75rem 1.5rem;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            font-weight: 600;
+                        ">Continue to Checkout</button>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+        }
+
+        // Complete purchase (placeholder for payment integration)
+        function completePurchase() {
+            // Remove modal
+            document.querySelector('[style*="backdrop-filter"]').remove();
+            
+            // Show success message
+            const successModal = document.createElement('div');
+            successModal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                backdrop-filter: blur(5px);
+            `;
+
+            successModal.innerHTML = `
+                <div style="
+                    background: white;
+                    padding: 2rem;
+                    border-radius: 16px;
+                    max-width: 400px;
+                    width: 90%;
+                    text-align: center;
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                ">
+                    <div style="color: #00b894; font-size: 3rem; margin-bottom: 1rem;">✅</div>
+                    <h3 style="color: #2d3436; margin-bottom: 1rem; font-size: 1.5rem;">Coming Soon!</h3>
+                    <p style="color: #636e72; margin-bottom: 1.5rem;">
+                        Online purchasing will be available soon.<br>
+                        Contact us directly for now!
+                    </p>
+                    <button onclick="this.parentElement.parentElement.remove()" style="
+                        background: linear-gradient(135deg, #e63946, #d63031);
+                        color: white;
+                        border: none;
+                        padding: 0.75rem 1.5rem;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        font-weight: 600;
+                    ">Got it!</button>
+                </div>
+            `;
+
+            document.body.appendChild(successModal);
+        }
+
+        // Filter products
+        function filterProducts() {
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const colorFilter = document.getElementById('colorFilter').value;
+            const sizeFilter = document.getElementById('sizeFilter').value;
+            
+            currentProducts = productData.filter(product => {
+                if (!product.available) return false;
+                
+                // Check category
+                if (categoryFilter && product.category !== categoryFilter) return false;
+                
+                // Check color
+                if (colorFilter && product.color !== colorFilter) return false;
+                
+                // Check size
+                if (sizeFilter && product.sizes && product.sizes.length > 0) {
+                    if (!product.sizes.includes(sizeFilter)) return false;
+                }
+                
+                return true;
+            });
+            
+            currentProductIndex = 0;
+            
+            if (currentProducts.length === 0) {
+                document.getElementById('productShowcase').style.display = 'none';
+                document.getElementById('noProductMessage').style.display = 'block';
+            } else {
+                document.getElementById('productShowcase').style.display = 'block';
+                document.getElementById('noProductMessage').style.display = 'none';
+                updateProductDisplay(currentProducts[0]);
+            }
+        }
+
+        // Auto-cycle through filtered products
+        function cycleProducts() {
+            if (currentProducts.length > 1) {
+                currentProductIndex = (currentProductIndex + 1) % currentProducts.length;
+                updateProductDisplay(currentProducts[currentProductIndex]);
+            }
+        }
+
+        // Event listeners
+        document.getElementById('categoryFilter').addEventListener('change', filterProducts);
+        document.getElementById('colorFilter').addEventListener('change', filterProducts);
+        document.getElementById('sizeFilter').addEventListener('change', filterProducts);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            if (currentProducts.length > 0) {
+                updateProductDisplay(currentProducts[0]);
+                
+                // Auto-cycle through products every 5 seconds if multiple products match
+                setInterval(cycleProducts, 5000);
+            } else {
+                document.getElementById('productShowcase').style.display = 'none';
+                document.getElementById('noProductMessage').style.display = 'block';
+            }
+        });
+
+        // Manual product cycling on image click
+        document.getElementById('productImage').addEventListener('click', function() {
+            if (currentProducts.length > 1) {
+                cycleProducts();
+            }
+        });
+    </script>
+</body>
+</html>
+
