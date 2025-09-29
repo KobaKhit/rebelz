@@ -1529,7 +1529,13 @@
                             {{ range .items }}
                             {{ $imagePaths := slice }}
                             {{ range .images }}
-                            {{ $imagePaths = $imagePaths | append .path }}
+                            {{ $path := "" }}
+                            {{ if .path }}
+                            {{ $path = .path }}
+                            {{ else }}
+                            {{ $path = . }}
+                            {{ end }}
+                            {{ $imagePaths = $imagePaths | append $path }}
                             {{ end }}
                             <div class="season-item" onclick="openImageGallery('{{ .name }}', {{ $imagePaths | jsonify }})">
                                 <h4 style="color: var(--primary); margin-bottom: 0.25rem; cursor: pointer;">{{ .name }}</h4>
