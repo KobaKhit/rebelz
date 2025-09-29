@@ -1,5 +1,5 @@
 teams:
-  - name: "Grindhouse League "
+  - name: Original REBELZ team (18U)
     players:
       - name: Shiheed Rice-Sloan
         position: Forward
@@ -64,3 +64,15 @@ teams:
           develop into a lethal 3 level scorer.  Ahnaf is a matchup nightmare in
           1v1 situations. "
         image: images/more-than-basketball-logo.webp
+  - name: Rebelz 2.0
+    players:
+      - name: IAN
+        position: SG
+        height: 5'8
+        image: x
+        bio: x
+      - name: Aser
+        position: PG
+        height: 5'8
+        bio: Lefty Sniper
+        image: x
