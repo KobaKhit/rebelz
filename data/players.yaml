@@ -86,3 +86,25 @@ teams:
         height: 5'5
         image: /images/rebelz-logo-old.png
         bio: "All around player with high IQ. "
+  - name: 18+ Men's League Team A
+    players:
+      - name: Pablo
+        position: PG
+        height: "6"
+        image: /images/rebelz-logo-old.png
+        bio: PG maestro
+      - name: Nick
+        position: SG
+        height: 6'1
+        image: /images/rebelz-logo-old.png
+        bio: All around hooper. (Defensive HOund)
+      - name: Omar
+        position: C
+        height: 6'5
+        image: /images/rebelz-logo-old.png
+        bio: Aggressive Scorer and all around hustle player. (Defensive Hound)
+      - name: Isaac
+        position: SG
+        height: 6'2
+        image: /images/rebelz-logo-old.png
+        bio: Lefty Sniper, great passer and born leader. (Glue Guy)
