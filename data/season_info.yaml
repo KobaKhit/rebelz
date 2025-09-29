@@ -2,9 +2,9 @@ items:
   - name: Grindhouse League
     description: Upper Darby Watkins Senior
     images:
+      - images/20250726_222039-1-.jpg
       - /images/grindhous.jpg
-      - path: /images/20250908_170253.jpg
-      - path: /images/20250908_171105.jpg
+      - images/grindhous.jpg
   - name: UnityKlassic 2025
     description: SixthmanCenter
     images:
