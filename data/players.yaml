@@ -116,6 +116,11 @@ teams:
         height: 6'3
         image: /images/rebelz-logo-old.png
         bio: All around offensive savant. Shot creator. (Closer)
+      - name: "Koba Khit. "
+        position: C
+        height: 6'6
+        image: x
+        bio: European Center
   - name: Rebelz 2.0
     players:
       - name: IAN
