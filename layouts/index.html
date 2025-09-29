@@ -30,18 +30,76 @@
         body {
             background-color: var(--background-color);
             color: var(--color);
+            margin: 0;
+            padding: 0;
+            width: 100%;
         }
         
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
+            width: 100%;
+            margin: 0;
+            padding: 1rem 2rem;
         }
         
-        .two-columns {
+        .full-width-container {
+            width: 100%;
+            margin: 0;
+            padding: 1rem 2rem;
+        }
+        
+        .three-columns {
             display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 1rem;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 2rem;
+            width: 100%;
+        }
+        
+        .website-title {
+            text-align: center;
+            margin: 0.5rem 0 1rem 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 0.5rem 0 2rem 0;
+            padding: 1rem 2rem;
+            background-color: var(--card-background-color);
+            border-radius: 0.5rem;
+            border: 1px solid var(--card-border-color);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .nav-item {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .nav-item a {
+            display: block;
+            padding: 0.75rem 1rem;
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 0.25rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.2s, color 0.2s, transform 0.2s;
+        }
+        
+        .nav-item a:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
         }
         
         .logo-container {
@@ -57,21 +115,56 @@
             max-height: 300px;
         }
         
+        .centered-logo-container {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+        }
+        
+        .centered-logo-image {
+            max-width: 400px;
+            max-height: 200px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .top-logo-container {
+            text-align: center;
+            padding: 1rem 0 0.5rem 0;
+            margin: 0;
+            background-color: var(--background-color);
+        }
+        
+        .top-logo-image {
+            max-width: 300px;
+            max-height: 120px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        
         .register-button {
             width: 100%;
             margin: 0 0 1rem 0;
-            background-color: var(--primary);
-            border-color: var(--primary);
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-decoration: none;
+            display: block;
+            padding: 0.75rem 1rem;
+            border-radius: 0.25rem;
+            text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: background-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
         }
         
         .register-button:hover {
-            background-color: var(--primary-hover);
-            border-color: var(--primary-hover);
+            background-color: var(--primary);
+            color: white;
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
         }
@@ -191,17 +284,26 @@
         }
         
         .footer-nav {
-            text-align: center;
+            text-align: right;
             margin: 1rem 0;
             padding-top: 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
         
         .footer-nav a {
-            margin: 0 0.5rem;
+            margin: 0;
+            padding: 0.5rem 1rem;
             background-color: transparent;
             border: 1px solid var(--primary);
             color: var(--primary);
+            text-decoration: none;
+            border-radius: 0.25rem;
+            font-size: 0.9rem;
             transition: background-color 0.2s, color 0.2s;
         }
         
@@ -210,13 +312,72 @@
             color: white;
         }
         
+        @media (max-width: 1200px) {
+            .three-columns {
+                grid-template-columns: 1fr 1.5fr 1fr;
+                gap: 1.5rem;
+            }
+            
+            .container, .full-width-container {
+                padding: 1rem 1.5rem;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .three-columns {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .nav-bar {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .website-title {
+                font-size: 2rem;
+            }
+            
+            .container, .full-width-container {
+                padding: 1rem;
+            }
+        }
+        
         @media (max-width: 768px) {
-            .two-columns {
+            .teams-container {
                 grid-template-columns: 1fr;
             }
             
-            .teams-container {
-                grid-template-columns: 1fr;
+            .website-title {
+                font-size: 1.5rem;
+            }
+            
+            .nav-bar {
+                gap: 0.25rem;
+                padding: 1rem;
+            }
+            
+            .container, .full-width-container {
+                padding: 0.5rem;
+            }
+            
+            .centered-logo-container {
+                margin: 1rem 0;
+                padding: 1rem;
+            }
+            
+            .centered-logo-image {
+                max-width: 300px;
+                max-height: 150px;
+            }
+            
+            .top-logo-container {
+                padding: 0.5rem 0 0.25rem 0;
+            }
+            
+            .top-logo-image {
+                max-width: 250px;
+                max-height: 100px;
             }
         }
         
@@ -578,6 +739,112 @@
         .coach-item-link:hover .name {
             color: var(--primary);
         }
+        
+        /* Supporters Section Styles */
+        .supporters-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .supporter-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--card-sectionning-background-color);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--card-border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .supporter-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .supporter-logo {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+        }
+        
+        .supporter-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .logo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        
+        .supporter-info {
+            flex-grow: 1;
+        }
+        
+        .supporter-name {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        
+        .supporter-description {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9rem;
+            color: #dddddd;
+            line-height: 1.4;
+        }
+        
+        .supporter-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        
+        .supporter-link:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+        
+        /* Universal hollow button style */
+        .hollow-button {
+            display: inline-block;
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.2s, color 0.2s, transform 0.2s;
+        }
+        
+        .hollow-button:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-1px);
+        }
 
         /* Chat Icon and Popup */
         .hidefooter {
@@ -920,53 +1187,35 @@
     </style>
 </head>
 <body>
-    <!-- Add this right after the opening <body> tag -->
-    <nav class="container">
-      <ul>
-        <li><a href="/" class="{{ if .IsHome }}active{{ end }}">Home</a></li>
-        <li><a href="/news/" class="{{ if eq .Section "news" }}active{{ end }}">News</a></li>
-        <li><a href="/about/" class="{{ if eq .RelPermalink "/about/" }}active{{ end }}">About Us</a></li>
-        <li><a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer">Donate</a></li>
-        <li><a href="/workforce-readiness/">Workforce Readiness</a></li>
-        <li>
-          <details role="list" dir="rtl">
-            <summary aria-haspopup="listbox" role="link">STEM</summary>
-            <ul role="listbox">
-              <li><a href="/stem/ai-app-development/">AI Assisted App Development</a></li>
-              <li><a href="/stem/computer-science/">Computer Science</a></li>
-              <li><a href="/stem/chess/">Chess</a></li>
-              <li><a href="/stem/drone-flight/">Drone Flight and FAA Part 107 Certification Training</a></li>
-            </ul>
-          </details>
-        </li>
-      </ul>
-    </nav>
-    <main class="container">
-        <div class="two-columns">
+    <!-- Top Logo Section -->
+    <div class="full-width-container">
+        <div class="top-logo-container">
+            <img src="/images/rebelz-logo.png" alt="Rebelz Basketball" class="top-logo-image">
+        </div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <div class="full-width-container">
+        <div class="nav-bar">
+            <div class="nav-item">
+                <a href="/">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="/about/">About</a>
+            </div>
+            <div class="nav-item">
+                <a href="/stem/">STEM</a>
+            </div>
+            <div class="nav-item">
+                <a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank">Donate</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="full-width-container">
+        <div class="three-columns">
+            <!-- Left Column: Coaches -->
             <div>
-                <!-- Logo -->
-                <div class="logo-container">
-                    <img src="/images/rebelz-logo.png" alt="Rebelz Basketball" class="logo-image">
-                </div>
-                
-                <!-- Register Button -->
-                <a href="https://forms.gle/dAc54Y42HvjAJeGa6" class="register-button" role="button" target="_blank">Register now</a>
-                
-                <!-- Upcoming Events -->
-                <article>
-                    <header>
-                        <h2>Upcoming Events</h2>
-                    </header>
-                    <div class="season-info">
-                        {{ with .Site.Data.season_info }}
-                        {{ .content | markdownify }}
-                        {{ else }}
-                        The 2025-2026 season is underway! We're competing in the Phila Circuit with our 16U and 17U teams. Check out our upcoming games and tournaments in the calendar below.
-                        {{ end }}
-                    </div>
-                    <div id="calendar"></div>
-                </article>
-                
                 <!-- Coaches Section -->
                 <article>
                     <header>
@@ -985,16 +1234,17 @@
                     </a>
                     {{ end }}
                     <div style="text-align: center; margin-top: 1rem;">
-                        <a href="/coaches/" class="view-all-button" style="display: inline-block; background-color: var(--primary); color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: bold;">View All Coaches</a>
+                        <a href="/coaches/" class="view-all-button" style="display: inline-block; background-color: transparent; border: 1px solid var(--primary); color: var(--primary); text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: bold; transition: background-color 0.2s, color 0.2s;" onmouseover="this.style.backgroundColor='var(--primary)'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='var(--primary)';">View All Coaches</a>
                     </div>
                 </article>
             </div>
             
+            <!-- Center Column: YouTube Clips + Players -->
             <div>
-                <!-- Play of the Day -->
+                <!-- YouTube Clips / Play of the Week -->
                 <article>
                     <header>
-                        <h2>Play of the Week</h2>
+                        <h2>YouTube Clips</h2>
                     </header>
                     
                     {{ with .Site.Data.playofday }}
@@ -1052,17 +1302,93 @@
                         {{ end }}
                     </div>
                 </article>
+            </div>
+            
+            <!-- Right Column: Events + Support -->
+            <div>
+                <!-- Events Section -->
+                <article>
+                    <header>
+                        <h2>Events</h2>
+                    </header>
+                    
+                    <!-- Local Events -->
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Local</h4>
+                        <div class="season-info">
+                            {{ with .Site.Data.season_info }}
+                            {{ .content | markdownify }}
+                            {{ else }}
+                            The 2025-2026 season is underway! We're competing in the Phila Circuit with our 16U and 17U teams.
+                            {{ end }}
+                        </div>
+                    </div>
+                    
+                    <!-- School / Gym Events -->
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">School / Gym</h4>
+                        <div id="calendar"></div>
+                    </div>
+                    
+                    <!-- Unity Events -->
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Unity</h4>
+                        <p style="font-size: 0.9rem; color: #dddddd;">Community building events and team activities.</p>
+                    </div>
+                    
+                    <!-- Charities -->
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Charities</h4>
+                        <p style="font-size: 0.9rem; color: #dddddd;">Giving back to our community through various charitable initiatives.</p>
+                    </div>
+                </article>
                 
+                <!-- Supporters Section -->
+                <article>
+                    <header>
+                        <h2>Supporters</h2>
+                    </header>
+                    <div class="supporters-grid">
+                        {{ range .Site.Data.supporters.supporters }}
+                        <div class="supporter-item">
+                            <div class="supporter-logo">
+                                {{ if .logo }}
+                                <img src="{{ .logo }}" alt="{{ .name }}" onerror="this.parentElement.innerHTML='<div class=\'logo-placeholder\'>{{ substr .name 0 2 | upper }}</div>'">
+                                {{ else }}
+                                <div class="logo-placeholder">{{ substr .name 0 2 | upper }}</div>
+                                {{ end }}
+                            </div>
+                            <div class="supporter-info">
+                                <h4 class="supporter-name">{{ .name }}</h4>
+                                <p class="supporter-description">{{ .description }}</p>
+                                {{ if .website }}
+                                <a href="{{ .website }}" target="_blank" class="supporter-link">Visit Website</a>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                    
+                    <!-- Call to Action -->
+                    <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--card-border-color);">
+                        <h4 style="color: var(--primary); margin-bottom: 1rem;">Join Our Community</h4>
+                        <a href="https://forms.gle/dAc54Y42HvjAJeGa6" class="register-button" role="button" target="_blank" style="margin-bottom: 1rem;">Register Now</a>
+                        <a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer" style="display: block; background-color: transparent; border: 1px solid var(--primary); color: var(--primary); text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: bold; transition: background-color 0.2s, color 0.2s;" onmouseover="this.style.backgroundColor='var(--primary)'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='var(--primary)';">Donate to Support Us</a>
+                    </div>
+                </article>
             </div>
         </div>
     </main>
     
-    <!-- Navigation links at the bottom -->
-    <footer class="container">
+    <!-- Footer: Links / Legal / Corporate -->
+    <footer class="full-width-container">
         <div class="footer-nav">
-            <a href="/" role="button">Home</a>
-            <a href="/about/" role="button">About Us</a>
-            <a href="https://www.gofundme.com/f/empower-youth-support-philadelphia-rebelz" target="_blank" rel="noopener noreferrer" role="button">Donate</a>
+            <a href="/about/" role="button">About</a>
+            <a href="/workforce-readiness/" role="button">Workforce</a>
+            <a href="/stem/" role="button">STEM Programs</a>
+            <a href="/register/" role="button">Register</a>
+            <span style="margin: 0 1rem; color: #666;">|</span>
+            <span style="color: #888; font-size: 0.9rem;">© 2025 Rebelz Basketball. All rights reserved.</span>
         </div>
     </footer>
     

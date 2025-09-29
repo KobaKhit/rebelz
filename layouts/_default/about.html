@@ -16,9 +16,10 @@
         }
         
         .container {
-            max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
             padding: 2rem;
+            max-width: 1400px;
         }
         
         .header {
@@ -74,6 +75,21 @@
             border: 3px solid #e63946;
         }
         
+        .person-image-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #e63946;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            border: 3px solid #e63946;
+        }
+        
         .person-name {
             font-weight: bold;
             margin-bottom: 0.25rem;
@@ -105,24 +121,40 @@
         
         .view-all-button {
             display: block;
-            background-color: #e63946;
-            color: white;
+            background-color: transparent;
+            border: 1px solid #e63946;
+            color: #e63946;
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 4px;
             text-align: center;
             margin-top: 1rem;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
         
         .view-all-button:hover {
-            background-color: #c1121f;
+            background-color: #e63946;
+            color: white;
         }
         
         @media (max-width: 768px) {
             .columns {
                 flex-direction: column;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .person-image, .person-image-placeholder {
+                width: 100px;
+                height: 100px;
+                font-size: 1.5rem;
+            }
+            
+            .logo {
+                max-width: 150px;
             }
         }
     </style>
@@ -130,7 +162,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="/images/rebelz-info.png" alt="Rebelz Basketball" class="logo">
+            <img src="/images/rebelz-logo.png" alt="Rebelz Basketball" class="logo">
             <h1>{{ .Title }}</h1>
         </div>
         
@@ -152,7 +184,11 @@
                 
                 {{ range site.Data.about.staff }}
                 <div class="person">
-                    <img src="/{{ .image }}" alt="{{ .name }}" class="person-image">
+                    {{ if and .image (ne .image "x") }}
+                    <img src="/{{ .image }}" alt="{{ .name }}" class="person-image" onerror="this.style.display='none'">
+                    {{ else }}
+                    <div class="person-image-placeholder">{{ substr .name 0 2 | upper }}</div>
+                    {{ end }}
                     <div class="person-name">{{ .name }}</div>
                     <div class="person-title">{{ .title }}</div>
                     <div class="person-bio">{{ .bio }}</div>
@@ -163,47 +199,19 @@
             <div class="column">
                 <h3>Coaches</h3>
                 
+                {{ range site.Data.coaches.coaches }}
                 <div class="person">
-                    <img src="/images/coach-williams.jpg" alt="Coach Williams" class="person-image">
-                    <div class="person-name">Coach Williams</div>
-                    <div class="person-title">Head Coach - 17U</div>
-                    <div class="person-bio">Former collegiate player with 10+ years coaching experience at the high school and AAU levels.</div>
+                    {{ if and .image (ne .image "x") }}
+                    <img src="/{{ .image }}" alt="{{ .name }}" class="person-image" onerror="this.style.display='none'">
+                    {{ else }}
+                    <div class="person-image-placeholder">{{ substr .name 0 2 | upper }}</div>
+                    {{ end }}
+                    <div class="person-name">{{ .name }}</div>
+                    <div class="person-bio">{{ .bio }}</div>
                 </div>
+                {{ end }}
                 
-                <div class="person">
-                    <img src="/images/coach-thompson.jpg" alt="Coach Thompson" class="person-image">
-                    <div class="person-name">Coach Thompson</div>
-                    <div class="person-title">Head Coach - 16U</div>
-                    <div class="person-bio">Specializes in player development with a focus on guard skills and shooting technique.</div>
-                </div>
-                
-                <div class="person">
-                    <img src="/images/coach-davis.jpg" alt="Coach Davis" class="person-image">
-                    <div class="person-name">Coach Davis</div>
-                    <div class="person-title">Assistant Coach</div>
-                    <div class="person-bio">Strength and conditioning specialist who helps players improve their athleticism and prevent injuries.</div>
-                </div>
-            </div>
-            
-            <div class="column">
-                <h3>Players</h3>
-                
-                <div class="person">
-                    <div class="person-name">17U Team</div>
-                    <div class="person-bio">Our 17U team consists of talented players born in 2007, competing at the highest level of AAU basketball in the Philadelphia Circuit.</div>
-                </div>
-                
-                <div class="person">
-                    <div class="person-name">16U Team</div>
-                    <div class="person-bio">Our 16U team features promising athletes born in 2008, developing their skills and basketball IQ through competitive play.</div>
-                </div>
-                
-                <div class="person">
-                    <div class="person-name">Alumni</div>
-                    <div class="person-bio">Many of our former players have gone on to play at the collegiate level, with several earning athletic scholarships.</div>
-                </div>
-                
-                <a href="/players/" class="view-all-button">View All Players</a>
+                <a href="/coaches/" class="view-all-button">View All Coaches</a>
             </div>
         </div>
         
