@@ -156,10 +156,7 @@ collections:
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Description", name: "description", widget: "string"}
-              - label: "Images"
-                name: "images"
-                widget: "list"
-                field: {label: "Image Path", name: "image", widget: "string", hint: "Path to image (e.g., /images/photo.jpg)"}
+              - {label: "Images", name: "images", widget: "list", field: {label: "Image Path", name: "path", widget: "string", hint: "Path to image (e.g., /images/photo.jpg)"}}
 
   - name: "about_page"
     label: "About Page"

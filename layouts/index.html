@@ -1527,7 +1527,11 @@
                             {{ with .Site.Data.season_info }}
                             {{ if .items }}
                             {{ range .items }}
-                            <div class="season-item" onclick="openImageGallery('{{ .name }}', {{ .images | jsonify }})">
+                            {{ $imagePaths := slice }}
+                            {{ range .images }}
+                            {{ $imagePaths = $imagePaths | append .path }}
+                            {{ end }}
+                            <div class="season-item" onclick="openImageGallery('{{ .name }}', {{ $imagePaths | jsonify }})">
                                 <h4 style="color: var(--primary); margin-bottom: 0.25rem; cursor: pointer;">{{ .name }}</h4>
                                 <p style="font-size: 0.9rem; color: #dddddd; margin: 0; cursor: pointer;">{{ .description }}</p>
                                 <small style="color: var(--primary); font-size: 0.8rem;">Click to view images</small>
