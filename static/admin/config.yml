@@ -228,20 +228,4 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Content", name: "body", widget: "markdown"}
 
-  - name: "supporters"
-    label: "Supporters"
-    files:
-      - file: "data/supporters.yaml"
-        label: "Supporters List"
-        name: "supporters-list"
-        fields:
-          - label: "Supporters"
-            name: "supporters"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string", hint: "Organization or business name"}
-              - {label: "Logo", name: "logo", widget: "image", required: false, hint: "Upload logo image or leave empty for text placeholder"}
-              - {label: "Description", name: "description", widget: "text", hint: "Brief description of partnership or support"}
-              - {label: "Website", name: "website", widget: "string", required: false, hint: "Full URL including https://"}
-
   
