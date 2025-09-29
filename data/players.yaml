@@ -76,26 +76,26 @@ teams:
         height: 6'1
         image: /images/rebelz-logo-old.png
         bio: All around hooper. (Defensive HOund)
-      - name: 30 aka Diego
-        position: PF
-        height: 6'1
-        image: /images/rebelz-logo-old.png
-        bio: Lefty Sniper and all around hooper. (Defensive Hound)
-      - name: Shiheed Rice-Sloan
-        position: PF
-        height: 6'2
-        image: /images/rebelz-logo-old.png
-        bio: Sharpshooter, defensive asset and natural leader.
       - name: Mu
         position: SF
         height: 6'2
         image: /images/rebelz-logo-old.png
         bio: All around player. Balanced and calm under pressure. (Defensive Hound)
+      - name: 30 aka Diego
+        position: PF
+        height: 6'1
+        image: /images/rebelz-logo-old.png
+        bio: Lefty Sniper and all around hooper. (Defensive Hound)
       - name: Omar
         position: C
         height: 6'5
         image: /images/rebelz-logo-old.png
         bio: Aggressive Scorer and all around hustle player. (Defensive Hound)
+      - name: Shiheed Rice-Sloan
+        position: PF
+        height: 6'2
+        image: /images/rebelz-logo-old.png
+        bio: Sharpshooter, defensive asset and natural leader.
       - name: Isaac
         position: SG
         height: 6'2
