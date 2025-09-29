@@ -26,9 +26,6 @@ coaches:
     bio: "Assistant Coach on Grindhouse league. Played Varsity Basketball and high
       level AAU basketball in the Mid-Atlantic Circuit.  Excellent coach and
       communicator. "
-  - name: Coach Dre
-    bio: "OG and basketball guru. "
-    image: images/the-sheath.png
   - name: Coach Drew
     image: images/convert.jpg
     bio: "Simon Gratz and Neumann Legend. OG Philadelphia Hooper and Excellent
@@ -37,3 +34,6 @@ coaches:
     image: x
     bio: Clinical Basketball Coach and Mentor to all that seek it. A true Coach and
       OG.
+  - name: Coach Dre
+    bio: "OG and basketball guru. "
+    image: images/the-sheath.png
