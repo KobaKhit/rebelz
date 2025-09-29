@@ -111,6 +111,11 @@ teams:
         height: 6'2
         image: /images/rebelz-logo-old.png
         bio: Scoring Wing
+      - name: 30 aka Diego
+        position: PF
+        height: 6'1
+        image: /images/rebelz-logo-old.png
+        bio: Lefty Sniper and all around hooper. (Defensive Hound)
   - name: Rebelz 2.0
     players:
       - name: IAN
