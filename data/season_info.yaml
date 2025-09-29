@@ -1,23 +1,23 @@
 items:
-  - name: "Grindhouse League"
-    description: "Upper Darby Watkins Senior"
+  - name: Grindhouse League
+    description: Upper Darby Watkins Senior
     images:
-      - path: "/images/20250908_165948.jpg"
-      - path: "/images/20250908_170253.jpg"
-      - path: "/images/20250908_171105.jpg"
-  - name: "UnityKlassic 2025"
-    description: "SixthmanCenter"
+      - /images/grindhous.jpg
+      - path: /images/20250908_170253.jpg
+      - path: /images/20250908_171105.jpg
+  - name: UnityKlassic 2025
+    description: SixthmanCenter
     images:
-      - path: "/images/_mg_7044.jpg"
-      - path: "/images/123.jpg"
-      - path: "/images/0.jpg"
-  - name: "RebelZ Clinic 2025"
-    description: "The Christian Academy"
+      - path: /images/_mg_7044.jpg
+      - path: /images/123.jpg
+      - path: /images/0.jpg
+  - name: RebelZ Clinic 2025
+    description: The Christian Academy
     images:
-      - path: "/images/1740421779482.jpg"
-      - path: "/images/screenshot_20250906-014307_drive.jpg"
-  - name: "Free School Gear Giveaway"
-    description: "Community outreach program"
+      - path: /images/1740421779482.jpg
+      - path: /images/screenshot_20250906-014307_drive.jpg
+  - name: Free School Gear Giveaway
+    description: Community outreach program
     images:
-      - path: "/images/heedy.png"
-      - path: "/images/screenshot_20250908-170959_chrome.jpg"
+      - path: /images/heedy.png
+      - path: /images/screenshot_20250908-170959_chrome.jpg
