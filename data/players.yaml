@@ -130,7 +130,7 @@ teams:
       - name: Deacon
         position: SF
         height: "6"
-        image: x
+        image: images/deacon-2-.jpg
         bio: "Hustler. Aggressive slasher and high IQ guard. "
   - name: Rebelz 2.0
     players:
