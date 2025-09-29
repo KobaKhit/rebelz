@@ -1,8 +1,23 @@
-content: |-
-  \-Grindhouse League: Upper Darby Watkins Senior
-
-  \-UnityKlassic 2025: SixthmanCenter
-
-  \-RebelZ Clinic 2025: The Christian Acadamy
-
-  \-Free School Gear Giveaway
+items:
+  - name: "Grindhouse League"
+    description: "Upper Darby Watkins Senior"
+    images:
+      - "/images/20250908_165948.jpg"
+      - "/images/20250908_170253.jpg"
+      - "/images/20250908_171105.jpg"
+  - name: "UnityKlassic 2025"
+    description: "SixthmanCenter"
+    images:
+      - "/images/_mg_7044.jpg"
+      - "/images/123.jpg"
+      - "/images/0.jpg"
+  - name: "RebelZ Clinic 2025"
+    description: "The Christian Academy"
+    images:
+      - "/images/1740421779482.jpg"
+      - "/images/screenshot_20250906-014307_drive.jpg"
+  - name: "Free School Gear Giveaway"
+    description: "Community outreach program"
+    images:
+      - "/images/heedy.png"
+      - "/images/screenshot_20250908-170959_chrome.jpg"
