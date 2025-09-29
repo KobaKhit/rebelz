@@ -127,6 +127,11 @@ teams:
         image: x
         bio: "Hustler. Excellent Rebounder, Defender and Facilitator. Mid-range offense
           worth noting. Team player till the end. "
+      - name: Deacon
+        position: SF
+        height: "6"
+        image: x
+        bio: "Hustler. Aggressive slasher and high IQ guard. "
   - name: Rebelz 2.0
     players:
       - name: IAN
