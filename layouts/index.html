@@ -1838,7 +1838,35 @@ ${info.event.extendedProps.description}`;
             galleryTitle.textContent = title;
             galleryGrid.innerHTML = '';
             
-            images.forEach(imagePath => {
+            // Debug: Log what we received
+            console.log('openImageGallery called with:', { title, images, type: typeof images });
+            
+            // Ensure images is an array
+            let imageArray = [];
+            if (Array.isArray(images)) {
+                imageArray = images;
+            } else if (typeof images === 'string') {
+                try {
+                    imageArray = JSON.parse(images);
+                } catch (e) {
+                    console.warn('Failed to parse images as JSON:', images);
+                    imageArray = [images];
+                }
+            } else if (images && typeof images === 'object') {
+                imageArray = Object.values(images);
+            }
+            
+            console.log('Processed imageArray:', imageArray);
+            
+            // Handle empty or invalid arrays
+            if (!Array.isArray(imageArray) || imageArray.length === 0) {
+                galleryGrid.innerHTML = '<p style="text-align: center; color: #666;">No images available</p>';
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                return;
+            }
+            
+            imageArray.forEach(imagePath => {
                 const img = document.createElement('img');
                 img.src = imagePath;
                 img.alt = title;
